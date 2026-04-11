@@ -103,8 +103,8 @@ function startQuiz(subjectKey) {
     state.startTime = Date.now();
     state.endTime = null;
 
-    // Set timer
-    state.timeLeft = state.questions.length * config.timePerQ;
+    // Set timer — fixed 360 minutes
+    state.timeLeft = 360 * 60;
 
     // Update UI
     document.getElementById('quizCategoryLabel').textContent = config.category;
@@ -142,7 +142,7 @@ function startFullExam() {
     state.hintShown = {};
     state.startTime = Date.now();
     state.endTime = null;
-    state.timeLeft = 240 * 60; // 240 minutes
+    state.timeLeft = 360 * 60; // 360 minutes
     state.mode = 'exam';
 
     document.getElementById('quizCategoryLabel').textContent = 'SIMULASI PENUH';
