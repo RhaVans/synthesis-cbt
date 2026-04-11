@@ -1,0 +1,292 @@
+Laporan Analisis Komprehensif: Kisi-Kisi dan Arsitektur Evaluasi UM UGM CBT 2026
+Pendahuluan dan Konteks Seleksi Akademik Pendidikan Tinggi
+Lanskap pendidikan tinggi di Indonesia, khususnya dalam konteks seleksi penerimaan mahasiswa baru di institusi terkemuka seperti Universitas Gadjah Mada (UGM), menuntut instrumen evaluasi yang sangat ketat, komprehensif, dan memiliki tingkat validitas prediktif yang tinggi. Sebagai salah satu institusi pendidikan tertua dan paling prestisius di Asia Tenggara, UGM mengimplementasikan sistem penjaringan yang tidak sekadar menguji kemampuan hafalan materi sekolah menengah, melainkan mengevaluasi kematangan kognitif, agilitas intelektual, dan kesiapan analitis para kandidat. Ujian Mandiri UGM melalui mekanisme Computer Based Test (UM UGM CBT) tahun 2026 merupakan salah satu jalur seleksi mandiri yang secara empiris dirancang untuk mengidentifikasi kandidat dengan kapasitas skolastik dan literasi akademik tertinggi yang memadai untuk bertahan dalam ekosistem pendidikan tinggi yang rigor.
+Berdasarkan pedoman resmi dan data yang dihimpun terkait jadwal penerimaan mahasiswa baru, proses pendaftaran untuk UM UGM CBT 2026 dijadwalkan berlangsung sejak 14 April hingga 5 Mei 2026.1 Periode pendaftaran ini memberikan jendela waktu yang strategis bagi kandidat pasca-pelaksanaan Seleksi Nasional Berdasarkan Tes (SNBT). Selanjutnya, pelaksanaan ujian utama secara serentak akan dihelat pada 2 hingga 6 Juni 2026, dengan pengumuman hasil seleksi yang dijadwalkan pada 12 Juni 2026.2 Penetapan jadwal yang sistematis ini mengharuskan calon mahasiswa untuk merancang linimasa persiapan yang sangat presisi, mengingat luasnya cakupan materi yang diekspektasikan.
+Laporan penelitian ini menyajikan diseksi yang sangat mendalam, terperinci, dan tersusun rapi mengenai kisi-kisi atau cakupan materi yang akan diujikan pada UM UGM CBT 2026. Laporan ini merupakan manifestasi dari analisis struktural terhadap instrumen tes UGM, yang terbagi ke dalam format Tes Potensi Skolastik (TPS), Tes Kemampuan Dasar Umum (TKD), serta Tes Kemampuan Akademik (TKA) yang mencakup rumpun Sains dan Teknologi (Saintek), rumpun Sosial dan Humaniora (Soshum), serta rumpun Campuran.4 Pergeseran paradigma evaluasi pada tahun 2026 juga tercermin pada variasi tipologi soal yang diujikan dalam skema tes masuk perguruan tinggi dewasa ini. Sistem evaluasi masa kini secara umum telah mengakomodasi model soal pilihan ganda konvensional, pilihan majemuk kompleks yang menuntut evaluasi multivariabel, serta isian singkat yang secara efektif mengeliminasi faktor tebakan acak spekulatif.6 Dinamika ini mengharuskan adanya analisis kisi-kisi yang tidak sekadar mendata pokok bahasan, melainkan membedah konsep fundamental, kompetensi neurokognitif yang diukur, dan tingkat kedalaman analisis yang diekspektasikan dari setiap subtes.
+Analisis Konstruk Tes Potensi Skolastik (TPS) / Tes Potensi Akademik (TPA)
+Tes Potensi Skolastik (TPS) atau Tes Potensi Akademik (TPA) menduduki posisi fundamental sebagai pilar pertama dalam arsitektur seleksi UM UGM CBT 2026. Instrumen psikometrik ini secara khusus tidak dirancang untuk mengukur pencapaian kurikuler atau rekam jejak pengetahuan spesifik terhadap suatu mata pelajaran. Sebaliknya, TPS/TPA difokuskan untuk memetakan kapasitas kognitif bawaan, agilitas mental, pemrosesan logika, dan kemampuan penalaran abstrak yang telah terbukti secara ilmiah sebagai prediktor paling valid bagi keberhasilan dan persistensi akademik mahasiswa di tingkat universitas.
+TPA UM UGM 2026 terbagi menjadi beberapa sub-konstruk yang masing-masing memiliki tujuan spesifik dalam mengukur dimensi neurokognitif, meliputi kemampuan verbal, numerik, logika, dan spasial.7 Keberadaan instrumen pengujian ini sangat krusial mengingat tantangan akademik di fakultas-fakultas UGM membutuhkan kemampuan pemrosesan informasi yang masif, sintesis data kualitatif maupun kuantitatif yang kompleks, dan perumusan konklusi yang koheren.
+Berikut adalah rincian materi, indikator kompetensi, dan analisis ekspektasi untuk subtes TPA/TPS UM UGM CBT 2026:
+
+Subtes TPA / TPS
+Fokus Evaluasi Kognitif
+Cakupan Materi Kisi-Kisi
+Analisis Indikator dan Kedalaman Kompetensi
+Kemampuan Verbal
+Pemahaman bahasa, kapasitas semantik, dan kepekaan terhadap struktur konseptual linguistik.
+• Sinonim (kesamaan makna kata)
+
+• Antonim (lawan kata)
+
+• Analogi (padanan relasi antar kata)
+
+• Pemahaman wacana dan literasi bacaan.7
+Mengukur kemampuan kandidat mendeteksi nuansa makna, memahami hierarki relasi antar-konsep, dan mengekstraksi informasi logis dari struktur frasa. Analogi menuntut ekstraksi hubungan abstrak (seperti hubungan part-to-whole, sebab-akibat, atau fungsional).10
+Kemampuan Numerik (Kuantitatif)
+Kecerdasan fluida dalam manipulasi angka, identifikasi pola kuantitatif yang tersembunyi.
+• Operasi hitung dasar dan aljabar elementer
+
+• Deret angka dan deret huruf
+
+• Aritmatika sosial dan persentase
+
+• Penalaran matematika dan konsep bilangan.6
+Difokuskan pada kecepatan komputasi dan ketepatan estimasi. Kandidat harus mampu menerjemahkan masalah dunia nyata ke dalam model matematis. Konsep bilangan tidak menguji hafalan rumus, melainkan pemahaman proporsi, probabilitas diskrit, dan logika rasio.6
+Kemampuan Logika (Penalaran)
+Pemikiran analitis murni, pemecahan masalah deduktif, dan pemahaman silogistik.
+• Silogisme (penarikan kesimpulan berdasarkan premis mayor dan minor)
+
+• Logika analitik (analisis posisi, jadwal, urutan)
+
+• Penalaran logis bersyarat.9
+Mengevaluasi kemampuan mengidentifikasi asumsi yang mendasari argumen yang kompleks, memvalidasi rasionalitas sebuah pernyataan, serta menghindari kejatuhan pada bias kognitif atau logical fallacy saat memproses data.10
+Kemampuan Spasial
+Visualisasi keruangan, kapabilitas rotasi mental, dan manipulasi objek geometri dua atau tiga dimensi secara imajiner.
+• Pencerminan bangun 2D
+
+• Rotasi bangun ruang 3D
+
+• Jaring-jaring bangun ruang abstrak
+
+• Pola gambar berlanjut.7
+Kapasitas ini memiliki korelasi prediktif tinggi terhadap kesuksesan di program studi yang membutuhkan visualisasi teknis yang kuat, seperti arsitektur, teknik sipil, kedokteran (anatomi bedah), dan geosains murni.7
+
+Ekskavasi lebih jauh terhadap subtes ini menunjukkan bahwa penalaran kuantitatif dan literasi bahasa semakin diintegrasikan dalam model-model soal tipe baru. Contohnya, subtes penalaran matematika tak lagi menyajikan soal persamaan linear yang steril, melainkan meramunya dalam konteks bacaan analitis yang menguji seberapa baik kandidat menyaring informasi numerik (noise vs. signal) dari sebuah narasi. Integrasi semacam ini mengimplikasikan bahwa Universitas Gadjah Mada sedang mentransisikan fokusnya menuju kandidat yang memiliki literasi kontekstual yang matang, bukan sekadar kemampuan menghitung mekanis.6
+Ekskavasi Terstruktur Tes Kemampuan Dasar Umum (TKD)
+Tes Kemampuan Dasar Umum (TKD) bertindak sebagai penyaring literasi akademik esensial yang diwajibkan bagi seluruh peserta ujian, tanpa terkecuali, baik yang memilih jalur Saintek, Soshum, maupun Campuran.9 TKD menilai tingkat kecakapan matematika universal dan kelancaran linguistik dalam dua bahasa utama (Indonesia dan Inggris). Pengujian ini berlandaskan pada premis bahwa setiap mahasiswa perguruan tinggi, terlepas dari disiplin ilmunya, mutlak membutuhkan fondasi matematika untuk mencerna statistik dasar, kemampuan membaca teks berbahasa Inggris untuk literatur internasional, serta kemahiran berbahasa Indonesia untuk menghasilkan publikasi dan karya tulis ilmiah yang sesuai dengan standar tata bahasa baku.
+Berdasarkan analisis durasi ujian mandiri terdahulu yang relevan dengan format 2026, setiap subtes dalam TKD (Matematika Dasar, Bahasa Indonesia, Bahasa Inggris) umumnya terdiri dari 15 soal dengan alokasi waktu pengerjaan masing-masing sekitar 20 menit.12 Kondisi ini mengharuskan efisiensi kognitif yang brutal; kandidat rata-rata hanya memiliki waktu berkisar 1 menit 20 detik untuk mengurai, menganalisis, dan menyelesaikan setiap permasalahan matematis atau mendeduksi informasi dari teks bahasa asing yang panjang.
+Kisi-Kisi Komprehensif Matematika Dasar (TKD)
+Mata uji Matematika Dasar di UM UGM CBT terkenal memiliki kurva tingkat kesulitan yang curam, secara substansial melebihi standar ujian akhir sekolah menengah konvensional. Penekanannya bukan pada aplikasi rumus secara parsial, melainkan pada kematangan konseptual dan integrasi beberapa bab berbeda dalam satu rumusan persoalan tunggal.
+
+Cakupan Pokok Bahasan
+Sub-Topik Analitis dan Kompleksitas Materi
+Implikasi Kognitif dan Metode Pemecahan
+Aljabar dan Fungsi Kompleks
+• Eksponen dan bentuk akar
+
+• Logaritma
+
+• Fungsi komposisi dan fungsi invers.9
+Penalaran difokuskan pada penyederhanaan bentuk akar irasional kompleks dan sifat logaritma bersarang. Peserta diekspektasikan dapat melihat pola dalam persamaan aljabar tingkat tinggi dan mereduksinya.
+Persamaan & Pertidaksamaan Kuadrat
+• Sifat akar-akar persamaan
+
+• Kedudukan titik terhadap kurva parabola
+
+• Menentukan titik potong antara dua kurva melalui substitusi.4
+Peserta diuji kemampuannya untuk tidak sekadar mencari nilai x, tetapi memvisualisasikan bagaimana dua fungsi kuadrat berinteraksi dalam ruang kartesian, serta menghitung jarak euclidean antar titik potong tersebut.4
+Sistem Persamaan & Program Linear
+• Sistem Persamaan Linear Dua Variabel (SPLDV) dan Tiga Variabel (SPLTV)
+
+• Persamaan garis lurus dan garis singgung.9
+Aplikasi dari penyelesaian masalah kontekstual optimasi. Soal sering disajikan dalam format naratif (soal cerita) yang mengharuskan abstraksi dari bahasa verbal ke bahasa matematis.
+Limit, Turunan, dan Matriks
+• Limit fungsi aljabar terhingga dan tak terhingga
+
+• Penggunaan metode kofaktor matriks
+
+• Aplikasi turunan untuk titik ekstrem.4
+UM UGM sering mengintegrasikan materi. Sebagai contoh, kandidat mungkin diminta menghitung determinan matriks menggunakan metode kofaktor yang variabelnya berbentuk limit fungsi menuju bilangan tertentu. Ini menuntut lompatan logika lintas-bab.4
+Barisan dan Deret
+• Barisan dan deret aritmatika/geometri
+
+• Suku tengah
+
+• Deret konvergen tak hingga
+
+• Interpolasi atau sisipan barisan.4
+Subtopik krusial meliputi perhitungan total jumlah seluruh suku dari sebuah barisan numerik baru yang terbentuk setelah dilakukannya penyisipan sejumlah konstanta (interpolasi) secara simetris di antara suku-suku asli.4
+Peluang dan Kombinatorika
+• Kaidah pencacahan
+
+• Permutasi dan kombinasi
+
+• Teori peluang probabilitas.4
+Kasus difokuskan pada skenario bersyarat yang rumit. Misalnya, kombinasi pemilihan komite dari populasi tertentu di mana kandidat X dan Y secara eksklusif tidak boleh terpilih secara bersamaan. Pendekatan algoritmik murni akan gagal tanpa logika himpunan yang tepat.4
+Geometri Dasar
+• Lingkaran, bujur sangkar, poligon
+
+• Rasio komparatif geometri.4
+Membandingkan rasio keliling atau luas dari bentuk geometris yang saling tumpang tindih (misalnya rasio keliling antara lingkaran luar dengan perimeter bujur sangkar di dalamnya).4
+
+Kecenderungan untuk menguji limit yang berafiliasi dengan determinan matriks 4 membuktikan ekspektasi bahwa calon mahasiswa harus sudah terbiasa dengan pemikiran matematika struktural. Hal ini bertujuan menyaring mahasiswa yang mampu mengikuti mata kuliah Kalkulus Differensial dan Aljabar Linear secara mulus di tahun pertama perkuliahan, yang merupakan prasyarat krusial di mayoritas program studi.
+Kisi-Kisi Komprehensif Bahasa Inggris (TKD)
+Uji kompetensi Bahasa Inggris pada CBT UM UGM menitikberatkan pada kemampuan membaca analitis atau Reading Comprehension di tingkat akademik. Mahasiswa UGM diproyeksikan akan banyak berinteraksi dengan jurnal internasional berskala Scopus yang sarat akan leksikon teknis dan struktur kalimat pasif yang panjang.
+
+Cakupan Pokok Bahasan
+Sub-Topik Analitis dan Kompleksitas Materi
+Implikasi Kognitif dan Metode Pemecahan
+Reading Comprehension & Makna Implisit
+• Menangkap ide utama gagasan (main idea)
+
+• Tujuan empiris penulis (author's purpose)
+
+• Kemampuan deduksi inferensi (making an inference).4
+Fokus utama pengujian. Teks yang disajikan sangat spesifik, misalnya teks mengenai sejarah linguistik dan status resmi bahasa Swahili di Rwanda, Uganda, dan Afrika Selatan, atau diskusi antropologis tentang pelestarian budaya komunal secara daring.4 Kandidat dituntut mencari makna tersirat di balik data.
+Tata Bahasa dan Sintaksis (Grammar)
+• Word Classes (adjektiva, verba, adverbia, nomina)
+
+• Simple Present Tense untuk perumusan fakta empiris
+
+• Subject-Verb Agreement.4
+Pengujian sering kali berbentuk kalimat yang kompleks sehingga subjek asli tersembunyi. Misalnya, kandidat harus menyadari penambahan sufiks "-s/-es" pada verba tunggal ketika merujuk pada regulasi (contoh: "Article 6 (2) spells...").4 Kandidat juga harus cermat membedakan adjektiva (misal: administrative) dengan kata bendanya (administration) dalam pengisi kalimat.4
+Analisis Kosakata Kontekstual (Vocabulary)
+• Sinonim (padanan similar meaning)
+
+• Antonim leksikal dalam bacaan.9
+Ujian ini menghindari hafalan kamus isolatif. Sebuah kata ganda (polisemi) dapat berarti dua hal yang bertolak belakang bergantung pada konteks kalimat akademik yang menaunginya. Analisis proksimitas diperlukan untuk menerka makna.
+Struktur Rumpang (Cloze Test)
+• Konjungsi korelatif, subordinatif, dan preposisi
+
+• Pengisian struktur kalimat parsial.9
+Menilai intuisi sintaksis kandidat. Kemampuan memilih konjungsi kausalitas (therefore, consequently) versus konjungsi konsesif (nevertheless, notwithstanding) secara presisi.
+
+Ekspektasi institusi dalam instrumen bahasa ini sangat jelas: kemampuan menerjemahkan teks berbahasa asing secara literal tidaklah cukup. Peserta dituntut melakukan sintesis silang dari teks, mengekstraksi data kultural (seperti dari contoh teks bahasa Swahili di Afrika 4), dan menentukan sikap atau bias penulis terhadap fenomena yang diuraikan.
+Kisi-Kisi Komprehensif Bahasa Indonesia (TKD)
+Sebagai instrumen saringan perguruan tinggi negeri yang membawa identitas bangsa, materi Bahasa Indonesia disusun bukan sebagai ujian literatur fiksi, melainkan sebagai ujian ketatabatasan akademis, berpatokan absolut pada Pedoman Umum Ejaan Bahasa Indonesia (PUEBI) serta kelogisan konstruksi wacana.
+
+Cakupan Pokok Bahasan
+Sub-Topik Analitis dan Kompleksitas Materi
+Implikasi Kognitif dan Metode Pemecahan
+Pemahaman Bacaan (Reading Literacy)
+• Ekstraksi makna tersurat dan tersirat
+
+• Pencarian kalimat utama dan gagasan penjelas
+
+• Implikasi naratif.9
+Materi ini secara teoretis paralel dengan materi PPU (Pengetahuan dan Pemahaman Umum) serta Literasi Bahasa Indonesia di UTBK.9 Peserta mengevaluasi koherensi internal antar-paragraf dalam teks ilmiah populer.
+Ejaan dan Penempatan Tanda Baca
+• PUEBI (penggunaan huruf kapital, miring, tebal)
+
+• Tata letak struktural tanda baca (koma, titik dua, tanda pisah).9
+Menganalisis kesalahan ejaan dalam kalimat majemuk. Mengetahui secara definitif kapan tanda titik koma digunakan untuk memisahkan klausa setara, atau kapan konjungsi intrakalimat tidak boleh berada di awal kalimat bersubjek tunggal.
+Morfologi (Pembentukan Kata)
+• Afiksasi (prefiks, sufiks, infiks, konfiks)
+
+• Reduplikasi dan komposisi (kata majemuk).9
+Memahami bagaimana proses afiksasi mengubah kelas kata (misalnya, proses pe-an yang mengubah verba menjadi nomina). Kesalahan morfologis sering dijebak melalui pembentukan kata yang lazim diucapkan namun salah secara baku (misalnya: mempengaruhi vs memengaruhi).
+Sintaksis dan Semantik
+• Struktur SPOK kalimat efektif
+
+• Rujukan subjek pada kalimat bertingkat
+
+• Sinonim, antonim, polisemi kontekstual.9
+Kemampuan membedah kalimat ambigu, mengidentifikasi subjek yang lesap dalam klausa anak, dan memastikan tidak ada pemborosan kata (pleonasme) yang merusak efektivitas penyampaian argumen ilmiah.
+
+Pengujian morfologi dan sintaksis yang ekstensif dirancang dengan tujuan mitigasi jangka panjang, yakni memastikan bahwa kandidat yang terpilih memiliki bekal tata bahasa analitis yang memadai untuk menyusun draf proposal penelitian, skripsi, dan jurnal publikasi yang terhindar dari bias ambiguitas struktural.
+Konstruksi Evaluasi TKA Saintek (Sains dan Teknologi)
+Tes Kemampuan Akademik (TKA) Saintek didesain khusus bagi pendaftar yang memproyeksikan diri masuk ke program studi rumpun keilmuan eksakta—seperti Ilmu Kedokteran, Teknik Sipil, MIPA, Biologi, Pertanian, maupun Kehutanan. Ujian ini mengonstruksikan sebuah ekosistem pengujian yang membedah kepiawaian kandidat terhadap interpretasi hukum-hukum alam, kapabilitas kuantifikasi fenomena fisika dan kimiawi, serta wawasan terhadap kompleksitas sistem biologis.9 Modul pengujiannya merangkum ranah Matematika IPA (Matematika Saintek), Fisika, Kimia, dan Biologi.
+Kisi-Kisi Matematika IPA (Matematika Saintek)
+Berbeda secara diametral dengan Matematika Dasar, Matematika IPA menghadirkan gradasi kesukaran yang mengedepankan analisis kalkulus tingkat lanjut dan geometri analitik yang sarat akan abstraksi spasial.9 Ruang lingkup komprehensifnya mencakup:
+Suku Banyak (Polinomial): Melibatkan operasi pembagian polinomial bersusun, pemahaman absolut terhadap Teorema Sisa dan Teorema Faktor, penentuan akar-akar persamaan rasional derajat tinggi, dan aplikasinya dalam pembentukan grafik fungsi yang kompleks.9
+Kalkulus Terintegrasi (Limit, Turunan, Integral): Beranjak dari dasar, Matematika IPA menuntut penguasaan metode pengintegralan substitusi, integrasi parsial, dan substitusi trigonometri. Aplikasinya ditekankan pada pencarian luasan area yang dibatasi oleh dua atau tiga kurva berpotongan, serta perhitungan volume benda putar melalui integrasi fungsi kontinu.9
+Vektor Lanjutan: Operasi vektor dimensi ruang (R3). Peserta diuji kemampuannya dalam memahami perkalian titik (dot product) untuk mencari proyeksi ortogonal, serta perkalian silang (cross product) dan perhitungan trigonometri analitik sudut yang dibentuk oleh persilangan dua vektor di ruang hampa.9
+Geometri Dimensi Tiga: Penalaran spasial tingkat tertinggi. Menentukan jarak absolut antara satu titik ekstrem terhadap sebuah bidang diagonal tak berwujud dalam sebuah prisma atau limas, menggunakan perpaduan antara teorema Pythagoras lanjutan, aturan kosinus, dan analisis proyeksi tegak lurus.9
+Lingkaran dan Transformasi Matriks: Merumuskan persamaan umum lingkaran, mengevaluasi garis singgung kutub, serta memanipulasi titik koordinat melalui komposisi rotasi, translasi, dan dilatasi yang dikodekan dalam determinan matriks.9
+Kisi-Kisi Fisika
+Fisika di dalam UM UGM tidak lagi memfokuskan pada kelancaran substitusi variabel ke dalam sebuah formula yang sudah jadi. Ujian ini menuntut kemahiran mengabstraksikan realitas fenomena dinamika alamiah ke dalam bentuk persamaan matematis, serta pemahaman atas batasan idealisasi sistem fisika.9
+
+Pokok Bahasan Fisika
+Rincian Konsep Analitis dan Materi Spesifik
+Mekanika Klasik & Kinematika
+Analisis vektor gerak, Kinematika partikel (GLB, GLBB, gerak parabola, melingkar). Penerapan Hukum Newton I, II, dan III pada sistem benda berinteraksi kompleks (seperti dua katrol bertingkat di atas bidang miring dengan koefisien gaya gesek statis dan kinetis bervariasi). Gaya gravitasi dan tegangan tali.9
+Usaha, Energi, & Momentum
+Teorema kekekalan energi mekanik dalam medan gravitasi non-ideal, impuls, serta hukum kekekalan momentum linear untuk pemecahan kasus tumbukan elastis dan inelastis pada partikel.9
+Zat, Kalor, dan Termodinamika
+Perpindahan kalor konduksi/konveksi/radiasi, Asas Black, Hukum Gas Ideal, dan entropi. Pemahaman fundamental atas Hukum I dan II Termodinamika, termasuk efisiensi mekanis dari model Siklus Carnot ideal.9
+Getaran dan Gelombang Fisik
+Gerak Harmonik Sederhana (GHS) pada ayunan matematis maupun sistem pegas. Sifat perambatan gelombang mekanik (transversal/longitudinal) dan elektromagnetik. Efek Doppler untuk menghitung frekuensi pengamat yang bergeser, interferensi optik, dan difraksi celah tunggal/ganda.9
+Elektromagnetisme Murni
+Elektrostatika (Hukum Coulomb, medan listrik di antara pelat, distribusi kapasitor ekuivalen). Listrik dinamis menggunakan penalaran Hukum Kirchhoff loop ganda untuk mencari arus percabangan. Medan magnet induksi dan arah vektor Gaya Lorentz kaidah tangan kanan.9
+Fisika Modern & Optik Geometri
+Optika geometri pada susunan instrumen cermin dan lensa (mikroskop, teleskop). Fenomena Fisika Modern difokuskan pada interpretasi paradoks relativitas khusus Einstein (dilatasi waktu, pengerutan panjang, ekuivalensi massa energi) serta kuantum (Efek Fotolistrik dan panjang gelombang de Broglie).9
+
+Kisi-Kisi Kimia
+Instrumen pengujian Kimia menitikberatkan pada perpaduan kualitatif (memahami mengapa sebuah reaksi terjadi berlandaskan sifat atomiknya) dan kuantitatif (menghitung hasil reaktan yang tersisa). Secara statistik, soal Kimia CBT UGM sangat sarat akan data empiris dan rentan menjebak kandidat melalui angka-angka desimal yang menuntut kejelian hitung.9
+Pondasi Dasar: Stoikiometri: Diakui sebagai "pondasi dasar wajib" dan materi yang paling dominan muncul setiap tahunnya. Meliputi interpretasi konsep mol universal, penyetaraan pereaksi pembatas, kalkulasi persentase hasil turunan, hingga penetapan rumus empiris dan ikatan molekul.9 Tanpa penguasaan stoikiometri absolut, kandidat akan lumpuh pada hampir seluruh bab kimia numerik lainnya.
+Struktur Materi: Teori model atom, struktur elektron mekanika gelombang, dan periodisitas (sifat periodik keelektronegatifan, afinitas). Dilanjutkan dengan teori Ikatan Kimia (ion, kovalen polar, logam) dan prediksi geometri molekul menggunakan hibridisasi orbital atau teori tolakan pasangan elektron bebas (VSEPR).9
+Dinamika Kinetika dan Energi: Laju reaksi kimia (menentukan orde reaksi dan tetapan laju berdasarkan tabel waktu eksperimental). Termokimia mengukur variasi entalpi (hukum Hess, energi ikatan pemutusan rata-rata) eksotermis dan endotermis.9
+Kesetimbangan Kimia & Larutan: Analisis pergeseran sistem ekuilibrium berdasar Asas Le Chatelier atas perubahan tekanan/suhu. Kimia larutan membedah pH hidrolisis garam dan bufer/penyangga, titrasi kuantitatif, serta komputasi Sifat Koligatif Larutan (perubahan tekanan uap osmotik, penurunan titik beku) pada senyawa nonelektrolit versus elektrolit yang melibatkan faktor Van't Hoff.9
+Elektrokimia dan Kimia Organik: Redoks (penyetaraan reaksi asam/basa yang kompleks), elektrokimia sel Volta untuk penentuan potensial sel baterai standar, dan hukum isolasi Faraday dalam sel Elektrolisis.9 Kimia organik mencakup nomenklatur hidrokarbon kompleks, gugus fungsi (alkohol, asam karboksilat, keton), hingga struktur polimer sintetis. Kimia Inti menjadi subtopik pendukung.9
+Kisi-Kisi Biologi
+Evolusi pengujian Biologi di UM UGM bergerak menjauh dari paradigma taksonomi menghafal nama spesies klasik menuju ke arah permodelan fisiologis, adaptasi molekuler, dan ekologi komputasional. Pemahaman bahwa organ bekerja sebagai sebuah hierarki sistem holistik sangat ditekankan.9
+Biologi Tingkat Seluler dan Molekuler: Konsep hakekat materi hidup, spesialisasi fungsi ribosom, mitokondria, plastida, dan organel lainnya. Transportasi selektif zat melintasi membran sel fosfolipid bilayer secara aktif maupun pasif (difusi, osmosis).9
+Biodiversitas, Taksonomi, dan Ekologi: Klasifikasi dari mikroba (Virus struktural, Monera prokariotik, Protista, Fungi) hingga pohon filogenetik Hewan (invertebrata dan vertebrata) dan Tumbuhan (Lumut, Paku, Spermatophyta). Dalam kajian Biosfer, fokus diberikan pada interaksi trofik ekosistem (jaring-jaring makanan kompleks, aliran perpindahan energi efisiensi 10%, daur materi biogeokimiawi) dan dinamika populasi.9
+Fisiologi Anatomi Tumbuhan & Hewan: Pendalaman terhadap fungsi jaringan meristematik kormofita. Pada subtopik Hewan, pengujian membedah anatomi organ pencernaan, respirasi, ekskresi nefron ginjal, sirkulasi kardiovaskuler, koordinasi saraf, dan endokrin. Contoh pertanyaan berakurasi tinggi dari kisi-kisi ini adalah analisis atas peran fungsional cairan hemolimfa pada insekta/serangga; berbeda dengan sistem peredaran darah tertutup pada mamalia, hemolimfa hanya berfungsi primer sebagai medium transportasi nutrisi metabolisme, alat proteksi kekebalan, dan tidak memiliki peran spesifik untuk mengangkut oksigen kapiler karena sistem pertukaran gas serangga bertumpu pada jaringan trakea secara independen.9
+Metabolisme Sel (Katalis dan Energi): Enzimologi, penguraian molekul kompleks (katabolisme/respirasi aerob via siklus Krebs dan fosforilasi oksidatif serta anaerob fermentasi). Pada lintasan biosintesis (anabolisme), ditekankan spesifikasi fungsi zat biologis. Sebagai misal, kandidat harus mampu mengidentifikasi secara presisi perbedaan reseptor panjang gelombang cahaya spesifik dari pigmen Chlorophyll a berhadapan dengan fungsi Chlorophyll b pada fotosistem tumbuhan.9
+Genetika, Keturunan, dan Evolusi Dinamis: Pola penurunan genetik hukum Mendel pertama dan kedua, rekombinasi, serta deviasi pautan gen epistasis/hipostasis. Analisis struktur makromolekuler substansi materi genetik (transkripsi DNA, translasi sintesis protein mRNA), fenomena mutasi seluler adaptif, mekanisme spesiasi makroevolusi, dan verifikasi jejak seleksi alam evolusioner Darwinian modern.9
+Pendekatan evaluasi Saintek UGM menggarisbawahi bahwa kompetensi analitik lintas batas adalah sebuah kemutlakan. Pengetahuan peserta mengenai sifat osmosis cairan hemolimfa dalam konteks Biologi, pada kenyataannya, digerakkan secara struktural oleh konsep tekanan hidrostatik pada Fisika, dan beroperasi di atas kerangka difusi konsentrasi larutan dari kajian Kimia dasar.9 Pemetaan kognitif inilah yang diharapkan dikuasai calon penerus sains di masa yang akan datang.
+Konstruksi Evaluasi TKA Soshum (Sosial dan Humaniora)
+TKA Soshum dikonstruksikan sebagai medan uji intelektual yang presisi untuk mengevaluasi kematangan pola pikir teoritis sosio-kultural, perspektif historis struktural, serta literasi spasial dan fiskal. Ujian Soshum CBT UM UGM memusatkan pandangannya ke dalam tiga dimensi sentral: konseptualisasi teori sosial makro, ekstraksi interpretatif atas data statistik atau tabel empiris, dan penalaran studi kasus (case-study reasoning) resolusi konflik kontemporer.19 Kisi-kisi subtes secara konsisten bertumpu pada Ekonomi, Sosiologi, Sejarah, dan Geografi.19
+Kisi-Kisi Ekonomi
+Sistem pengujian ekonomi UM UGM meramu teori mikroekonomi rasionalitas konsumen dengan tata kelola makroekonomi agregat, serta kompetensi teknikal pencatatan operasional entitas komersial.9
+
+Pokok Bahasan Ekonomi
+Rincian Konsep Analitis dan Materi Spesifik
+Prinsip Ilmu Ekonomi Mikro
+Akar masalah kelangkaan sumber daya (scarcity), perhitungan opportunity cost (biaya peluang eksklusif), serta mekanisme empiris interaksi ekuilibrium penawaran dan permintaan. Termasuk evaluasi sensitivitas pasar lewat kurva matematis elastisitas harga, silang, dan pendapatan.9
+Struktur Pasar & Makroekonomi
+Klasifikasi struktur kekuasaan produsen (pasar monopoli, persaingan sempurna murni, monopsoni, oligopoli). Konsep makroekonomi difokuskan pada pemahaman instrumen agregat penciptaan kekayaan bangsa: metrik perhitungan PDB, PNB (GNP), NNI, dinamika pengangguran terbuka/terselubung, dan kontrol moneter laju inflasi berantai.9
+Manajemen Kebijakan Negara
+Operasional instrumen korektif pemerintah untuk stabilisasi resesi. Intervensi Kebijakan Moneter via diskonto bank sentral dan Giro Wajib Minimum, dipadukan dengan kontrol Kebijakan Fiskal melalui perpajakan dan pengaturan subsidi/belanja infrastruktur. Telaah neraca perdagangan internasional.19
+Akuntansi dan Sektor Keuangan
+Fungsi literasi finansial terkait operasional perbankan syariah/konvensional, koperasi inklusif. Diujikan kompetensi teknikal menyusun siklus dasar akuntansi debet-kredit, penyusunan jurnal penyesuaian, laporan neraca lajur komprehensif, dan identifikasi laba-rugi untuk skala entitas perusahaan jasa dan entitas perusahaan dagang inventori.9
+
+Kisi-Kisi Sosiologi
+Sosiologi UGM membuang jauh sifat dogmatis normatif. Mata uji ini disajikan layaknya simulasi di mana kandidat diposisikan sebagai analis sosial yang harus mampu menguraikan struktur kemajemukan masyarakat, membaca variabel riset metodologi demografi, dan memecahkan sumbatan disintegrasi komunal.
+Stratifikasi dan Diferensiasi Struktur Sosial: Pemahaman tajam secara filosofis. Kandidat diuji kapasitasnya untuk secara gamblang memisahkan konsep Diferensiasi Sosial (keberagaman yang bersifat horizontal pararel, netral, tidak menempatkan kelas hierarkis, contoh: perbedaan afiliasi suku bangsa, denominasi keagamaan, ras genetik) dari fenomena Stratifikasi Sosial (pengkelasan vertikal hierarkis masyarakat yang diciptakan karena disparitas penguasaan akses kapital, monopoli power politik, distribusi kompensasi prestise, dan hak prerogatif privilese).20
+Interaksi, Kelompok, dan Konflik Ekologis/Sosial: Mekanisme pembentukan kelompok eksklusif vs inklusif. Pendalaman terhadap resolusi benturan komunal. Subtopik yang sangat diutamakan adalah identifikasi agen pemicu dan faktor penghalang proses integrasi kultural. Contoh permasalahan konflik riil adalah dikotomi asimetris relasi kekuasaan antara resistensi masyarakat akar rumput penganut norma/hukum adat teritorial berhadapan dengan ekspansi perizinan korporat multinasional dari pemerintah pusat. Kejumudan ini disebabkan vested interest atau kepatuhan absolut tradisi menolak infiltrasi inovasi sekuler.9
+Institusi Nilai, Norma, dan Sosialisasi: Memahami signifikansi proses agen primer dan sekunder mentransformasi individu menjadi aktor komunal. Sosialisasi dipahami bukan sebagai penekanan kehendak bebas, melainkan sarana krusial untuk melatih afeksi dan interaksi kultural yang beradab dan adaptif dengan tatanan pluralisme di luar lingkungan dominasi keluarga inti asalnya.20 Penekanan juga diberikan pada patologi ketidakharmonisan sosial akibat globalisasi.9
+Metodologi Penelitian Sosial Analitik: Kandidat diekspektasikan memahami bagaimana sebuah survei kebijakan negara digagas. Penguasaan jenis observasi eksperimental versus kualitatif partisipatoris. Ujian kerap menyorot metodologi Cluster Sampling (Pengambilan Sampel Gugus). Peneliti menyiasati homogenitas wilayah dengan merumuskan kluster berbasis karakteristik demografis ekuivalen sebelum menerapkan probabilitas acak guna meningkatkan efektivitas penarikan sampel survei skala besar.20
+Kisi-Kisi Sejarah
+Ujian sejarah pada lanskap UM UGM merepresentasikan tradisi hermeneutika sejarah. Paradigma historiografi menuntut kandidat tidak cuma menghafal tahun kejadian ("when"), namun lebih kepada pembedahan anatomi sosio-politik ("why" dan "how") dari fenomena revolusi pemerintahan yang krusial.19
+Dinamika Klasik Nusantara: Mengkaji transisi sistem kekuasaan, penyebaran rute budaya agraris-maritim, relasi feodal, masa puncak keemasan hingga dekadensi politik hegemoni Kerajaan Hindu-Budha dan transisi pembentukan struktur dominasi institusional Kerajaan bernuansa Islam.9
+Dialektika Kolonial dan Kebangkitan Nasional: Analisis intervensi imperialisme VOC dan pemerintahan Hindia-Belanda. Terdapat telaah kritis ihwal Politik Etis (Etische Politiek) sebagai katalisator krusial lahirnya stratifikasi sosial priyayi sekuler terdidik, yang tanpa disadari rezim kolonial justru menjadi arsitek ideologis radikal pemicu manifesto organisasi kemerdekaan pergerakan nasional di awal abad 20.9
+Lintasan Demokrasi dan Orde Baru: Dinamika transisi dari Demokrasi Liberal ke Demokrasi Terpimpin Soekarno. Dalam kajian rezim Orde Baru, materi berfokus pada anatomi sentralisasi kekuasaan. Fokus kritis adalah pemahaman mengenai keabsahan lahirnya rezim komando militeristik tersebut; bahwa konsolidasi mutlak Soeharto dilandasi mandat Surat Perintah 11 Maret 1966 (Supersemar), yang esensi fundamentalnya dirancang untuk menjamin pengamanan instabilitas keamanan negara pasca tragedi berdarah G30S-PKI.9
+Era Reformasi Kontemporer: Kajian fluktuatif atas kebijakan transisi otonomi disentralisasi dan eskalasi krisis keamanan regional. Sebagai studi kasus presisi, ujian menyoroti intervensi militerisme dengan mencuatnya penerapan Darurat Operasi Militer di Daerah Nanggroe Aceh Darussalam. Konflik bereskalasi pada rezim pemerintahan Megawati Soekarnoputri per tanggal 19 Mei 2003 usai diplomasi perundingan Otonomi Khusus berhadapan jalan buntu karena faksi Gerakan Aceh Merdeka (GAM) yang menolak keras kesepakatan demiliterisasi pelucutan senjata di wilayah otonomnya.20
+Revolusi Skala Global dan Sejarah Dunia: Pergerakan filosofis dari Revolusi Amerika, Prancis, industri Eropa, dan Tiongkok.21 Kajian abad ke-20 menyoroti polarisasi ideologis pemicu runtuhnya hegemoni Uni Soviet dan usainya Perang Dingin. Fenomena dikupas melalui tinjauan atas implementasi instrumen glasnost (liberalisasi ruang wacana publik transparan) serta doktrin perestroika (agenda reformasi sistem kendali perekonomian birokratis) yang digagas sentral secara moderat oleh Mikhail Gorbachev, yang pada akhirnya malah menstimulasi disintegrasi berantai seluruh negara satelit Komunis pada 1991 akibat guncangan stabilitas nasional.20
+Kisi-Kisi Geografi
+Di TKA Soshum, porsi Geografi dipertahankan sebagai sarana jembatan epistemologis penengah antara determinisme eksakta fisik (bumi) dengan possibilisme antropologis ilmu sosial (aktivitas peradaban manusia).19
+
+Pokok Bahasan Geografi
+Rincian Konsep Analitis dan Materi Spesifik
+Falsafah Geosains & Pemetaan Dasar
+Membedah empat tiang absolut perspektif kajian keilmuan: deskripsi (narasi atribut terpadu keruangan), distribusi (asimetri penyebaran elemen geosfer alam/sosial), interelasi (rantai probabilitas sebab-akibat), dan korologi (integrasi spasial).9 Pemahaman mengenai Sistem Informasi Geografis (SIG) berbasis parameter vektor poligon spasial serta interpretasi rona foto udara (Penginderaan Jauh).19
+Geomorfologi Dinamis (Litosfer & Pedosfer)
+Proses orogenesa pemicu tektonisme patahan, tipe manifestasi vulkanisme dapur magma, klasifikasi tenaga eksogen (erosi fluvial laut gletser) pembentuk profil morfologi bumi, mekanika bebatuan primer sekunder sedimen, dan identifikasi stratifikasi tanah agrikultur.9
+Dinamika Cuaca, Iklim, dan Hidrosfer
+Sirkulasi gradien suhu atmosferik dan pergerakan angin global, interpretasi kelembaban curah hujan. Proses siklus sirkulasi hidrologis persediaan air konstan, morfologi bentang laut dasar lautan dan intervensi aliran perairan darat/DAS.9
+Demografi Populasional dan Antroposfer
+Interpretasi transisi grafis parameter kependudukan sensus: mortalitas asimetris, angka kelahiran kasar (CBR), parameter ledakan penduduk agraris (dependency ratio), konstruksi migrasi internal komuter, hingga mobilitas sentrifugal komunal kota satelit.9
+Spasial Kebijakan Lingkungan & Lokasi Industri
+Identifikasi sentra persebaran daya dukung lingkungan strategis, perancangan analisis AMDAL operasional pertambangan, kalkulasi nilai ekologi berkelanjutan, dan teori aglomerasi spasial optimum Weber (transportasi material termurah) dalam tata letak industri terpadu.9
+
+Keseluruhan kerangka Soshum tersebut didesain untuk menyaring pola penalaran resolusi berbasis data (evidence-based problem solving). UGM mencari cendekiawan yang mampu meletakkan letupan isu politik masa reformasi, pergeseran inflasi bank makro, atau stratifikasi sosiologis akibat lokalisasi industri, dalam satu kerangka utuh analisis tata kelola kenegaraan yang sinergis.
+Arsitektur Evaluasi Psikometrik TKA Campuran
+Dalam peta kompetisi seleksi universitas di Indonesia, keberadaan kluster tipe ujian TKA Campuran memberikan fleksibilitas tanpa batas sekaligus menciptakan beban komputasional otak terbesar dalam UM UGM CBT 2026. Bagi peserta didik yang hendak menyilangkan spesialisasi lintas-fakultas (contoh: kandidat memilih preferensi program studi pertama di Fakultas Kedokteran dan program studi kedua di Fakultas Hukum), diwajibkan secara reguler untuk menyerap semua instrumen pengujian secara integral: subtes murni TPA, ujian literasi fundamental Matematika Dasar, B. Indonesia, B. Inggris, dan seluruh paket rumpun TKA baik kluster Matematika IPA, Kimia, Biologi, Fisika digabungkan dengan rangkaian Sejarah, Geografi, Sosiologi, dan Ekonomi berturut-turut tanpa jeda dispensasi yang signifikan.11
+Desain kognitif ini dirancang bukan sebatas untuk menguji tingkat penguasaan hafalan materi ensiklopedis. Lebih dalam daripada itu, ini adalah instrumen pengukur parameter daya tahan kelelahan pikiran murni (cognitive endurance and perceptual fatigue resistance). Mengingat durasi reguler saja pada kluster sains individual sudah menyita durasi ketat sebesar 240 menit murni (yakni 4 jam kontinu untuk menyelesaikan 165 permasalahan berlevel kalkulus lanjut) 12, modul TKA Campuran ini mengisyaratkan sebuah ekstensi alokasi stamina mental yang sangat masif, durasi pelaksanaan yang jauh lebih ekstensif 2, serta efisiensi manajemen batas waktu krisis pada hari pengujian CBT tersebut.2
+Implikasi strategis dari kurikulum ujian Campuran menguji parameter kompetensi "polimatik"—sebuah kesanggupan otak kandidat untuk segera secara instan berpindah kuadran cara bernalar (switching paradigm) dalam hitungan sekuens waktu detik. Di satu detik peserta terikat pada penyelesaian pergerakan variabel mekanika fluida (Fisika), beberapa saat kemudian kandidat harus segera merekonfigurasi sistem memori kerja serebralnya memvisualisasi hierarki masyarakat sosial pra-sejarah, dan kembali dipaksa memecahkan kompleksitas persentase pembagian hasil deviden laba dagang akuntansi keuangan. Mereka yang berhasil mencatatkan rekam persentil kuartil tinggi di rute perpaduan ekstrem lintas disiplin ini adalah wujud mutlak intelektual organik tangguh yang diprediksi tangkas mencerna berbagai ragam disiplin kompleks pendidikan abad 21 yang menuntut riset multidisipliner kolaboratif terdepan di jenjang Universitas Gadjah Mada nantinya.
+Sintesis Implikasi dan Tinjauan Akhir
+Berdasarkan telaah kritis yang komprehensif atas struktur morfologi ujian, silabus parameter pengetahuan eksakta/soshum, dan variansi model kompetensi bahasa serta literasi dalam Universitas Gadjah Mada Computer Based Test (UM UGM CBT) 2026, tampak dengan jelas arsitektur penyeleksian yang berstandar internasional. Sistem ini secara bertahap mereduksi proporsi soal hafalan algoritmik pasif dan mentransisikannya menuju evaluasi Higher Order Thinking Skills (HOTS) yang integratif, holistik, dan berpijak pada metode first-principles thinking. Melalui instrumen ini, panitia admisi secara objektif menyaring esensi potensi genetik agilitas akademik serta tingkat resistensi peserta terhadap tuntutan akademik yang fluktuatif di masa yang akan datang. Keberhasilan menembus proses ini tidak dapat sekadar disandarkan pada strategi hapalan trial-and-error, melainkan menuntut rekayasa kesiapan strategis yang jauh bertumpu pada latihan ketajaman penalaran dan keluwesan abstraksi yang holistik. Penggalian mendalam sistem ujian ini dapat difungsikan oleh pemangku pendidikan sebagai instrumen acuan prediktif pengembangan kecerdasan adaptif bangsa demi menyongsong dinamika riset perguruan tinggi yang makin kompleks di esok hari.
+Karya yang dikutip
+Jadwal Seleksi – Admisi - Admissions UGM - Universitas Gadjah Mada, diakses April 11, 2026, https://admissions.ugm.ac.id/v26/pendaftaran-mahasiswa-baru-wni/sarjana-sarjana-terapan/jadwal-seleksi/
+UM UGM Computer Based Test (UM UGM CBT) 2026 – Admisi - Admissions UGM, diakses April 11, 2026, https://admissions.ugm.ac.id/v26/pendaftaran-mahasiswa-baru-wni/sarjana-sarjana-terapan/ragam-seleksi-sarjana-sarjana-terapan-2025/um-ugm-computer-based-test-um-ugm-cbt-2026/
+Lengkap! Ini Jadwal dan Biaya Jalur Mandiri UGM 2026 Terbaru - BeritaSatu.com, diakses April 11, 2026, https://www.beritasatu.com/nasional/2983824/lengkap-ini-jadwal-dan-biaya-jalur-mandiri-ugm-2026-terbaru
+Contoh Soal UM UGM Kemampuan Dasar (TKDU) dan ..., diakses April 11, 2026, https://www.brainacademy.id/blog/contoh-soal-tkdu-um-ugm
+UM UGM CBT 2026: Jadwal Lengkap, Syarat, dan Cara Daftarnya - detikcom, diakses April 11, 2026, https://www.detik.com/jogja/kota-pelajar/d-8423551/um-ugm-cbt-2026-jadwal-lengkap-syarat-dan-cara-daftarnya
+Contoh Soal UTBK-SNBT 2026: Tes Potensi Skolastik (TPS) & Tes Literasi - Ruangguru, diakses April 11, 2026, https://www.ruangguru.com/blog/contoh-soal-tes-skolastik
+45+ Contoh Soal TPA: Pembahasan dan Tips Mengerjakannya - Jobstreet Indonesia, diakses April 11, 2026, https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan
+Latihan Soal UTUL UGM 2026 - TPA NUMERIK - YouTube, diakses April 11, 2026, https://www.youtube.com/watch?v=7Wc-ranHUUs
+Materi UM UGM 2024 (Saintek dan Soshum) yang Rinci - UTBKCAK, diakses April 11, 2026, https://utbkcak.com/persebaran-materi-um-ugm/
+PART 5. Tips Pembahasan UM UGM 2025 – Tes Potensi Akademik (TPA)| KEMAMPUAN VERBAL - YouTube, diakses April 11, 2026, https://www.youtube.com/watch?v=yT_oV2_tZ6U
+Daftar Mata Uji UM UGM (UM UGM CBT) Tahun 2025 Computer Based Test, diakses April 11, 2026, https://admissions.ugm.ac.id/v26/wp-content/uploads/sites/3/2026/01/Mata-Uji-UM-UGM-CBT-Tahun-2025_REV.pdf
+Try Out UM UGM - Paket 1 Mandiri Saintek - Ujian Mandiri 2026 - edunovasi.com, diakses April 11, 2026, https://edunovasi.com/mandiri/detail/MTIw
+100+ Soal Tes Masuk UGM (UM UGM) dengan Pembahasan Kisi-Kisi Soal Universitas Gadjah Mada - #1 Simulasi UTBK, diakses April 11, 2026, https://utbk.or.id/soal-tes-masuk-ugm/
+Tka Saintek (Utul Ugm) | PDF - Scribd, diakses April 11, 2026, https://www.scribd.com/document/505839146/TKA-SAINTEK-UTUL-UGM
+PEMBAHASAN UM UGM 2021 FISIKA || PART 1 - YouTube, diakses April 11, 2026, https://www.youtube.com/watch?v=f1go7Zsl7XE
+(PDF) Soal UTUL UGM Kimia dan Pembahasan - TXTAMBIS, diakses April 11, 2026, https://txtambis.com/karya/soal-kimia-utul-ugm-dan-pembahasan/
+Sebaran Materi UM UGM (Biologi) | PDF - Scribd, diakses April 11, 2026, https://id.scribd.com/document/871494197/Sebaran-Materi-UM-UGM-Biologi
+10 Contoh Soal Biologi UTUL UGM Saintek dan Kunci Jawaban - Skuling, diakses April 11, 2026, https://skuling.id/contoh-soal-biologi-utul-ugm/
+Kisi-Kisi TKA Sosial dan Humaniora | PDF - Scribd, diakses April 11, 2026, https://id.scribd.com/document/942812113/Kisi-kisi-Tka-Soshum
+Contoh Soal UM UGM Soshum dan Pembahasannya - Brain Academy, diakses April 11, 2026, https://brainacademy.id/blog/contoh-soal-um-ugm-soshum
+Contoh Soal UM UGM Soshum dan Pembahasannya - Brain Academy, diakses April 11, 2026, https://www.brainacademy.id/blog/contoh-soal-um-ugm-soshum
