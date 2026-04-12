@@ -1,0 +1,27 @@
+// SOSHUM ABSOLUTE FINAL — +14 (4 Eko + 3 Sos + 4 Sej + 3 Geo) → 1000
+
+appendQuestions('soshum_ekonomi', [
+{question:"Gaya hidup konsumtif (consumerism) berdampak negatif berupa ...",options:["Pemborosan, utang berlebihan, dan kerusakan lingkungan","Peningkatan tabungan","Kemandirian finansial","Investasi produktif","Pertumbuhan ekonomi sehat"],answer:0,explanation:"Konsumerisme berlebihan: spending melebihi kebutuhan → utang, limbah, eksploitasi sumber daya."},
+{question:"Keunggulan kompetitif (competitive advantage) menurut Michael Porter dicapai melalui ...",options:["Cost leadership, differentiation, atau focus strategy","Monopoli saja","Subsidi saja","Korupsi","Dumping saja"],answer:0,explanation:"Porter: strategi generik — keunggulan biaya rendah, diferensiasi produk, atau fokus pada ceruk pasar."},
+{question:"Neraca pembayaran (balance of payments) terdiri dari ...",options:["Neraca berjalan (current account) dan neraca modal/finansial (capital/financial account)","Hanya ekspor","Hanya impor","Hanya utang","Hanya investasi"],answer:0,explanation:"BoP: catatan semua transaksi ekonomi suatu negara dengan luar negeri — current + capital/financial account."},
+{question:"CSR (Corporate Social Responsibility) adalah ...",options:["Tanggung jawab perusahaan terhadap dampak sosial dan lingkungan dari operasinya","Hanya kewajiban pajak","Promosi produk","Iklan televisi","Sponsorship saja"],answer:0,explanation:"CSR: perusahaan bertanggung jawab atas dampak operasinya — lingkungan, sosial, kesejahteraan masyarakat."},
+]);
+
+appendQuestions('soshum_sosiologi', [
+{question:"Reproduksi sosial menurut Bourdieu adalah proses ...",options:["Masyarakat mewariskan ketimpangan sosial dari generasi ke generasi","Menghapus ketimpangan","Menciptakan kesetaraan","Mobilitas sempurna","Distribusi merata"],answer:0,explanation:"Bourdieu: sistem pendidikan (dan budaya) mereproduksi ketimpangan kelas — anak kelas atas tetap di atas."},
+{question:"Arena (field) menurut Bourdieu adalah ...",options:["Ruang sosial tempat aktor bersaing memperebutkan kapital","Lapangan olahraga","Hanya ekonomi","Hanya politik","Tanpa persaingan"],answer:0,explanation:"Field: arena sosial (ekonomi, budaya, akademik, politik) tempat agen berkompetisi menggunakan berbagai modal."},
+{question:"Sosialisasi anticipatory (pengantisipasian) adalah ...",options:["Proses belajar norma/nilai kelompok yang ingin dimasuki seseorang","Sosialisasi masa lalu","Pengulangan sosialisasi","Sosialisasi primer","Sosialisasi gagal"],answer:0,explanation:"Anticipatory socialization: belajar peran/norma kelompok yang belum dimasuki — persiapan transisi status."},
+]);
+
+appendQuestions('soshum_sejarah', [
+{question:"Perang Batak (1878-1907) melawan Belanda dipimpin oleh ...",options:["Sisingamangaraja XII","Imam Bonjol","Diponegoro","Teuku Umar","Cut Nyak Dhien"],answer:0,explanation:"Sisingamangaraja XII: raja sekaligus pemimpin spiritual Batak yang memimpin perlawanan terhadap kolonial."},
+{question:"Pertempuran Ambarawa (November 1945) dipimpin oleh ...",options:["Kolonel Soedirman","Letkol Soeharto","Jenderal Nasution","Bung Tomo","Sri Sultan HB IX"],answer:0,explanation:"Pertempuran Ambarawa (Nov-Des 1945): mengusir Sekutu dari Ambarawa. 15 Desember = Hari Infanteri."},
+{question:"Presiden pertama Republik Indonesia adalah ...",options:["Ir. Soekarno","Mohammad Hatta","Soeharto","BJ Habibie","Abdurrahman Wahid"],answer:0,explanation:"Soekarno: proklamator sekaligus presiden pertama RI (1945-1967)."},
+{question:"Wakil presiden pertama Republik Indonesia adalah ...",options:["Drs. Mohammad Hatta","Soekarno","Soeharto","Adam Malik","Hamengkubuwono IX"],answer:0,explanation:"Hatta: proklamator sekaligus wakil presiden pertama RI (1945-1956). Dijuluki 'Bapak Koperasi'."},
+]);
+
+appendQuestions('soshum_geografi', [
+{question:"Hutan produksi berfungsi untuk ...",options:["Menghasilkan hasil hutan (kayu, rotan, getah) secara lestari","Melindungi tata air saja","Pariwisata saja","Konservasi saja","Tidak ada fungsi ekonomi"],answer:0,explanation:"Hutan produksi: kawasan hutan yang dikelola untuk menghasilkan komoditas kehutanan secara berkelanjutan."},
+{question:"Daerah bayangan hujan (rain shadow) terdapat di sisi ...",options:["Leeward (belakang gunung, menghadap menjauh dari angin)","Windward","Pantai","Dataran rendah","Khatulistiwa"],answer:0,explanation:"Rain shadow: sisi gunung yang membelakangi angin — udara sudah kehilangan kelembaban → kering."},
+{question:"Aktivitas seismik di Indonesia sangat tinggi karena ...",options:["Pertemuan tiga lempeng tektonik besar (Eurasia, Indo-Australia, Pasifik)","Iklim tropis","Curah hujan tinggi","Banyak sungai","Dataran rendah luas"],answer:0,explanation:"Indonesia: titik pertemuan 3 lempeng besar → zona subduksi aktif → gempa dan vulkanisme intensif."},
+]);
