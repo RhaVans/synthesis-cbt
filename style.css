@@ -748,7 +748,7 @@ body {
 /* Category Grid */
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-lg);
 }
 
@@ -1781,8 +1781,17 @@ body {
     justify-content: center;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========== RESPONSIVE — MOBILE OPTIMISATION ========== */
+
+/* Prevent horizontal overflow globally */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* ── Tablet / small desktop (≤900px) ── */
 @media (max-width: 900px) {
+    /* Quiz: sidebar moves below question panel */
     .quiz-body {
         flex-direction: column-reverse;
     }
@@ -1798,6 +1807,7 @@ body {
         max-height: 150px;
     }
 
+    /* Category cards: single column */
     .category-grid {
         grid-template-columns: 1fr;
     }
@@ -1812,7 +1822,46 @@ body {
     }
 }
 
+/* ── Large mobile (≤768px) ── */
+@media (max-width: 768px) {
+    /* Subject selection container */
+    .select-container {
+        padding: var(--space-lg) var(--space-md);
+    }
+
+    /* Category grid: force single column with safe min */
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    /* Advanced challenge card */
+    .advanced-challenge-card {
+        margin-top: var(--space-md);
+    }
+
+    /* Stats dashboard subject table: hide accuracy col on mobile */
+    .stats-subject-row {
+        grid-template-columns: 1fr 60px 60px 60px;
+    }
+
+    .stats-subject-row .stats-subject-cell:last-child {
+        display: none;
+    }
+
+    .stats-subject-row-header span:last-child {
+        display: none;
+    }
+
+    /* Results */
+    .results-container {
+        padding: var(--space-lg) var(--space-md);
+    }
+}
+
+/* ── Standard mobile (≤600px) ── */
 @media (max-width: 600px) {
+    /* Kill old hero-stats (legacy) */
     .hero-stats {
         flex-direction: column;
         gap: 0;
@@ -1832,13 +1881,19 @@ body {
         border-bottom: none;
     }
 
-    .hero-info {
-        flex-direction: column;
-    }
-
+    /* Quiz header: wrap and re-order for small screens */
     .quiz-header {
         flex-wrap: wrap;
         gap: var(--space-sm);
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .quiz-header-left {
+        gap: var(--space-sm);
+    }
+
+    .quiz-subject-label {
+        font-size: 14px;
     }
 
     .quiz-header-center {
@@ -1846,16 +1901,28 @@ body {
         max-width: 100%;
         margin: 0;
         width: 100%;
+        flex-basis: 100%;
     }
 
+    /* Nav buttons: prev/next fill width */
     .quiz-nav-buttons {
         flex-wrap: wrap;
     }
 
+    .quiz-nav-buttons .btn-primary,
+    .quiz-nav-buttons .btn-secondary {
+        flex: 1;
+        min-width: 0;
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    /* Question navigator: 7 columns */
     .question-grid {
         grid-template-columns: repeat(7, 1fr);
     }
 
+    /* Mode toggle: full width */
     .mode-toggle {
         width: 100%;
     }
@@ -1863,12 +1930,183 @@ body {
     .mode-btn {
         flex: 1;
         justify-content: center;
+        padding: 10px 12px;
+        font-size: 13px;
     }
 
     .results-meta {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Subject buttons: better touch target */
+    .subject-btn {
+        padding: 14px 16px;
+        min-height: 48px;
+    }
+
+    /* Stats time card */
+    .stats-time-card {
+        flex-wrap: wrap;
+        gap: var(--space-md);
+        padding: var(--space-md);
+    }
 }
+
+/* ── Small mobile (≤480px) ── */
+@media (max-width: 480px) {
+    /* Select container: tighter padding */
+    .select-container {
+        padding: var(--space-md);
+    }
+
+    /* Category card: tighter */
+    .category-card {
+        padding: var(--space-md);
+    }
+
+    .advanced-challenge-card {
+        padding: var(--space-md);
+    }
+
+    /* Option buttons: readable touch-size */
+    .option-btn {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    /* Question card padding */
+    .question-card {
+        padding: var(--space-lg) var(--space-md);
+    }
+
+    /* Quiz nav bottom bar */
+    .quiz-nav-buttons {
+        gap: var(--space-sm);
+    }
+
+    /* Results */
+    .results-header {
+        gap: var(--space-lg);
+    }
+
+    .results-score-ring {
+        width: 120px;
+        height: 120px;
+    }
+
+    .results-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .results-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Stats dashboard */
+    .stats-summary-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-summary-row .stats-summary-card:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .stats-subject-row {
+        grid-template-columns: 1fr 50px 50px;
+        font-size: 12px;
+    }
+
+    /* Hide last two cols on very small screen */
+    .stats-subject-row .stats-subject-cell:nth-child(4),
+    .stats-subject-row .stats-subject-cell:nth-child(5),
+    .stats-subject-row-header span:nth-child(4),
+    .stats-subject-row-header span:nth-child(5) {
+        display: none;
+    }
+
+    /* Modal */
+    .modal-card {
+        padding: var(--space-lg);
+    }
+
+    /* Mode toggle text: shorten if needed */
+    .mode-btn {
+        font-size: 12px;
+        gap: 5px;
+        padding: 9px 8px;
+    }
+
+    /* Sidebar question grid: 5 col on smallest */
+    .question-grid {
+        grid-template-columns: repeat(5, 1fr);
+        max-height: 200px;
+    }
+}
+
+/* ── Extra small (≤375px) ── */
+@media (max-width: 375px) {
+    /* Hero: ensure SYNTHESIS doesn't overflow */
+    .hero-title {
+        font-size: clamp(36px, 13vw, 52px) !important;
+        white-space: normal !important;
+        word-break: break-word;
+    }
+
+    .hero-content {
+        padding: 28px 16px 28px 26px !important;
+    }
+
+    .hero-stats-box {
+        flex-direction: column;
+    }
+
+    .stats-cell {
+        border-right: none;
+        border-bottom: 1px solid rgba(201,168,76,0.2);
+        padding: 12px 16px;
+    }
+
+    .stats-cell:last-child {
+        border-bottom: none;
+    }
+
+    .hero-cta {
+        font-size: 12px;
+        padding: 13px 20px;
+    }
+
+    /* Select: minimal padding */
+    .select-container {
+        padding: 12px;
+    }
+
+    .cat-header {
+        gap: var(--space-sm);
+    }
+
+    .quiz-subject-label {
+        font-size: 13px;
+        max-width: 140px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Subject button: one line */
+    .subject-btn {
+        font-size: 13px;
+    }
+
+    .subj-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 160px;
+    }
+}
+
 
 /* Scrollbar — minimal */
 ::-webkit-scrollbar {
