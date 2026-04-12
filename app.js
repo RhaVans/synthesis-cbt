@@ -216,7 +216,7 @@ function renderQuestion() {
     if (state.mode === 'practice' && state.answers[idx] !== undefined) {
         const isCorrect = state.answers[idx] === q.answer;
         explPanel.style.display = 'block';
-        document.getElementById('explanationIcon').textContent = isCorrect ? '✅' : '❌';
+        document.getElementById('explanationIcon').textContent = isCorrect ? '✓' : '✗';
         const titleEl = document.getElementById('explanationTitle');
         titleEl.textContent = isCorrect ? 'Jawaban Benar!' : `Jawaban Salah — Jawaban yang benar: ${labels[q.answer]}`;
         titleEl.className = `explanation-title ${isCorrect ? 'correct' : 'wrong'}`;
