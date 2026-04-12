@@ -701,6 +701,115 @@ body {
     border-radius: var(--radius-full);
 }
 
+/* ========== ADVANCED CHALLENGE CARD ========== */
+:root {
+    --cat-adv: #F59E0B;
+    --cat-adv-bg: rgba(245, 158, 11, 0.08);
+    --cat-adv-glow: rgba(245, 158, 11, 0.15);
+    --cat-adv-border: rgba(245, 158, 11, 0.2);
+}
+
+.advanced-challenge-card {
+    margin-top: var(--space-lg);
+    padding: var(--space-lg);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--cat-adv-border);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.03), rgba(15, 29, 51, 0.7));
+}
+
+.advanced-challenge-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cat-adv), #D97706, var(--cat-adv), transparent);
+}
+
+.adv-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cat-adv), #D97706, var(--cat-adv), transparent);
+    animation: adv-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes adv-shimmer {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.advanced-challenge-card:hover {
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 8px 32px var(--cat-adv-glow);
+}
+
+.cat-icon-adv {
+    background: var(--cat-adv-bg);
+    color: var(--cat-adv);
+}
+
+.cat-icon-adv svg {
+    stroke: var(--cat-adv);
+}
+
+.advanced-challenge-card .cat-info h3 {
+    color: var(--cat-adv);
+}
+
+.adv-count-badge {
+    color: var(--cat-adv) !important;
+    background: var(--cat-adv-bg) !important;
+    border: 1px solid var(--cat-adv-border);
+}
+
+.adv-subject-btn:hover {
+    border-color: rgba(245, 158, 11, 0.25) !important;
+    background: rgba(245, 158, 11, 0.05) !important;
+}
+
+.adv-difficulty-tag {
+    margin-top: var(--space-md);
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.3px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: var(--space-md);
+}
+
+/* KaTeX overrides for dark theme */
+.katex {
+    font-size: 1.05em !important;
+    color: var(--text-primary) !important;
+}
+
+.katex .mord,
+.katex .mop,
+.katex .mbin,
+.katex .mrel,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner {
+    color: inherit !important;
+}
+
+.question-text .katex-display {
+    margin: 12px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.option-text .katex {
+    font-size: 1em !important;
+}
+
 /* ========== QUIZ VIEW ========== */
 .quiz-layout {
     max-width: 1300px;

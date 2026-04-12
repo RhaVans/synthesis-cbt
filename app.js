@@ -21,6 +21,9 @@ const SUBJECTS = {
     soshum_sosiologi: { name: 'Sosiologi', category: 'TKA Soshum', catKey: 'soshum', timePerQ: 80 },
     soshum_sejarah: { name: 'Sejarah', category: 'TKA Soshum', catKey: 'soshum', timePerQ: 80 },
     soshum_geografi: { name: 'Geografi', category: 'TKA Soshum', catKey: 'soshum', timePerQ: 80 },
+    // Advanced Challenge
+    adv_precalculus: { name: 'Pre-Kalkulus', category: 'Advanced Challenge', catKey: 'adv', timePerQ: 120 },
+    adv_calculus: { name: 'Kalkulus', category: 'Advanced Challenge', catKey: 'adv', timePerQ: 120 },
 };
 
 // ========== STATE ==========
@@ -45,13 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateSubjectCounts() {
-    let categoryTotals = { tps: 0, tkd: 0, saintek: 0, soshum: 0 };
+    let categoryTotals = { tps: 0, tkd: 0, saintek: 0, soshum: 0, adv: 0 };
     let grandTotal = 0;
 
     for (const [key, config] of Object.entries(SUBJECTS)) {
         const count = (QUESTION_BANK[key] || []).length;
         const el = document.getElementById(`count-${key}`);
         if (el) el.textContent = count;
+        if (!categoryTotals[config.catKey]) categoryTotals[config.catKey] = 0;
         categoryTotals[config.catKey] += count;
         grandTotal += count;
     }
@@ -234,6 +238,26 @@ function renderQuestion() {
     // Update grid
     updateQuestionGrid();
     updateSidebarStats();
+
+    // Render KaTeX math in the quiz area
+    renderMathInContainer(document.querySelector('.quiz-main'));
+}
+
+// ========== KaTeX MATH RENDERING ==========
+function renderMathInContainer(container) {
+    if (!container || typeof renderMathInElement !== 'function') return;
+    try {
+        renderMathInElement(container, {
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false }
+            ],
+            throwOnError: false,
+            trust: true
+        });
+    } catch (e) {
+        // silently ignore KaTeX rendering errors
+    }
 }
 
 function formatText(text) {
