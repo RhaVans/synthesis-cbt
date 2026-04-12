@@ -78,6 +78,9 @@ function showView(viewId) {
         target.scrollTop = 0;
         window.scrollTo(0, 0);
     }
+    if (viewId === 'stats') {
+        renderStatsDashboard();
+    }
 }
 
 // ========== MODE ==========
@@ -467,6 +470,9 @@ function submitQuiz() {
             scoreFill.style.strokeDashoffset = offset;
         }, 100);
     });
+
+    // Record session for statistics
+    recordSession(correct, wrong, skipped, elapsed);
 }
 
 // ========== REVIEW ==========
@@ -652,3 +658,326 @@ document.addEventListener('keydown', (e) => {
         case 'h': toggleHint(); break;
     }
 });
+
+// ========== STATISTICS & ANALYTICS ENGINE ==========
+const STATS_KEY = 'synthesis_stats';
+const SESSIONS_KEY = 'synthesis_sessions';
+
+function getStats() {
+    try {
+        return JSON.parse(localStorage.getItem(STATS_KEY)) || createEmptyStats();
+    } catch (e) {
+        return createEmptyStats();
+    }
+}
+
+function getSessions() {
+    try {
+        return JSON.parse(localStorage.getItem(SESSIONS_KEY)) || [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function createEmptyStats() {
+    const stats = { totalCorrect: 0, totalWrong: 0, totalSkipped: 0, totalTime: 0, sessions: 0, subjects: {} };
+    for (const key of Object.keys(SUBJECTS)) {
+        stats.subjects[key] = { correct: 0, wrong: 0, skipped: 0 };
+    }
+    return stats;
+}
+
+function saveStats(stats) {
+    localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+}
+
+function saveSessions(sessions) {
+    localStorage.setItem(SESSIONS_KEY, JSON.stringify(sessions));
+}
+
+function recordSession(correct, wrong, skipped, elapsedSeconds) {
+    const stats = getStats();
+    stats.totalCorrect += correct;
+    stats.totalWrong += wrong;
+    stats.totalSkipped += skipped;
+    stats.totalTime += elapsedSeconds;
+    stats.sessions++;
+
+    // Per-subject breakdown
+    if (state.currentSubject && state.currentSubject !== 'full_exam') {
+        if (!stats.subjects[state.currentSubject]) {
+            stats.subjects[state.currentSubject] = { correct: 0, wrong: 0, skipped: 0 };
+        }
+        stats.subjects[state.currentSubject].correct += correct;
+        stats.subjects[state.currentSubject].wrong += wrong;
+        stats.subjects[state.currentSubject].skipped += skipped;
+    } else if (state.currentSubject === 'full_exam') {
+        // Distribute across subjects proportionally for full exam
+        // (simplified: just add to total, not per-subject)
+    }
+
+    saveStats(stats);
+
+    // Record time-series session data
+    const sessions = getSessions();
+    sessions.push({
+        date: new Date().toISOString(),
+        correct: correct,
+        wrong: wrong,
+        skipped: skipped,
+        elapsed: elapsedSeconds,
+        subject: state.currentSubject,
+        total: correct + wrong + skipped
+    });
+    // Keep last 50 sessions max
+    if (sessions.length > 50) sessions.splice(0, sessions.length - 50);
+    saveSessions(sessions);
+}
+
+function renderStatsDashboard() {
+    const stats = getStats();
+    const sessions = getSessions();
+    const totalAnswered = stats.totalCorrect + stats.totalWrong + stats.totalSkipped;
+    const accuracy = totalAnswered > 0 ? Math.round((stats.totalCorrect / (stats.totalCorrect + stats.totalWrong)) * 100) || 0 : 0;
+
+    // Summary cards
+    document.getElementById('statsTotalCorrect').textContent = stats.totalCorrect;
+    document.getElementById('statsTotalWrong').textContent = stats.totalWrong;
+    document.getElementById('statsTotalSkipped').textContent = stats.totalSkipped;
+    document.getElementById('statsTotalAnswered').textContent = totalAnswered;
+    document.getElementById('statsAccuracyValue').textContent = accuracy;
+
+    // Accuracy ring animation
+    const circumference = 263.894;
+    const offset = circumference - (accuracy / 100) * circumference;
+    const ring = document.getElementById('statsAccuracyRing');
+    ring.style.strokeDashoffset = circumference;
+    requestAnimationFrame(() => {
+        setTimeout(() => { ring.style.strokeDashoffset = offset; }, 50);
+    });
+
+    // Time display
+    const totalMin = Math.floor(stats.totalTime / 60);
+    const totalHrs = Math.floor(totalMin / 60);
+    const remMin = totalMin % 60;
+    document.getElementById('statsTotalTime').textContent = `${totalHrs}j ${remMin}m`;
+    document.getElementById('statsSessions').textContent = stats.sessions;
+    const avgPerQ = totalAnswered > 0 ? Math.round(stats.totalTime / totalAnswered) : 0;
+    document.getElementById('statsAvgPerQ').textContent = `${avgPerQ}d`;
+
+    // Performance over time chart
+    renderPerformanceChart(sessions);
+
+    // Category breakdown
+    renderCategoryBreakdown(stats);
+
+    // Subject breakdown
+    renderSubjectBreakdown(stats);
+}
+
+function renderPerformanceChart(sessions) {
+    const canvas = document.getElementById('performanceChart');
+    const emptyMsg = document.getElementById('chartEmptyMsg');
+    const ctx = canvas.getContext('2d');
+
+    // HiDPI support
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.parentElement.getBoundingClientRect();
+    const width = rect.width;
+    const height = 260;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.scale(dpr, dpr);
+
+    ctx.clearRect(0, 0, width, height);
+
+    if (sessions.length === 0) {
+        canvas.style.display = 'none';
+        emptyMsg.style.display = 'block';
+        return;
+    }
+    canvas.style.display = 'block';
+    emptyMsg.style.display = 'none';
+
+    const padTop = 30, padBottom = 50, padLeft = 45, padRight = 20;
+    const chartW = width - padLeft - padRight;
+    const chartH = height - padTop - padBottom;
+
+    // Data
+    const data = sessions.slice(-20); // Last 20 sessions
+    const maxVal = Math.max(1, ...data.map(s => s.correct + s.wrong));
+
+    // Grid lines
+    ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+    ctx.lineWidth = 1;
+    const gridLines = 5;
+    for (let i = 0; i <= gridLines; i++) {
+        const y = padTop + (chartH / gridLines) * i;
+        ctx.beginPath();
+        ctx.moveTo(padLeft, y);
+        ctx.lineTo(width - padRight, y);
+        ctx.stroke();
+
+        // Y-axis label
+        ctx.fillStyle = 'rgba(184, 176, 160, 0.5)';
+        ctx.font = '10px JetBrains Mono, monospace';
+        ctx.textAlign = 'right';
+        ctx.fillText(Math.round(maxVal - (maxVal / gridLines) * i), padLeft - 8, y + 4);
+    }
+
+    const barGroupW = chartW / data.length;
+    const barW = Math.min(barGroupW * 0.35, 24);
+    const gap = 3;
+
+    data.forEach((s, i) => {
+        const x = padLeft + barGroupW * i + barGroupW / 2;
+
+        // Correct bar (green)
+        const correctH = (s.correct / maxVal) * chartH;
+        const correctY = padTop + chartH - correctH;
+        ctx.fillStyle = 'rgba(74, 222, 128, 0.75)';
+        roundRect(ctx, x - barW - gap/2, correctY, barW, correctH, 2);
+        ctx.fill();
+
+        // Wrong bar (red)
+        const wrongH = (s.wrong / maxVal) * chartH;
+        const wrongY = padTop + chartH - wrongH;
+        ctx.fillStyle = 'rgba(192, 57, 43, 0.75)';
+        roundRect(ctx, x + gap/2, wrongY, barW, wrongH, 2);
+        ctx.fill();
+
+        // X-axis label — session number
+        ctx.fillStyle = 'rgba(184, 176, 160, 0.5)';
+        ctx.font = '10px JetBrains Mono, monospace';
+        ctx.textAlign = 'center';
+        const label = formatSessionDate(s.date);
+        ctx.fillText(label, x, height - padBottom + 18);
+
+        // Accuracy text above bars
+        const sessionTotal = s.correct + s.wrong;
+        if (sessionTotal > 0) {
+            const acc = Math.round((s.correct / sessionTotal) * 100);
+            ctx.fillStyle = 'rgba(201, 168, 76, 0.7)';
+            ctx.font = 'bold 10px JetBrains Mono, monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText(acc + '%', x, Math.min(correctY, wrongY) - 6);
+        }
+    });
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+    if (h < 1) return;
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h);
+    ctx.lineTo(x, y + h);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+}
+
+function formatSessionDate(isoDate) {
+    try {
+        const d = new Date(isoDate);
+        return `${d.getDate()}/${d.getMonth()+1}`;
+    } catch (e) {
+        return '';
+    }
+}
+
+function renderCategoryBreakdown(stats) {
+    const container = document.getElementById('statsCategoryBreakdown');
+    const categories = {
+        tps: { name: 'TPS / TPA', color: 'var(--cat-tps)' },
+        tkd: { name: 'TKD', color: 'var(--cat-tkd)' },
+        saintek: { name: 'TKA Saintek', color: 'var(--cat-saintek)' },
+        soshum: { name: 'TKA Soshum', color: 'var(--cat-soshum)' },
+        adv: { name: 'Advanced Challenge', color: 'var(--gold)' }
+    };
+
+    let html = '';
+    for (const [catKey, catInfo] of Object.entries(categories)) {
+        let catCorrect = 0, catWrong = 0, catSkipped = 0;
+        for (const [subjKey, subjConfig] of Object.entries(SUBJECTS)) {
+            if (subjConfig.catKey === catKey && stats.subjects[subjKey]) {
+                catCorrect += stats.subjects[subjKey].correct;
+                catWrong += stats.subjects[subjKey].wrong;
+                catSkipped += stats.subjects[subjKey].skipped;
+            }
+        }
+        const catTotal = catCorrect + catWrong + catSkipped;
+        const correctPct = catTotal > 0 ? (catCorrect / catTotal * 100) : 0;
+        const wrongPct = catTotal > 0 ? (catWrong / catTotal * 100) : 0;
+        const skippedPct = catTotal > 0 ? (catSkipped / catTotal * 100) : 0;
+
+        html += `
+            <div class="stats-breakdown-item">
+                <div class="stats-breakdown-header">
+                    <span class="stats-breakdown-name">${catInfo.name}</span>
+                    <div class="stats-breakdown-counts">
+                        <span class="correct-count">✓ ${catCorrect}</span>
+                        <span class="wrong-count">✗ ${catWrong}</span>
+                        <span>${catTotal} total</span>
+                    </div>
+                </div>
+                <div class="stats-bar-track">
+                    <div class="stats-bar-correct" style="width:${correctPct}%"></div>
+                    <div class="stats-bar-wrong" style="width:${wrongPct}%"></div>
+                    <div class="stats-bar-skipped" style="width:${skippedPct}%"></div>
+                </div>
+            </div>
+        `;
+    }
+    container.innerHTML = html;
+}
+
+function renderSubjectBreakdown(stats) {
+    const container = document.getElementById('statsSubjectBreakdown');
+    let html = `
+        <div class="stats-subject-row stats-subject-row-header">
+            <span>Mata Uji</span>
+            <span style="text-align:center">Benar</span>
+            <span style="text-align:center">Salah</span>
+            <span style="text-align:center">Total</span>
+            <span style="text-align:center">Akurasi</span>
+        </div>
+    `;
+
+    for (const [key, config] of Object.entries(SUBJECTS)) {
+        const s = stats.subjects[key] || { correct: 0, wrong: 0, skipped: 0 };
+        const total = s.correct + s.wrong + s.skipped;
+        const answered = s.correct + s.wrong;
+        const accuracy = answered > 0 ? Math.round((s.correct / answered) * 100) + '%' : '—';
+
+        html += `
+            <div class="stats-subject-row">
+                <span class="stats-subject-name">${config.name}</span>
+                <span class="stats-subject-cell correct-val">${s.correct}</span>
+                <span class="stats-subject-cell wrong-val">${s.wrong}</span>
+                <span class="stats-subject-cell total-val">${total}</span>
+                <span class="stats-subject-cell accuracy-val">${accuracy}</span>
+            </div>
+        `;
+    }
+    container.innerHTML = html;
+}
+
+// ========== RESET STATS ==========
+function confirmResetStats() {
+    document.getElementById('resetStatsModal').style.display = 'flex';
+}
+
+function closeResetModal() {
+    document.getElementById('resetStatsModal').style.display = 'none';
+}
+
+function executeResetStats() {
+    localStorage.removeItem(STATS_KEY);
+    localStorage.removeItem(SESSIONS_KEY);
+    closeResetModal();
+    renderStatsDashboard();
+}

@@ -73,22 +73,10 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                     Latihan
                 </button>
-                <button class="mode-btn" data-mode="exam" onclick="setMode('exam')">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    Simulasi Ujian
+                <button class="mode-btn" data-mode="stats" onclick="showView('stats')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    Statistik &amp; Analisis
                 </button>
-            </div>
-
-            <!-- Full Exam Simulation -->
-            <div class="full-exam-card glass-card" onclick="startFullExam()">
-                <div class="full-exam-badge">SIMULASI PENUH</div>
-                <h3>Ujian Mandiri Lengkap</h3>
-                <p>Simulasi ujian lengkap sesuai format CBT dengan timer dan bobot penilaian resmi</p>
-                <div class="full-exam-meta">
-                    <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> 165 Soal</span>
-                    <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 240 Menit</span>
-                    <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg> Skor Terbobot</span>
-                </div>
             </div>
 
             <!-- Category Cards -->
@@ -239,6 +227,134 @@
             </div>
         </div>
     </section>
+
+    <!-- ========== STATISTICS & ANALYTICS VIEW ========== -->
+    <section id="stats" class="view">
+        <div class="stats-container">
+            <div class="stats-top-bar">
+                <button class="btn-back" onclick="showView('select')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Kembali
+                </button>
+                <div class="stats-top-right">
+                    <button class="btn-reset-stats" onclick="confirmResetStats()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        Reset Data
+                    </button>
+                </div>
+            </div>
+            <h2 class="stats-page-title">Statistik &amp; Analisis</h2>
+            <p class="stats-page-subtitle">Ringkasan performa latihan Anda</p>
+
+            <!-- Summary Cards Row -->
+            <div class="stats-summary-row">
+                <div class="stats-summary-card">
+                    <div class="stats-ring-wrap">
+                        <svg viewBox="0 0 100 100" class="stats-ring-svg">
+                            <circle cx="50" cy="50" r="42" class="stats-ring-bg"/>
+                            <circle cx="50" cy="50" r="42" class="stats-ring-fill" id="statsAccuracyRing"/>
+                        </svg>
+                        <div class="stats-ring-center">
+                            <span class="stats-ring-value" id="statsAccuracyValue">0</span>
+                            <span class="stats-ring-unit">%</span>
+                        </div>
+                    </div>
+                    <span class="stats-card-label">Akurasi</span>
+                </div>
+                <div class="stats-summary-card stats-card-correct">
+                    <div class="stats-card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span class="stats-card-number" id="statsTotalCorrect">0</span>
+                    <span class="stats-card-label">Benar</span>
+                </div>
+                <div class="stats-summary-card stats-card-wrong">
+                    <div class="stats-card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--error)" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <span class="stats-card-number" id="statsTotalWrong">0</span>
+                    <span class="stats-card-label">Salah</span>
+                </div>
+                <div class="stats-summary-card stats-card-skipped">
+                    <div class="stats-card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                    </div>
+                    <span class="stats-card-number" id="statsTotalSkipped">0</span>
+                    <span class="stats-card-label">Dilewati</span>
+                </div>
+                <div class="stats-summary-card stats-card-total">
+                    <div class="stats-card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <span class="stats-card-number" id="statsTotalAnswered">0</span>
+                    <span class="stats-card-label">Total Dijawab</span>
+                </div>
+            </div>
+
+            <!-- Performance Over Time Chart -->
+            <div class="stats-chart-card glass-card">
+                <div class="stats-chart-header">
+                    <h3>Performa Sepanjang Waktu</h3>
+                    <span class="stats-chart-legend">
+                        <span class="legend-dot-inline" style="background:var(--success)"></span> Benar
+                        <span class="legend-dot-inline" style="background:var(--error);margin-left:12px"></span> Salah
+                    </span>
+                </div>
+                <div class="stats-chart-wrap">
+                    <canvas id="performanceChart" width="800" height="280"></canvas>
+                    <p class="stats-chart-empty" id="chartEmptyMsg" style="display:none">Belum ada data sesi. Mulai latihan untuk melihat grafik performa.</p>
+                </div>
+            </div>
+
+            <!-- Time Spent Card -->
+            <div class="stats-time-card glass-card">
+                <div class="stats-time-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <div class="stats-time-info">
+                    <span class="stats-time-value" id="statsTotalTime">0j 0m</span>
+                    <span class="stats-time-label">Total Waktu Latihan</span>
+                </div>
+                <div class="stats-time-info">
+                    <span class="stats-time-value" id="statsSessions">0</span>
+                    <span class="stats-time-label">Sesi Latihan</span>
+                </div>
+                <div class="stats-time-info">
+                    <span class="stats-time-value" id="statsAvgPerQ">0d</span>
+                    <span class="stats-time-label">Rata-rata / Soal</span>
+                </div>
+            </div>
+
+            <!-- Per-Category Breakdown -->
+            <div class="stats-breakdown-card glass-card">
+                <h3 class="stats-section-title">Soal Dijawab per Kategori</h3>
+                <div class="stats-breakdown-list" id="statsCategoryBreakdown">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Per-Subject Breakdown -->
+            <div class="stats-breakdown-card glass-card">
+                <h3 class="stats-section-title">Detail per Mata Uji</h3>
+                <div class="stats-subject-list" id="statsSubjectBreakdown">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reset Stats Confirmation Modal -->
+    <div class="modal-overlay" id="resetStatsModal" style="display:none;">
+        <div class="modal-card glass-card">
+            <div class="modal-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--error)"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+            <h3>Reset Semua Statistik?</h3>
+            <p>Seluruh data performa dan riwayat latihan akan dihapus permanen.</p>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeResetModal()">Batal</button>
+                <button class="btn-danger" onclick="executeResetStats()">Ya, Hapus</button>
+            </div>
+        </div>
+    </div>
 
     <!-- ========== QUIZ VIEW ========== -->
     <section id="quiz" class="view">
