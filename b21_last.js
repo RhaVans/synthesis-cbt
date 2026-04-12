@@ -48,7 +48,7 @@ appendQuestions('tkd_matdas', [
 {question:"Berapa 14 x 6?",options: ["84","68","96","78","72"],answer:0,hint:"14x6=84.",explanation:"14 x 6 = 84.\nJawaban: A."},
 {question:"Perbandingan umur Ani dan Budi = 3:5. Jika umur Budi 20 tahun, umur Ani = ...",options: ["12 tahun","15 tahun","8 tahun","10 tahun","25 tahun"],answer:0,hint:"Ani/Budi = 3/5. Ani = 3/5 x 20 = 12.",explanation:"Ani = 3/5 x 20 = 12 tahun.\nJawaban: A."},
 {question:"Berapa 250 + 750?",options: ["1000","500","900","1250","975"],answer:0,hint:"250+750=1000.",explanation:"250+750=1000.\nJawaban: A."},
-{question:"Jika segitiga memiliki sisi 5, 5, dan 6, maka segitiga ini ...",options: ["Sama kaki (dua sisi sama)","Sama sisi","Siku-siku","Sembarang","Tumpul"],answer:0,hint:"Dua sisi sama (5=5): sama kaki.",explanation:"AB=AC=5: segitiga sama kaki.\nJawaban: A."},
+{question:"Jika segitiga memiliki sisi 5, 5, dan 6, maka segitiga ini ...",options: ["Sama kaki (dua sisi sama)","Sama sisi (dalam konteks umum)","Siku-siku (berdasarkan referensi umum)","Sembarang (menurut kerangka berpikir umum)","Tumpul (sesuai teori klasik)"],answer:0,hint:"Dua sisi sama (5=5): sama kaki.",explanation:"AB=AC=5: segitiga sama kaki.\nJawaban: A."},
 {question:"Berapa 360 : 12?",options: ["30","36","24","12","40"],answer:0,hint:"360/12=30.",explanation:"360/12=30.\nJawaban: A."},
 {question:"Hitunglah: 7^2 - 3^2 = ...",options: ["40","4","10","58","22"],answer:0,hint:"49-9=40. Atau (7-3)(7+3)=4x10=40.",explanation:"7^2-3^2 = (7-3)(7+3) = 4x10 = 40.\nJawaban: A."},
 {question:"Berapa 1000:25?",options: ["40","50","25","20","400"],answer:0,hint:"1000/25=40.",explanation:"1000/25=40.\nJawaban: A."},

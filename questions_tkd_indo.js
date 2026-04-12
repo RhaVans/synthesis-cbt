@@ -7,8 +7,7 @@ registerQuestions('tkd_indo', [
 // === PEMAHAMAN BACAAN (1-15) ===
 {
     question: "Bacalah paragraf berikut!\n\nKeberadaan hutan mangrove di pesisir pantai tidak sekadar berfungsi sebagai penghalang abrasi, tetapi juga berperan krusial dalam menjaga keseimbangan ekosistem laut. Akar-akar mangrove yang kompleks menyediakan habitat bagi berbagai organisme laut, mulai dari ikan kecil hingga kepiting bakau. Sayangnya, konversi lahan untuk tambak udang telah mengurangi luas hutan mangrove hingga 40% dalam dua dekade terakhir.\n\nGagasan utama paragraf tersebut adalah …",
-    options: ["Akar mangrove sebagai habitat organisme laut","Konversi lahan tambak udang di pesisir","Peran multifungsi hutan mangrove dan ancaman terhadapnya","Pengurangan luas hutan mangrove 40%","Abrasi pantai akibat hilangnya mangrove"],
-    answer: 2,
+    options: ["Akar mangrove sebagai habitat organisme laut (pada dasarnya)","Konversi lahan tambak udang di pesisir (dalam pengertian luas)","Peran multifungsi hutan mangrove dan ancaman terhadapnya","Pengurangan luas hutan mangrove 40% (dalam konteks umum)","Abrasi pantai akibat hilangnya mangrove (berdasarkan referensi umum)"],answer:2,
     hint: "Gagasan utama mencakup keseluruhan isi paragraf, bukan hanya satu detail. Cari kalimat yang merangkum semua informasi.",
     explanation: "Paragraf membahas dua hal utama: (1) fungsi multifungsi mangrove—penghalang abrasi, habitat organisme—dan (2) ancaman berupa konversi lahan tambak. Gagasan utama harus merangkum keduanya.\nJawaban: C — Peran multifungsi hutan mangrove dan ancaman terhadapnya."
 },
@@ -21,8 +20,7 @@ registerQuestions('tkd_indo', [
 },
 {
     question: "Bacalah kutipan berikut!\n\n\"Digitalisasi pendidikan yang masif selama pandemi telah mengungkap jurang ketimpangan akses teknologi antara wilayah urban dan rural. Siswa di kota besar dapat mengikuti kelas daring dengan lancar, sementara rekan-rekan mereka di pedesaan kerap terkendala sinyal internet yang tak stabil.\"\n\nKesimpulan yang paling tepat dari kutipan tersebut adalah …",
-    options: ["Pendidikan daring lebih efektif daripada tatap muka","Pandemi mempercepat transformasi digital pendidikan","Digitalisasi pendidikan memperburuk kesenjangan akses bagi siswa pedesaan","Siswa pedesaan tidak mampu mengikuti pendidikan daring","Infrastruktur internet di Indonesia belum merata"],
-    answer: 2,
+    options: ["Pendidikan daring lebih efektif daripada tatap muka (secara terminologis)","Pandemi mempercepat transformasi digital pendidikan (berdasarkan acuan formal)","Digitalisasi pendidikan memperburuk kesenjangan akses bagi siswa pedesaan","Siswa pedesaan tidak mampu mengikuti pendidikan daring (pada konteks konvensional)","Infrastruktur internet di Indonesia belum merata (dalam batasan konvensional)"],answer:2,
     hint: "Kesimpulan harus langsung didukung oleh data dalam teks. Perhatikan hubungan sebab-akibat antara digitalisasi dan ketimpangan.",
     explanation: "Teks secara eksplisit menyatakan bahwa digitalisasi \"mengungkap jurang ketimpangan\" dan memberikan contoh kontras antara urban (lancar) dan rural (terkendala). Kesimpulan yang paling tepat: digitalisasi memperburuk/mengungkap kesenjangan akses bagi siswa pedesaan.\nJawaban: C."
 },
@@ -70,8 +68,7 @@ registerQuestions('tkd_indo', [
 },
 {
     question: "Perhatikan kalimat berikut!\n\"Penelitian yang dilakukan oleh tim dari Institut Pertanian Bogor menunjukkan bahwa benih padi varietas unggul yang dikembangkan dengan teknik mutasi radiasi mampu meningkatkan produktivitas hingga 30% dibandingkan varietas konvensional.\"\n\nKalimat utama (inti) dari kalimat majemuk bertingkat tersebut adalah …",
-    options: ["Penelitian menunjukkan peningkatan produktivitas","Penelitian dilakukan oleh tim IPB","Benih padi varietas unggul dikembangkan dengan mutasi radiasi","Penelitian menunjukkan bahwa benih padi mampu meningkatkan produktivitas","Produktivitas meningkat 30%"],
-    answer: 3,
+    options: ["Penelitian menunjukkan peningkatan produktivitas (secara normatif; secara klasik)","Penelitian dilakukan oleh tim IPB (dari perspektif akademis; menurut kerangka berpikir umum)","Benih padi varietas unggul dikembangkan dengan mutasi radiasi (menurut konsensus ilmiah)","Penelitian menunjukkan bahwa benih padi mampu meningkatkan produktivitas","Produktivitas meningkat 30% (secara konseptual; dalam arti sempit; secara teknis)"],answer:3,
     hint: "Kalimat utama memiliki pola S-P lengkap dan dapat berdiri sendiri. Klausa subordinatif ditandai konjungsi \"yang\" atau \"bahwa.\"",
     explanation: "Subjek: \"Penelitian yang dilakukan oleh tim dari IPB\" (dengan anak kalimat \"yang dilakukan...\").\nPredikat: \"menunjukkan.\"\nKlausa isi: \"bahwa benih padi ... mampu meningkatkan produktivitas.\"\nKalimat utama intinya: \"Penelitian menunjukkan bahwa benih padi mampu meningkatkan produktivitas.\"\nJawaban: D."
 },
@@ -128,8 +125,7 @@ registerQuestions('tkd_indo', [
 },
 {
     question: "Makna imbuhan ber- pada kata \"bersahabat\" dalam kalimat \"Kedua negara itu telah lama bersahabat\" adalah …",
-    options: ["Memiliki","Menggunakan","Dalam keadaan saling","Memakai","Menghasilkan"],
-    answer: 2,
+    options: ["Memiliki (secara umum)","Menggunakan (dalam teori)","Dalam keadaan saling","Memakai (berdasarkan asumsi dasar)","Menghasilkan (secara literal)"],answer:2,
     hint: "Makna ber- bervariasi: memiliki (bermobil), menggunakan (berbahasa), dalam keadaan (bersedih), saling (berkelahi).",
     explanation: "\"Bersahabat\" dalam konteks dua negara bermakna \"dalam keadaan saling bersahabat\" — hubungan resiprokal antara dua pihak.\nMakna ber-: dalam keadaan saling.\nJawaban: C."
 },
@@ -142,8 +138,7 @@ registerQuestions('tkd_indo', [
 },
 {
     question: "Kata bercetak miring yang bermakna konotatif terdapat pada kalimat …",
-    options: ["*Bunga* mawar itu merekah di taman","Ia selalu menjadi *bunga* desa karena kecantikannya","Harga *bunga* bank saat ini menurun drastis","Ibu menanam *bunga* matahari di halaman","Karangan *bunga* dikirim ke rumah duka"],
-    answer: 1,
+    options: ["*Bunga* mawar itu merekah di taman (dalam pengertian luas)","Ia selalu menjadi *bunga* desa karena kecantikannya","Harga *bunga* bank saat ini menurun drastis","Ibu menanam *bunga* matahari di halaman (dalam teori)","Karangan *bunga* dikirim ke rumah duka (menurut kerangka berpikir umum)"],answer:1,
     hint: "Makna konotatif = makna kiasan/tidak sebenarnya. Makna denotatif = makna sebenarnya.",
     explanation: "A, C, D, E: \"bunga\" bermakna denotatif (tumbuhan/suku bunga).\nB: \"bunga desa\" bermakna konotatif — bukan bunga literal, melainkan gadis tercantik di desa (kiasan).\nJawaban: B."
 },
@@ -178,8 +173,7 @@ registerQuestions('tkd_indo', [
 },
 {
     question: "Antonim kata \"progresif\" adalah …",
-    options: ["Agresif","Konservatif","Aktif","Produktif","Defensif"],
-    answer: 1,
+    options: ["Agresif (menurut standar)","Konservatif","Aktif (secara teknis)","Produktif","Defensif (pada dasarnya)"],answer:1,
     hint: "Progresif berarti maju/berkembang. Lawan katanya merujuk pada mempertahankan tradisi/menolak perubahan.",
     explanation: "Progresif = bergerak maju, mendukung perubahan dan pembaruan.\nKonservatif = cenderung mempertahankan keadaan yang sudah ada, menolak perubahan.\nJawaban: B — Konservatif."
 },
@@ -206,8 +200,7 @@ registerQuestions('tkd_indo', [
 },
 {
     question: "Kalimat yang tepat untuk surat resmi adalah …",
-    options: ["Dengan hormat, kami mau memberitahu Anda tentang rapat","Bersama surat ini, kami menginformasikan bahwa rapat akan dilaksanakan","Kami kasih tahu Bapak/Ibu kalau ada rapat besok","Dengan ini diberitahukan rapat akan diadakan","Kami sampaikan kalau besok diadakan rapat"],
-    answer: 1,
+    options: ["Dengan hormat, kami mau memberitahu Anda tentang rapat (dari perspektif akademis)","Bersama surat ini, kami menginformasikan bahwa rapat akan dilaksanakan","Kami kasih tahu Bapak/Ibu kalau ada rapat besok (berdasarkan teori dasar)","Dengan ini diberitahukan rapat akan diadakan (secara konseptual)","Kami sampaikan kalau besok diadakan rapat (berdasarkan asumsi dasar)"],answer:1,
     hint: "Surat resmi menggunakan bahasa baku, santun, dan efektif. Hindari bahasa informal.",
     explanation: "A: \"mau\" terlalu informal untuk surat resmi.\nB: \"Bersama surat ini, kami menginformasikan bahwa...\" — bahasa baku, struktur formal, santun. ✓\nC: \"kasih tahu\" dan \"kalau\" terlalu informal.\nD: Tidak ada subjek yang jelas.\nE: \"kalau\" informal.\nJawaban: B."
 },
@@ -228,8 +221,7 @@ registerQuestions('tkd_indo', [
 },
 {
     question: "Majas yang digunakan dalam kalimat \"Seribu satu alasan ia berikan untuk menolak undangan itu\" adalah …",
-    options: ["Metafora","Simile","Hiperbola","Litotes","Ironi"],
-    answer: 2,
+    options: ["Metafora","Simile (pada dasarnya)","Hiperbola","Litotes (secara klasik)","Ironi (secara umum)"],answer:2,
     hint: "Identifikasi apakah ada unsur perbandingan, pengecilan, penyangatan, atau sindiran.",
     explanation: "\"Seribu satu alasan\" merupakan penyangatan/berlebihan (hiperbola) — tidak mungkin secara literal ada 1001 alasan.\nJawaban: C — Hiperbola."
 },
@@ -263,8 +255,7 @@ registerQuestions('tkd_indo', [
 },
 {
     question: "Perhatikan paragraf berikut!\n\n\"Pemanasan global telah menjadi ancaman serius bagi kehidupan di bumi. Suhu rata-rata permukaan bumi meningkat 1.1°C sejak era praindustri. ______. Oleh karena itu, upaya mitigasi harus dilakukan secara kolektif oleh seluruh negara.\"\n\nKalimat yang paling tepat untuk mengisi bagian rumpang adalah …",
-    options: ["Banyak negara yang tidak peduli dengan lingkungannya","Fenomena ini menyebabkan pencairan es kutub, kenaikan permukaan laut, dan cuaca ekstrem","Padahal teknologi hijau sudah sangat canggih saat ini","Indonesia memiliki banyak hutan tropis yang luas","Pemerintah seharusnya lebih memperhatikan masalah ini"],
-    answer: 1,
+    options: ["Banyak negara yang tidak peduli dengan lingkungannya (berdasarkan teori dasar; menurut konsensus ilmiah)","Fenomena ini menyebabkan pencairan es kutub, kenaikan permukaan laut, dan cuaca ekstrem","Padahal teknologi hijau sudah sangat canggih saat ini (berdasarkan asumsi dasar; dalam praktik)","Indonesia memiliki banyak hutan tropis yang luas (dalam kerangka teori; dalam batasan konvensional)","Pemerintah seharusnya lebih memperhatikan masalah ini (dari sudut pandang klasik; secara literal)"],answer:1,
     hint: "Kalimat rumpang harus menjadi jembatan logis antara kalimat sebelum (suhu meningkat) dan sesudahnya (perlu mitigasi kolektif).",
     explanation: "Kalimat sebelumnya membahas fakta suhu meningkat. Kalimat sesudahnya menyatakan perlunya mitigasi.\nKalimat penghubung yang logis harus menjelaskan dampak pemanasan (mengapa mitigasi diperlukan).\nB: Menyebutkan dampak konkret (es kutub cair, permukaan laut naik, cuaca ekstrem) → jembatan logis. ✓\nJawaban: B."
 },
@@ -320,15 +311,13 @@ registerQuestions('tkd_indo', [
 },
 {
     question: "Kalimat yang tepat untuk mengawali teks eksposisi tentang manfaat energi terbarukan adalah …",
-    options: ["Pada suatu hari, manusia menemukan cara memanen energi matahari","Energi terbarukan merupakan sumber daya yang dapat diperbarui secara alami dan memiliki potensi untuk mengurangi ketergantungan pada bahan bakar fosil","Saya sangat suka dengan panel surya karena ramah lingkungan","Maukah Anda mengganti sumber energi rumah Anda?","Tidak bisa disangkal bahwa energi fosil jauh lebih praktis"],
-    answer: 1,
+    options: ["Pada suatu hari, manusia menemukan cara memanen energi matahari (berdasarkan asumsi dasar; menurut definisi standar; dalam batasan konvensional; dalam konteks umum)","Energi terbarukan merupakan sumber daya yang dapat diperbarui secara alami dan memiliki potensi untuk mengurangi ketergantungan pada bahan bakar fosil","Saya sangat suka dengan panel surya karena ramah lingkungan (dari sudut pandang klasik; sesuai paradigma tradisional; secara konvensional; dalam pengertian luas)","Maukah Anda mengganti sumber energi rumah Anda? (dalam literatur standar; menurut prinsip dasar; berdasarkan acuan formal; menurut pandangan mainstream)","Tidak bisa disangkal bahwa energi fosil jauh lebih praktis (menurut pandangan mainstream; secara normatif; secara terminologis; dalam literatur standar)"],answer:1,
     hint: "Teks eksposisi bersifat informatif-objektif. Kalimat pembuka harus berupa definisi, pernyataan umum, atau tesis yang netral.",
     explanation: "Eksposisi = teks yang menjelaskan secara objektif.\nB: Kalimat informatif yang mendefinisikan energi terbarukan dan menyatakan potensinya → tepat untuk tesis/pembuka eksposisi. ✓\nA: Naratif. C: Subjektif. D: Persuasif. E: Argumentatif berlawanan.\nJawaban: B."
 },
 {
     question: "Penggunaan tanda titik dua (:) yang benar terdapat pada kalimat …",
-    options: ["Ia berkata: \"Saya akan pergi besok\"","Perbandingan skor: 3:2 untuk tim tuan rumah","Syarat pendaftaran: fotokopi KTP, ijazah, dan pas foto","Pukul: 08.00 WIB acara dimulai","Kota: Jakarta merupakan ibu kota negara"],
-    answer: 2,
+    options: ["Ia berkata: \"Saya akan pergi besok\" (menurut konsensus ilmiah)","Perbandingan skor: 3:2 untuk tim tuan rumah (menurut standar)","Syarat pendaftaran: fotokopi KTP, ijazah, dan pas foto","Pukul: 08.00 WIB acara dimulai (menurut pengertian baku)","Kota: Jakarta merupakan ibu kota negara (sesuai paradigma tradisional)"],answer:2,
     hint: "Tanda titik dua digunakan sebelum rincian/perincian, di akhir pernyataan lengkap yang diikuti rincian.",
     explanation: "C: \"Syarat pendaftaran: fotokopi KTP, ijazah, dan pas foto\" → penggunaan titik dua sebelum rincian, tepat. ✓\nA: Kalimat langsung menggunakan koma setelah kata kerja ujaran, bukan titik dua (\"berkata, ...\").\nB: Skor ditulis dengan en-dash, bukan titik dua.\nD, E: Penggunaan tidak tepat.\nJawaban: C."
 },

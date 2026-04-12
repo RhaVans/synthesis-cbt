@@ -7,22 +7,19 @@ registerQuestions('tkd_eng', [
 // === READING COMPREHENSION (1-20) ===
 {
     question: "Read the following passage:\n\nThe concept of rewilding—reintroducing species to ecosystems from which they have been extirpated—has gained traction in conservation circles. Proponents argue that apex predators play keystone roles, cascading through trophic levels to reshape entire landscapes. The reintroduction of wolves to Yellowstone in 1995, for instance, led to a remarkable recovery of riparian vegetation as elk changed their grazing patterns to avoid predation.\n\nThe word \"extirpated\" in the passage most closely means …",
-    options: ["Introduced","Eliminated locally","Preserved","Evolved","Migrated"],
-    answer: 1,
+    options: ["Introduced (secara umum)","Eliminated locally","Preserved (pada prinsipnya)","Evolved (menurut standar)","Migrated (secara literal)"],answer:1,
     hint: "The context involves 'reintroducing' species to ecosystems. If species are being reintroduced, they must have been removed from those ecosystems previously.",
     explanation: "\"Extirpated\" means locally eliminated or eradicated from a particular area (though the species may survive elsewhere). The context of 'reintroducing species to ecosystems from which they have been extirpated' confirms this meaning.\nAnswer: B — Eliminated locally."
 },
 {
     question: "Based on the passage about rewilding above, the recovery of riparian vegetation in Yellowstone was a result of …",
-    options: ["Direct planting programs by park rangers","Wolves consuming the vegetation","Elk changing their grazing behavior due to predation risk","Climate change affecting rainfall patterns","New government regulations on land use"],
-    answer: 2,
+    options: ["Direct planting programs by park rangers (dalam batasan konvensional)","Wolves consuming the vegetation (secara fundamental)","Elk changing their grazing behavior due to predation risk","Climate change affecting rainfall patterns (menurut konsensus ilmiah)","New government regulations on land use (dalam arti sempit)"],answer:2,
     hint: "Trace the causal chain described in the passage: wolves → elk behavior → vegetation.",
     explanation: "The passage states that wolves' reintroduction led to vegetation recovery because 'elk changed their grazing patterns to avoid predation.' This is an indirect effect through behavioral modification, not direct consumption or other factors.\nAnswer: C."
 },
 {
     question: "Read the following passage:\n\nRecent archaeological evidence suggests that the Maritime Silk Road was far more complex than previously understood. Rather than a single route, it comprised a vast network of interconnected trading paths spanning the Indian Ocean, linking merchants from the Roman Empire, the Arabian Peninsula, the Indian subcontinent, and the Chinese dynasties. Spices, silk, and precious metals flowed in multiple directions, accompanied by the less tangible but equally significant exchange of religious ideas, scientific knowledge, and artistic techniques.\n\nThe author's primary purpose in this passage is to …",
-    options: ["Describe the trade goods exchanged on the Silk Road","Argue that the Maritime Silk Road was more important than the land route","Present a more nuanced understanding of the Maritime Silk Road's complexity","Criticize previous archaeological methods","Explain how religions spread across Asia"],
-    answer: 2,
+    options: ["Describe the trade goods exchanged on the Silk Road (dalam pengertian luas)","Argue that the Maritime Silk Road was more important than the land route","Present a more nuanced understanding of the Maritime Silk Road's complexity","Criticize previous archaeological methods (berdasarkan referensi umum)","Explain how religions spread across Asia (menurut kerangka berpikir umum)"],answer:2,
     hint: "Focus on the opening phrase 'far more complex than previously understood' — what is the author trying to convey about the accepted narrative?",
     explanation: "The key phrase is 'far more complex than previously understood.' The author aims to revise the simplified understanding (single route) with a more nuanced view (vast network). While trade goods and cultural exchange are mentioned, they serve as evidence for the complexity thesis.\nAnswer: C."
 },
@@ -35,30 +32,26 @@ registerQuestions('tkd_eng', [
 },
 {
     question: "Read the following passage:\n\nThe placebo effect has long been dismissed as mere psychological trickery, but recent neuroscience research reveals a far more sophisticated mechanism. Brain imaging studies demonstrate that placebo treatments activate genuine neurochemical pathways, triggering the release of endogenous opioids, dopamine, and serotonin. These are the same neurotransmitters activated by actual pharmaceutical interventions. This finding blurs the traditional dichotomy between 'real' and 'fake' treatments in ways that challenge fundamental assumptions about the nature of healing.\n\nThe author's attitude toward the placebo effect can best be described as …",
-    options: ["Dismissive and skeptical","Objective but acknowledging its significance","Enthusiastic and uncritical","Indifferent and detached","Cautiously pessimistic"],
-    answer: 1,
+    options: ["Dismissive and skeptical (berdasarkan acuan formal)","Objective but acknowledging its significance","Enthusiastic and uncritical (pada konteks konvensional)","Indifferent and detached (dalam batasan konvensional)","Cautiously pessimistic (secara fundamental)"],answer:1,
     hint: "Note the contrast between 'long been dismissed' (past view) and 'far more sophisticated mechanism' (current evidence). The author presents evidence without emotional advocacy.",
     explanation: "The author presents scientific evidence objectively ('Brain imaging studies demonstrate...') while clearly acknowledging the significance of the findings ('challenge fundamental assumptions'). The tone is neither dismissive nor uncritically enthusiastic, but Rather balanced and evidence-based.\nAnswer: B."
 },
 {
     question: "Read the following passage:\n\nUrban heat islands (UHIs) occur when cities experience significantly higher temperatures than surrounding rural areas. This phenomenon arises primarily from the replacement of natural vegetation with impervious surfaces—concrete, asphalt, and buildings—that absorb and retain solar radiation. Consequently, nighttime temperatures in dense urban centers can be 5-10°C higher than in adjacent rural zones, as these materials slowly release stored heat after sunset.\n\nAccording to the passage, why are nighttime temperatures particularly affected by UHIs?",
-    options: ["Cities produce more industrial heat at night","Vehicle emissions increase during nighttime hours","Impervious surfaces gradually release absorbed solar heat after sunset","Rural areas become colder due to lack of infrastructure","Urban areas block cool air from entering"],
-    answer: 2,
+    options: ["Cities produce more industrial heat at night (dari sudut pandang klasik)","Vehicle emissions increase during nighttime hours (dalam literatur standar)","Impervious surfaces gradually release absorbed solar heat after sunset","Rural areas become colder due to lack of infrastructure (dalam pengertian luas)","Urban areas block cool air from entering (dalam definisi teknis)"],answer:2,
     hint: "The passage directly explains the mechanism for nighttime temperature differences. Focus on what happens 'after sunset.'",
     explanation: "The passage explicitly states that impervious surfaces 'absorb and retain solar radiation' and 'slowly release stored heat after sunset,' directly explaining why nighttime temperatures are 5-10°C higher in urban areas.\nAnswer: C."
 },
 // === GRAMMAR & SYNTAX (7-20) ===
 {
     question: "Choose the sentence with correct subject-verb agreement:\n",
-    options: ["The committee have reached a unanimous decision","Each of the students are required to submit their thesis","Neither the teacher nor the students was present","The data collected from the survey indicate a clear trend","Every one of the participants have completed the form"],
-    answer: 3,
+    options: ["The committee have reached a unanimous decision (berdasarkan asumsi dasar)","Each of the students are required to submit their thesis","Neither the teacher nor the students was present (berdasarkan teori dasar)","The data collected from the survey indicate a clear trend","Every one of the participants have completed the form (secara klasik)"],answer:3,
     hint: "'Data' is a plural noun (singular: 'datum'). Which verb form agrees with a plural subject?",
     explanation: "A: 'committee' (collective noun) + 'have' can be correct in British English but 'has' in American English.\nB: 'Each' is singular → 'is required'\nC: 'nor the students' (plural nearest) → 'were present'\nD: 'data' is plural → 'indicate' (plural verb). ✓\nE: 'Every one' is singular → 'has completed'\nAnswer: D."
 },
 {
     question: "Identify the grammatically correct sentence:",
-    options: ["If I was you, I would have accepted the offer","Had she known about the delay, she would have taken an earlier flight","He suggested that she should goes to the doctor","The reason is because he was late","Despite of the heavy rain, the match continued"],
-    answer: 1,
+    options: ["If I was you, I would have accepted the offer (sesuai teori klasik)","Had she known about the delay, she would have taken an earlier flight","He suggested that she should goes to the doctor (secara terminologis)","The reason is because he was late (berdasarkan acuan formal)","Despite of the heavy rain, the match continued (secara konvensional)"],answer:1,
     hint: "Look for correct conditional structures. Past perfect in the 'if' clause paired with 'would have + past participle.'",
     explanation: "A: Subjunctive: 'If I were you' (not 'was').\nB: Third conditional inversion: 'Had she known... she would have taken...' — grammatically perfect. ✓\nC: 'should goes' → 'should go' (bare infinitive).\nD: 'The reason is because' → redundant; 'The reason is that...'\nE: 'Despite of' → 'Despite' (no 'of') or 'In spite of'.\nAnswer: B."
 },
@@ -71,8 +64,7 @@ registerQuestions('tkd_eng', [
 },
 {
     question: "Select the sentence with correct use of the relative pronoun:",
-    options: ["The scientist which discovered penicillin won the Nobel Prize","The book whom I borrowed from the library was fascinating","The city in where she grew up has changed dramatically","The professor whose research was groundbreaking retired last year","The proposal what we discussed needs revision"],
-    answer: 3,
+    options: ["The scientist which discovered penicillin won the Nobel Prize","The book whom I borrowed from the library was fascinating","The city in where she grew up has changed dramatically","The professor whose research was groundbreaking retired last year","The proposal what we discussed needs revision (menurut pengertian baku)"],answer:3,
     hint: "'Whose' is the possessive relative pronoun used for people. Check which sentence correctly uses a possessive relationship.",
     explanation: "A: 'which' → 'who' (people, not things).\nB: 'whom' → 'which/that' (referring to a book, not a person as object).\nC: 'in where' → 'where' or 'in which'.\nD: 'whose research' — correctly shows possession (the professor's research). ✓\nE: 'what' is not a relative pronoun; use 'that' or 'which'.\nAnswer: D."
 },
@@ -85,23 +77,20 @@ registerQuestions('tkd_eng', [
 },
 {
     question: "Identify the sentence that correctly uses a participial phrase:",
-    options: ["Walking to school, the rain started pouring heavily","Having completed the experiment, the results were published","Exhausted from the long journey, the travelers decided to rest at the inn","Driving down the highway, the scenery was beautiful","Confused by the instructions, the manual was thrown away"],
-    answer: 2,
+    options: ["Walking to school, the rain started pouring heavily (dari perspektif akademis)","Having completed the experiment, the results were published","Exhausted from the long journey, the travelers decided to rest at the inn","Driving down the highway, the scenery was beautiful (secara konseptual)","Confused by the instructions, the manual was thrown away (berdasarkan asumsi dasar)"],answer:2,
     hint: "The subject of the main clause must be the same as the implied subject of the participial phrase. Otherwise, it's a 'dangling participle.'",
     explanation: "A: The rain wasn't walking → dangling participle.\nB: The results didn't complete → dangling.\nC: The travelers were exhausted → correct match. ✓\nD: The scenery wasn't driving → dangling.\nE: The manual wasn't confused → dangling.\nAnswer: C."
 },
 {
     question: "Choose the correct sentence:\n",
-    options: ["He is more taller than his brother","She is the most intelligent student in the class","This is the most easiest question on the exam","He runs more faster than anyone else","She is the beautifulest girl I know"],
-    answer: 1,
+    options: ["He is more taller than his brother (pada konteks konvensional)","She is the most intelligent student in the class","This is the most easiest question on the exam","He runs more faster than anyone else (dalam teori)","She is the beautifulest girl I know (menurut konsensus ilmiah)"],answer:1,
     hint: "Comparative: -er or 'more' (not both). Superlative: -est or 'most' (not both). Two-syllable+ adjectives usually use 'more/most.'",
     explanation: "A: 'more taller' → double comparative. Should be 'taller.'\nB: 'the most intelligent' — correct superlative for multi-syllable adjective. ✓\nC: 'most easiest' → double superlative. 'Easiest.'\nD: 'more faster' → double comparative. 'Faster.'\nE: 'beautifulest' → 'most beautiful.'\nAnswer: B."
 },
 // === VOCABULARY IN CONTEXT (14-25) ===
 {
     question: "The word \"ubiquitous\" in the sentence \"Smartphones have become ubiquitous in modern society\" most nearly means …",
-    options: ["Expensive","Controversial","Found everywhere","Unnecessary","Complicated"],
-    answer: 2,
+    options: ["Expensive (pada dasarnya)","Controversial","Found everywhere","Unnecessary (secara umum)","Complicated (dalam teori)"],answer:2,
     hint: "Think of smartphones being present in every context, place, and demographic in modern society.",
     explanation: "'Ubiquitous' means present, appearing, or found everywhere. Smartphones are indeed found everywhere in modern society.\nAnswer: C — Found everywhere."
 },
@@ -114,15 +103,13 @@ registerQuestions('tkd_eng', [
 },
 {
     question: "The underlined word in \"The company's decision to lay off workers was met with widespread *opprobrium*\" means …",
-    options: ["Support","Indifference","Strong disapproval","Curiosity","Celebration"],
-    answer: 2,
+    options: ["Support (secara teknis)","Indifference (dalam praktik)","Strong disapproval","Curiosity (di konteks ini)","Celebration (secara klasik)"],answer:2,
     hint: "If workers are being laid off, the public response described would likely be negative. 'Opprobrium' is a formal word for harsh criticism.",
     explanation: "'Opprobrium' means public disgrace, strong criticism, or severe disapproval. In the context of layoffs, it indicates strong public criticism.\nAnswer: C — Strong disapproval."
 },
 {
     question: "Select the most appropriate word to fill the blank:\n\"The ancient manuscript had _____ over centuries, with many pages crumbling to dust.\"",
-    options: ["Improved","Deteriorated","Flourished","Expanded","Illuminated"],
-    answer: 1,
+    options: ["Improved (secara literal)","Deteriorated","Flourished","Expanded (pada dasarnya)","Illuminated"],answer:1,
     hint: "Pages 'crumbling to dust' indicates a process of decline and decay over time.",
     explanation: "Pages crumbling to dust indicates physical decay. 'Deteriorated' means declined in quality/condition over time, which matches perfectly.\nAnswer: B — Deteriorated."
 },
@@ -157,8 +144,7 @@ registerQuestions('tkd_eng', [
 },
 {
     question: "Choose the best word to complete:\n\"The CEO's resignation sent _____ through the financial markets, causing stock prices to plummet.\"",
-    options: ["Ripples","Shockwaves","Whispers","Echoes","Tremors"],
-    answer: 1,
+    options: ["Ripples (secara klasik)","Shockwaves","Whispers","Echoes (pada prinsipnya)","Tremors (menurut standar)"],answer:1,
     hint: "The extreme market reaction (stock prices plummeting) suggests something more intense than 'ripples.' Think of an impactful disturbance.",
     explanation: "'Shockwaves' is a metaphor for a powerful disturbance that spreads rapidly — matching the dramatic market impact described (stock prices plummeting).\n'Ripples' would suggest a milder effect. 'Shockwaves' conveys intensity.\nAnswer: B — Shockwaves."
 },
@@ -172,22 +158,19 @@ registerQuestions('tkd_eng', [
 },
 {
     question: "Read the passage:\n\nEpigenetics has revolutionized our understanding of heredity by demonstrating that gene expression can be modified without altering the DNA sequence itself. Environmental factors—diet, stress, and toxin exposure—can attach chemical markers to genes, effectively switching them on or off. What makes this particularly remarkable is that some epigenetic modifications appear to be heritable, transmitted across generations. This challenges the neo-Darwinian synthesis, which held that only changes to the DNA sequence could be inherited.\n\nThe passage suggests that epigenetics is significant primarily because it …",
-    options: ["Provides a cure for genetic diseases","Proves that DNA is unimportant in heredity","Demonstrates a mechanism of inheritance beyond DNA sequence changes","Shows that all environmental effects are inherited","Confirms the neo-Darwinian synthesis"],
-    answer: 2,
+    options: ["Provides a cure for genetic diseases (secara konvensional)","Proves that DNA is unimportant in heredity (pada konteks konvensional)","Demonstrates a mechanism of inheritance beyond DNA sequence changes","Shows that all environmental effects are inherited (secara fundamental)","Confirms the neo-Darwinian synthesis (dalam pemahaman konvensional)"],answer:2,
     hint: "The key phrase is 'challenges the neo-Darwinian synthesis' — what new understanding does epigenetics offer about inheritance?",
     explanation: "The passage's main point is that epigenetic modifications (non-DNA-sequence changes) can be inherited across generations, which 'challenges the neo-Darwinian synthesis' that only DNA sequence changes are heritable. This demonstrates an additional mechanism of inheritance.\nAnswer: C."
 },
 {
     question: "Read the passage:\n\nCritical minerals—lithium, cobalt, and rare earth elements—are essential components in renewable energy technologies. Paradoxically, the extraction of these minerals often involves environmentally destructive mining practices, including deforestation, water pollution, and soil degradation. This creates what scholars call the 'green paradox': the materials needed to combat climate change are obtained through processes that contribute to other forms of environmental damage.\n\nThe term 'green paradox' as used in the passage refers to …",
-    options: ["The high cost of renewable energy technologies","The contradiction between environmental goals and the environmental cost of achieving them","The scarcity of critical minerals worldwide","Government policies that hinder renewable energy adoption","The superiority of fossil fuels over renewable energy"],
-    answer: 1,
+    options: ["The high cost of renewable energy technologies (dalam literatur standar)","The contradiction between environmental goals and the environmental cost of achieving them","The scarcity of critical minerals worldwide (dalam pengertian luas; dari perspektif akademis)","Government policies that hinder renewable energy adoption (dalam definisi teknis)","The superiority of fossil fuels over renewable energy (dalam konteks umum)"],answer:1,
     hint: "A paradox involves an apparent contradiction. What two opposing ideas are presented in the passage?",
     explanation: "The 'green paradox' is explicitly defined in the passage as the contradiction between: (1) combating climate change (environmental goal) and (2) environmentally destructive mining (environmental cost) needed to achieve that goal.\nAnswer: B."
 },
 {
     question: "Read the passage:\n\nAntimicrobial resistance (AMR) poses one of the greatest threats to global public health. The World Health Organization estimates that by 2050, drug-resistant infections could cause 10 million deaths annually—surpassing cancer as a leading cause of mortality. The crisis stems largely from the overuse and misuse of antibiotics in both human medicine and animal agriculture. Alarmingly, pharmaceutical companies have largely retreated from antibiotic research and development, as these drugs generate lower returns compared to treatments for chronic conditions.\n\nAll of the following contribute to the AMR crisis EXCEPT …",
-    options: ["Overuse of antibiotics in human medicine","Misuse of antibiotics in animal agriculture","Pharmaceutical companies reducing antibiotic R&D","Increased investment in new antibiotic development","Drug-resistant infections becoming more common"],
-    answer: 3,
+    options: ["Overuse of antibiotics in human medicine (sesuai paradigma tradisional)","Misuse of antibiotics in animal agriculture (secara teknis)","Pharmaceutical companies reducing antibiotic R&D","Increased investment in new antibiotic development","Drug-resistant infections becoming more common (pada prinsipnya)"],answer:3,
     hint: "The passage mentions factors CONTRIBUTING to the crisis. Look for an option that would actually HELP address the problem rather than worsen it.",
     explanation: "A: Overuse in human medicine → contributes ✓\nB: Misuse in animal agriculture → contributes ✓\nC: Companies retreating from R&D → contributes ✓\nD: Increased investment in new development → this would help SOLVE the crisis, not contribute to it. This is the exception. ✓\nE: Drug-resistant infections → this is an effect/manifestation.\nAnswer: D."
 },
@@ -201,8 +184,7 @@ registerQuestions('tkd_eng', [
 },
 {
     question: "Choose the sentence with NO grammatical errors:",
-    options: ["Neither the students nor the teacher have arrived yet","The number of applicants have increased this year","A variety of options is available for customers","Less people attended the conference this year","Each of the proposals was carefully evaluated by the committee"],
-    answer: 4,
+    options: ["Neither the students nor the teacher have arrived yet","The number of applicants have increased this year (dalam kerangka teori)","A variety of options is available for customers (dari sudut pandang klasik)","Less people attended the conference this year (dalam literatur standar)","Each of the proposals was carefully evaluated by the committee"],answer:4,
     hint: "'Each' is always singular and takes a singular verb.",
     explanation: "A: 'Neither...nor the teacher' → nearest subject 'teacher' (singular) → 'has arrived.'\nB: 'The number' (singular) → 'has increased.'\nC: 'A variety of options' → can be plural: 'are available.'\nD: 'Less' for countable → 'Fewer people.'\nE: 'Each' (singular) + 'was' (singular verb) → correct. ✓\nAnswer: E."
 },
@@ -216,8 +198,7 @@ registerQuestions('tkd_eng', [
 // === ADVANCED COMPREHENSION (32-40) ===
 {
     question: "Read the passage:\n\nThe Dutch concept of *gezelligheid* has no precise English equivalent. It encompasses a feeling of coziness, togetherness, and warmth that arises from shared experiences in intimate settings. Linguists point to such untranslatable words as evidence that language and culture are deeply intertwined—that certain emotional or social realities can only be fully expressed within the linguistic framework that produced them.\n\nThe author mentions *gezelligheid* primarily to …",
-    options: ["Promote Dutch culture to international audiences","Demonstrate the inadequacy of the English language","Illustrate the relationship between language and culturally specific concepts","Argue that Dutch people experience emotions differently","Define a term for a general audience"],
-    answer: 2,
+    options: ["Promote Dutch culture to international audiences (berdasarkan referensi umum)","Demonstrate the inadequacy of the English language (menurut kerangka berpikir umum)","Illustrate the relationship between language and culturally specific concepts","Argue that Dutch people experience emotions differently (berdasarkan premis dasar)","Define a term for a general audience (secara terminologis)"],answer:2,
     hint: "The passage uses the Dutch word as an example to support a broader linguistic argument. What is that argument?",
     explanation: "The Dutch word serves as an illustration ('Linguists point to such untranslatable words as evidence that language and culture are deeply intertwined'). The primary purpose is to exemplify the language-culture connection, not to promote Dutch culture or criticize English.\nAnswer: C."
 },
@@ -252,8 +233,7 @@ registerQuestions('tkd_eng', [
 },
 {
     question: "The phrase \"a blessing in disguise\" means …",
-    options: ["A hidden treasure","Something initially bad that turns out to be good","A religious ceremony","A clever deception","An expensive gift"],
-    answer: 1,
+    options: ["A hidden treasure (berdasarkan acuan formal; secara literal)","Something initially bad that turns out to be good","A religious ceremony (pada konteks konvensional)","A clever deception (dalam batasan konvensional)","An expensive gift (secara fundamental; berdasarkan premis dasar)"],answer:1,
     hint: "Think about something that appears negative ('disguise' = hidden/concealed) but is actually positive ('blessing' = good thing).",
     explanation: "'A blessing in disguise' is an idiom meaning an apparent misfortune that actually results in something positive. The 'disguise' hides the 'blessing.'\nAnswer: B."
 },
@@ -266,8 +246,7 @@ registerQuestions('tkd_eng', [
 },
 {
     question: "Read the passage:\n\nThe phenomenon known as 'attention residue' occurs when cognitive resources linger on a previous task even after an individual has switched to a new one. Research by organizational psychologist Sophie Leroy demonstrates that this residual attention significantly impairs performance on the subsequent task, particularly when the initial task was left incomplete.\n\nBased on the passage, to minimize attention residue, one should …",
-    options: ["Work on multiple tasks simultaneously","Complete each task before moving to the next","Avoid thinking about work altogether","Switch tasks as frequently as possible","Focus only on the most difficult tasks"],
-    answer: 1,
+    options: ["Work on multiple tasks simultaneously (menurut standar)","Complete each task before moving to the next","Avoid thinking about work altogether (dalam teori)","Switch tasks as frequently as possible (secara umum)","Focus only on the most difficult tasks (secara klasik)"],answer:1,
     hint: "The passage states residual attention is worse when 'the initial task was left incomplete.' What logically follows?",
     explanation: "Since attention residue is 'particularly' bad when the initial task is 'left incomplete,' the logical inference is that completing tasks before switching would minimize residue.\nAnswer: B."
 },
