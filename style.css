@@ -867,7 +867,6 @@ body {
 }
 
 .advanced-challenge-card {
-    margin-top: var(--space-lg);
     padding: var(--space-lg);
     overflow: hidden;
     position: relative;
