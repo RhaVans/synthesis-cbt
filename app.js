@@ -45,6 +45,7 @@ let state = {
 document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     updateSubjectCounts();
+    initHero();
 });
 
 function updateSubjectCounts() {
@@ -67,6 +68,10 @@ function updateSubjectCounts() {
 
     const totalEl = document.getElementById('totalQuestions');
     if (totalEl) totalEl.textContent = grandTotal;
+
+    // Also update the new prestige hero stats cell (same id)
+    // The DOM may have two elements with id="totalQuestions" — update both
+    document.querySelectorAll('#totalQuestions').forEach(el => { el.textContent = grandTotal; });
 }
 
 // ========== VIEW MANAGEMENT ==========
@@ -981,3 +986,68 @@ function executeResetStats() {
     closeResetModal();
     renderStatsDashboard();
 }
+
+// ========== HERO TITLE SCRAMBLE ANIMATION ==========
+function initHero() {
+    const titleEl = document.getElementById('heroTitle');
+    if (!titleEl) return;
+
+    const WORD = 'SYNTHESIS';
+    const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+    // Build individual letter spans
+    titleEl.innerHTML = WORD.split('').map((ch, i) =>
+        `<span class="letter" data-char="${ch}" data-index="${i}">${ch}</span>`
+    ).join('');
+
+    const letters = titleEl.querySelectorAll('.letter');
+
+    function randomChar() {
+        return CHARS[Math.floor(Math.random() * CHARS.length)];
+    }
+
+    function scrambleLetter(span, originalChar, ticks, callback) {
+        let count = 0;
+        span.classList.add('scrambling');
+        const iv = setInterval(() => {
+            span.textContent = randomChar();
+            count++;
+            if (count >= ticks) {
+                clearInterval(iv);
+                span.textContent = originalChar;
+                span.classList.remove('scrambling');
+                if (callback) callback();
+            }
+        }, 60);
+    }
+
+    function runScrambleCycle() {
+        // Pick 3 unique random letter indices
+        const indices = [];
+        while (indices.length < 3) {
+            const idx = Math.floor(Math.random() * WORD.length);
+            if (!indices.includes(idx)) indices.push(idx);
+        }
+
+        let completed = 0;
+        indices.forEach(idx => {
+            const span = letters[idx];
+            const original = span.dataset.char;
+            const ticks = 6 + Math.floor(Math.random() * 5); // 6–10 ticks
+            const delay = Math.floor(Math.random() * 200); // stagger each letter slightly
+            setTimeout(() => {
+                scrambleLetter(span, original, ticks, () => {
+                    completed++;
+                });
+            }, delay);
+        });
+
+        // Schedule next cycle: 500–1500ms after current one (from start of this cycle)
+        const nextDelay = 500 + Math.floor(Math.random() * 1000);
+        setTimeout(runScrambleCycle, nextDelay);
+    }
+
+    // Start after a 1s initial delay
+    setTimeout(runScrambleCycle, 1000);
+}
+

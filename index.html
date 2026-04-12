@@ -7,7 +7,7 @@
     <meta name="description" content="SYNTHESIS: Simulasi interaktif Computer Based Test (CBT) dengan 2500+ soal HOTS meliputi TPS, TKD, TKA Saintek & Soshum.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Raleway:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- KaTeX Math Rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -20,38 +20,69 @@
 
     <!-- ========== LANDING PAGE ========== -->
     <section id="landing" class="view active">
-        <div class="landing-container">
-            <div class="ugm-emblem">
-                <div class="emblem-ring">
-                    <div class="emblem-inner">
-                        <span class="emblem-text">SYN</span>
-                    </div>
+        <!-- Decorative: nested squares top-right -->
+        <div class="hero-deco-squares" aria-hidden="true">
+            <div class="deco-square deco-sq-outer"></div>
+            <div class="deco-square deco-sq-inner"></div>
+        </div>
+        <!-- Decorative: crosshair bottom-right -->
+        <div class="hero-deco-crosshair" aria-hidden="true">
+            <div class="ch-h"></div>
+            <div class="ch-v"></div>
+        </div>
+
+        <!-- Gold left-border accent bar -->
+        <div class="hero-accent-bar" aria-hidden="true"></div>
+
+        <!-- Hero content -->
+        <div class="hero-content">
+
+            <!-- Top row: badge left / CBT label right -->
+            <div class="hero-top-row">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot" aria-hidden="true"></span>
+                    <span class="hero-badge-text">SIMULASI</span>
                 </div>
+                <span class="hero-badge-right">CBT / 2025</span>
             </div>
-            <h1 class="hero-title">
-                <span class="title-line title-line-1">Simulasi</span>
-                <span class="title-line title-line-2">SYNTHESIS</span>
-            </h1>
-            <p class="hero-subtitle">Simulasi Ujian Masuk Perguruan Tinggi — Computer Based Test</p>
-            <div class="hero-stats">
-                <div class="stat-card">
-                    <span class="stat-number" id="totalQuestions">1100</span>
-                    <span class="stat-label">Soal HOTS</span>
+
+            <!-- Eyebrow -->
+            <p class="hero-eyebrow">UJIAN MASUK PERGURUAN TINGGI</p>
+
+            <!-- Main title with scramble animation -->
+            <h1 class="hero-title" id="heroTitle" aria-label="SYNTHESIS"></h1>
+
+            <!-- Subtitle -->
+            <p class="hero-subtitle">Computer Based Test — SNBT Simulator</p>
+
+            <!-- Divider -->
+            <div class="hero-divider" aria-hidden="true"></div>
+
+            <!-- Stats box -->
+            <div class="hero-stats-box">
+                <div class="stats-cell">
+                    <span class="stats-cell-num" id="totalQuestions">5500</span>
+                    <span class="stats-cell-lbl">SOAL HOTS</span>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">17</span>
-                    <span class="stat-label">Mata Uji</span>
+                <div class="stats-cell">
+                    <span class="stats-cell-num">17</span>
+                    <span class="stats-cell-lbl">MATA UJI</span>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Kategori</span>
+                <div class="stats-cell">
+                    <span class="stats-cell-num">05</span>
+                    <span class="stats-cell-lbl">KATEGORI</span>
                 </div>
             </div>
 
-            <button class="btn-primary btn-glow" onclick="showView('select')">
-                <span>Mulai Simulasi</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <!-- CTA -->
+            <button class="hero-cta" onclick="showView('select')" id="heroCtaBtn">
+                <span>MULAI SIMULASI</span>
+                <span class="cta-arrow" aria-hidden="true">
+                    <span class="cta-arrow-line"></span>
+                    <span class="cta-arrow-tip"></span>
+                </span>
             </button>
+
         </div>
     </section>
 
