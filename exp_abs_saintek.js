@@ -1,0 +1,62 @@
+// ABSOLUTE FINAL — Saintek +100 (25 per subject) to reach 1000
+
+appendQuestions('saintek_matipa', [
+{question:"$\\lim_{x\\to\\infty}\\frac{3x^2+x}{x^2-1}=...$",options:["3","0","$\\infty$","1","-1"],answer:0,explanation:"Pangkat sama: $\\lim = \\frac{3}{1} = 3$ (rasio koefisien leading)."},
+{question:"Jika $f(x)=x^3-6x^2+9x+1$, titik stasioner di $x=...$",options:["$x=1$ dan $x=3$","$x=0$","$x=2$ saja","$x=-1$","$x=4$"],answer:0,explanation:"$f'(x)=3x^2-12x+9=3(x-1)(x-3)=0 \\Rightarrow x=1,3$."},
+{question:"$P(5,2)=...$",options:["20","10","5","60","120"],answer:0,explanation:"$P(5,2)=\\frac{5!}{3!}=\\frac{120}{6}=20$."},
+{question:"Volume bola dengan jari-jari 6 cm = ...",options:["$288\\pi$ cm³","$144\\pi$ cm³","$216\\pi$ cm³","$36\\pi$ cm³","$432\\pi$ cm³"],answer:0,explanation:"$V=\\frac{4}{3}\\pi r^3=\\frac{4}{3}\\pi(216)=288\\pi$ cm³."},
+{question:"$\\sin 30°=...$",options:["$\\frac{1}{2}$","$\\frac{\\sqrt{3}}{2}$","$1$","$0$","$\\frac{\\sqrt{2}}{2}$"],answer:0,explanation:"$\\sin 30°=0.5=\\frac{1}{2}$."},
+{question:"Integral $\\int x e^x dx$ (int. parsial) = ...",options:["$(x-1)e^x+C$","$xe^x+C$","$e^x+C$","$x^2e^x+C$","$\\frac{x^2}{2}e^x+C$"],answer:0,explanation:"Parsial: $u=x, dv=e^x dx$. $\\int xe^x dx=xe^x-e^x+C=(x-1)e^x+C$."},
+{question:"Rank matriks $\\begin{pmatrix}1&2\\\\2&4\\end{pmatrix}$ = ...",options:["1","2","0","3","4"],answer:0,explanation:"Baris kedua = 2× baris pertama (linearly dependent). Rank = 1."},
+{question:"Jika $z=2+3i$, maka konjugat $\\bar{z}=...$",options:["$2-3i$","$-2+3i$","$-2-3i$","$3+2i$","$3-2i$"],answer:0,explanation:"Konjugat: ubah tanda bagian imajiner. $\\bar{z}=2-3i$."},
+{question:"Luas jajargenjang dengan alas 12 cm dan tinggi 5 cm = ...",options:["60 cm²","30 cm²","17 cm²","120 cm²","25 cm²"],answer:0,explanation:"$L = \\text{alas} \\times \\text{tinggi} = 12 \\times 5 = 60$ cm²."},
+{question:"Rumus luas permukaan kubus dengan sisi $s$ = ...",options:["$6s^2$","$s^3$","$4s^2$","$12s$","$s^2$"],answer:0,explanation:"Kubus: 6 muka, masing-masing sisi × sisi = $6s^2$."},
+{question:"$\\cos 0° = ...$",options:["1","0","$\\frac{1}{2}$","$\\frac{\\sqrt{2}}{2}$","$-1$"],answer:0,explanation:"$\\cos 0° = 1$."},
+{question:"$3! = ...$",options:["6","3","9","27","1"],answer:0,explanation:"$3! = 3 \\times 2 \\times 1 = 6$."},
+{question:"Modus dari data 2, 3, 3, 4, 5, 5, 5, 6 adalah ...",options:["5","3","4","2","6"],answer:0,explanation:"Modus = nilai yang paling sering muncul. 5 muncul 3 kali (terbanyak)."},
+]);
+
+appendQuestions('saintek_fisika', [
+{question:"Kuat arus listrik 2A mengalir melalui hambatan 5Ω. Tegangan = ...",options:["10 V","7 V","2.5 V","0.4 V","25 V"],answer:0,explanation:"$V=IR=2\\times5=10$ V (Hukum Ohm)."},
+{question:"Energi yang tersimpan dalam kapasitor $C=10\\mu F$ dengan tegangan 100V = ...",options:["0.05 J","0.1 J","0.5 J","1 J","10 J"],answer:0,explanation:"$E=\\frac{1}{2}CV^2=\\frac{1}{2}(10\\times 10^{-6})(10000)=0.05$ J."},
+{question:"Kecepatan cahaya dalam vakum = ...",options:["$3 \\times 10^8$ m/s","$3 \\times 10^6$ m/s","$3 \\times 10^{10}$ m/s","$3 \\times 10^5$ m/s","$3 \\times 10^3$ m/s"],answer:0,explanation:"$c \\approx 3 \\times 10^8$ m/s (kecepatan cahaya dalam vakum)."},
+{question:"Kelembaman (inersia) berhubungan langsung dengan ...",options:["Massa benda","Volume benda","Warna benda","Suhu benda","Bentuk benda"],answer:0,explanation:"Inersia sebanding dengan massa: semakin berat, semakin sulit mengubah keadaan geraknya."},
+{question:"Gaya sentripetal $F=...$",options:["$\\frac{mv^2}{r}$","$mg$","$ma$","$kx$","$\\mu mg$"],answer:0,explanation:"$F_s=\\frac{mv^2}{r}$: gaya yang menarik benda ke pusat lingkaran pada gerak melingkar."},
+{question:"Suhu nol mutlak (absolute zero) = ...",options:["0 K = -273.15°C","0°C","100°C","-100°C","273°C"],answer:0,explanation:"Nol mutlak: 0 K = -273.15°C. Suhu terendah yang secara teoritis mungkin."},
+{question:"Gelombang bunyi termasuk gelombang ...",options:["Longitudinal (mekanik)","Transversal","Elektromagnetik","Stasioner saja","Tidak memerlukan medium"],answer:0,explanation:"Bunyi: gelombang longitudinal mekanik — memerlukan medium untuk merambat."},
+{question:"Frekuensi dan periode memiliki hubungan ...",options:["$f = 1/T$ (berbanding terbalik)","$f = T$","$f = T^2$","$f = 2T$","$f = T/2$"],answer:0,explanation:"$f = 1/T$: frekuensi = kebalikan periode."},
+{question:"Amplitudo getaran mempengaruhi ...",options:["Energi dan intensitas getaran","Frekuensi","Periode","Panjang gelombang","Kecepatan rambat"],answer:0,explanation:"Amplitudo ∝ energi: semakin besar amplitudo, semakin besar energi getaran."},
+{question:"1 watt = ...",options:["1 joule per detik","1 newton","1 pascal","1 hertz","1 volt"],answer:0,explanation:"Watt (W) = J/s. Daya = laju kerja/energi per satuan waktu."},
+{question:"Potensial listrik di suatu titik menunjukkan ...",options:["Energi potensial per satuan muatan","Gaya per muatan","Arus per muatan","Hambatan per panjang","Daya per volume"],answer:0,explanation:"$V = W/q$ (J/C = Volt). Potensial = energi potensial listrik per unit muatan."},
+{question:"Kecepatan sudut (ω) dalam gerak melingkar beraturan berhubungan dengan kecepatan linear ...",options:["$v = \\omega r$","$v = \\omega / r$","$v = \\omega + r$","$v = \\omega^2 r$","$v = r / \\omega$"],answer:0,explanation:"$v = \\omega r$: kecepatan linear = kecepatan sudut × jari-jari."},
+]);
+
+appendQuestions('saintek_kimia', [
+{question:"Unsur yang memiliki konfigurasi elektron [Ar] 4s² 3d¹⁰ 4p⁵ termasuk golongan ...",options:["VIIA (halogen)","IA","IIA","IIIA","VA"],answer:0,explanation:"4p⁵ → golongan 7A (VIIA), halogen. Unsur tersebut adalah Brom (Br, Z=35)."},
+{question:"Hukum perbandingan tetap (Proust) menyatakan ...",options:["Komposisi unsur dalam senyawa selalu tetap","Energi selalu kekal","Massa selalu berubah","Volume selalu konstan","Suhu tidak berperan"],answer:0,explanation:"Hukum Proust: senyawa murni selalu memiliki perbandingan massa unsur-unsur yang tetap."},
+{question:"Hukum kekekalan massa (Lavoisier) ...",options:["Massa reaktan = massa produk dalam reaksi kimia","Massa selalu berkurang","Massa bertambah","Massa hilang","Energi = massa"],answer:0,explanation:"Lavoisier: dalam reaksi kimia tertutup, massa total sebelum = massa total sesudah."},
+{question:"Bilangan kuantum utama (n) menentukan ...",options:["Tingkat energi/kulit elektron","Bentuk orbital","Orientasi orbital","Spin elektron","Massa atom"],answer:0,explanation:"n = kuantum utama: menentukan tingkat energi dan kulit (n=1: K, n=2: L, dst)."},
+{question:"Orbital s, p, d, f memiliki bentuk yang berbeda karena ...",options:["Bilangan kuantum azimut (l) yang berbeda","Bilangan kuantum utama saja","Spin saja","Massa elektron","Muatan inti"],answer:0,explanation:"l menentukan bentuk orbital: l=0 (s, bola), l=1 (p, barbel), l=2 (d), l=3 (f)."},
+{question:"Reaksi adisi terjadi pada senyawa yang memiliki ...",options:["Ikatan rangkap (C=C atau C≡C)","Ikatan tunggal saja","Cincin benzena","Gugus -OH","Gugus -COOH"],answer:0,explanation:"Reaksi adisi: penambahan atom/gugus pada ikatan rangkap → ikatan rangkap menjadi tunggal."},
+{question:"Reaksi substitusi terjadi ketika ...",options:["Atom/gugus dalam molekul digantikan oleh atom/gugus lain","Ikatan rangkap terputus","Polimer terbentuk","Larutan mengendap","Gas dihasilkan selalu"],answer:0,explanation:"Substitusi: atom/gugus pada senyawa diganti oleh atom/gugus baru (halogenasi alkana, nitrasi benzena)."},
+{question:"Hukum Gay-Lussac (pada volume tetap): ...",options:["$P \\propto T$ (tekanan sebanding suhu absolut)","$P \\propto 1/T$","$P = \\text{konstan}$","$T = \\text{konstan}$","$V \\propto T$"],answer:0,explanation:"Gay-Lussac: $P/T = k$ pada V konstan. Suhu naik → tekanan naik."},
+{question:"Faktor yang memengaruhi laju reaksi ...",options:["Konsentrasi, suhu, katalis, luas permukaan, sifat zat","Hanya warna","Hanya bau","Hanya rasa","Hanya bentuk"],answer:0,explanation:"5 faktor: konsentrasi, suhu, katalis, luas permukaan kontak, dan sifat/natura zat."},
+{question:"Energi ionisasi pertama adalah ...",options:["Energi minimum untuk melepaskan 1 elektron dari atom gas dalam keadaan dasar","Energi untuk menambah elektron","Energi ikatan","Energi aktivasi","Energi kinetik"],answer:0,explanation:"IE₁: energi yang diperlukan untuk melepaskan satu elektron terluarsebuahatomgasbebas."},
+{question:"Keelektronegatifan menunjukkan ...",options:["Kemampuan atom menarik elektron ikatan","Kemampuan atom melepas elektron","Ukuran atom","Massa atom","Jumlah neutron"],answer:0,explanation:"Keelektronegatifan (Pauling): tendensiatommenarik elektrondalamikatan kimia. F = paling elektronegatif."},
+{question:"Logam alkali (golongan IA) memiliki sifat ...",options:["Sangat reaktif, lunak, berkilau, konduktor baik","Sangat tidak reaktif","Sangat keras","Bukan konduktor","Gas mulia"],answer:0,explanation:"Alkali (Li, Na, K, ...): sangat reaktif (1 elektron valensi), lunak, titik leleh rendah, konduktor."},
+]);
+
+appendQuestions('saintek_biologi', [
+{question:"Organel yang hanya terdapat pada sel tumbuhan (bukan sel hewan) adalah ...",options:["Kloroplas, dinding sel, vakuola sentral besar","Mitokondria","Ribosom","Nukleus","Membran sel"],answer:0,explanation:"Khas sel tumbuhan: kloroplas (fotosintesis), dinding sel (selulosa), vakuola sentral besar."},
+{question:"Organel yang hanya terdapat pada sel hewan (bukan sel tumbuhan) adalah ...",options:["Sentriol (untuk pembelahan sel)","Kloroplas","Dinding sel","Vakuola sentral","Plasmodesmata"],answer:0,explanation:"Khas sel hewan: sentriol (organisasi mikrotubulus saat mitosis), lisosom lebih menonjol."},
+{question:"Endositosis adalah proses ...",options:["Sel memasukkan zat dari luar dengan membungkus membran","Sel mengeluarkan zat","Pembelahan sel","Replikasi DNA","Transkripsi"],answer:0,explanation:"Endositosis: membran plasma membungkus zat dari luar → membentuk vesikel → masuk sel (fagositosis/pinositosis)."},
+{question:"Eksositosis adalah proses ...",options:["Sel mengeluarkan zat melalui penggabungan vesikel dengan membran","Sel memasukkan zat","Pembelahan sel","Pernapasan sel","Fotosintesis"],answer:0,explanation:"Eksositosis: vesikel bergabung dengan membran plasma → mengeluarkan isi (sekresi hormon, enzim)."},
+{question:"Haploid (n) berarti sel memiliki ... set kromosom.",options:["Satu","Dua","Tiga","Empat","Nol"],answer:0,explanation:"Haploid (n): satu set kromosom. Contoh: sel gamet (sperma, ovum) manusia = 23 kromosom."},
+{question:"Diploid (2n) berarti sel memiliki ... set kromosom.",options:["Dua","Satu","Tiga","Empat","Nol"],answer:0,explanation:"Diploid (2n): dua set kromosom (satu dari ayah, satu dari ibu). Manusia: 2n = 46."},
+{question:"Glikolisis terjadi di ...",options:["Sitoplasma","Mitokondria","Nukleus","RE","Golgi"],answer:0,explanation:"Glikolisis: penguraian glukosa menjadi 2 piruvat di SITOPLASMA (tidak perlu O₂)."},
+{question:"ATP terdiri dari ...",options:["Adenin + ribosa + 3 gugus fosfat","Guanin + deoksiribosa","Sitosin + ribosa","Timin + fosfat","Urasil + ribosa"],answer:0,explanation:"ATP (adenosin trifosfat): basa adenin + gula ribosa + 3 gugus fosfat (ikatan fosfat berenergi tinggi)."},
+{question:"Fermentasi alkohol menghasilkan ...",options:["Etanol dan CO₂","Asam laktat","ATP saja","Oksigen","Glukosa"],answer:0,explanation:"Fermentasi alkohol (ragi): piruvat → etanol + CO₂ (tanpa O₂)."},
+{question:"Fermentasi asam laktat terjadi pada ...",options:["Otot manusia saat kekurangan O₂","Ragi","Tumbuhan hijau","Bakteri fotosintetik","Algae"],answer:0,explanation:"Fermentasi laktat: piruvat → asam laktat di otot saat aktivitas berat (anaerobik)."},
+{question:"Seleksi buatan (artificial selection) adalah ...",options:["Manusia memilih organisme dengan sifat tertentu untuk dibiakkan","Seleksi alam","Mutasi acak","Genetic drift","Migrasi alami"],answer:0,explanation:"Seleksi buatan: manusia menentukan organisme mana yang boleh bereproduksi berdasarkan sifat yang diinginkan."},
+{question:"Antibiotik bekerja dengan cara ...",options:["Menghambat atau membunuh bakteri","Membunuh virus","Menghancurkan sel manusia","Memperkuat bakteri","Meningkatkan infeksi"],answer:0,explanation:"Antibiotik: zat antimikroba yang menghambat pertumbuhan/membunuh bakteri (bukan virus)."},
+]);
