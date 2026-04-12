@@ -1,0 +1,104 @@
+// ============================================
+// ADVANCED CHALLENGE — Pre-Kalkulus Batch 3
+// Filling to 250: Polinomial, Barisan/Deret, Fungsi Lanjut,
+// Koordinat Polar, Matriks, Bilangan Kompleks, Vektor
+// ============================================
+
+appendQuestions('adv_precalculus', [
+// [Polinomial Lanjut] — 10 soal
+{question:"Tentukan sisa pembagian $x^3 - 2x + 1$ oleh $x - 1$ menggunakan teorema sisa.",options:["$0$","$1$","$-1$","$2$","$-2$"],answer:0,hint:"Teorema sisa: sisa = $f(1)$.",explanation:"$f(1) = 1 - 2 + 1 = 0$.\nSisa = 0, artinya $(x-1)$ faktor dari $x^3-2x+1$."},
+{question:"Tentukan akar-akar dari $x^3 - 6x^2 + 11x - 6 = 0$.",options:["$x = 1, 2, 3$","$x = 1, 2, 4$","$x = 2, 3, 6$","$x = 1, 3, 6$","$x = -1, 2, 3$"],answer:0,hint:"Cek $x=1$: $1-6+11-6=0$ ✓. Lalu faktorkan.",explanation:"$f(1)=0 \\Rightarrow (x-1)$ faktor.\n$x^3-6x^2+11x-6 = (x-1)(x^2-5x+6) = (x-1)(x-2)(x-3)$.\nAkar: $1, 2, 3$."},
+{question:"Tentukan derajat polinomial $(x^2+1)(x^3-x+2)$.",options:["$5$","$6$","$3$","$4$","$2$"],answer:0,hint:"Derajat hasil kali = jumlah derajat.",explanation:"Derajat $= 2 + 3 = 5$."},
+{question:"Jika $P(x) = x^4 - 3x^2 + 2$, hitung $P(-1)$.",options:["$0$","$2$","$-2$","$4$","$6$"],answer:0,hint:"Substitusi $x = -1$: $1 - 3 + 2$.",explanation:"$P(-1) = (-1)^4 - 3(-1)^2 + 2 = 1 - 3 + 2 = 0$.\nArtinya $(x+1)$ adalah faktor."},
+{question:"Berapa banyak akar (termasuk perulangan) polinomial berderajat $n$?",options:["$n$ akar","$n-1$ akar","$n+1$ akar","$2n$ akar","Tidak tentu"],answer:0,hint:"Teorema Fundamental Aljabar.",explanation:"Menurut Teorema Fundamental Aljabar, setiap polinomial berderajat $n$ memiliki tepat $n$ akar kompleks (dihitung dengan multiplisitas)."},
+{question:"Tentukan koefisien utama dari $f(x) = -2x^5 + 3x^4 - x + 7$.",options:["$-2$","$3$","$7$","$5$","$-1$"],answer:0,hint:"Koefisien utama = koefisien suku berderajat tertinggi.",explanation:"Suku berderajat tertinggi: $-2x^5$.\nKoefisien utama = $-2$."},
+{question:"Untuk polinomial $f(x) = x^3 + ax^2 + bx - 6$ dengan akar $1, 2, -3$, tentukan $a$.",options:["$0$","$1$","$-1$","$2$","$-6$"],answer:0,hint:"$f(x) = (x-1)(x-2)(x+3)$. Ekspansi dan cocokkan.",explanation:"$(x-1)(x-2)(x+3) = x^3 + 0x^2 - 7x + 6$.\nWait, cek: $(x-1)(x-2) = x^2-3x+2$.\n$(x^2-3x+2)(x+3) = x^3+3x^2-3x^2-9x+2x+6 = x^3-7x+6$.\nTapi $f(x) = x^3+ax^2+bx-6$.\nDengan akar $1,2,-3$: produk akar $= 1\\cdot2\\cdot(-3) = -6 = -(-6)/1$ ✓.\nJumlah akar $= 1+2+(-3) = 0 = -a \\Rightarrow a = 0$."},
+{question:"Jika $p(x) = 2x^3 - x^2 + 3x - 5$, tentukan $p(0)$.",options:["$-5$","$0$","$5$","$3$","$-2$"],answer:0,hint:"$p(0) =$ suku konstan.",explanation:"$p(0) = 0 - 0 + 0 - 5 = -5$."},
+{question:"Tentukan semua akar rasional dari $x^3 - 3x + 2 = 0$.",options:["$x = 1$ (kembar) dan $x = -2$","$x = 1$ dan $x = 2$","$x = -1$ dan $x = 2$","$x = 1, -1, 2$","$x = 1$ dan $x = -2$"],answer:0,hint:"$f(1) = 0$. Faktorkan.",explanation:"$f(1) = 1-3+2 = 0$.\n$x^3-3x+2 = (x-1)(x^2+x-2) = (x-1)(x+2)(x-1) = (x-1)^2(x+2)$.\nAkar: $x=1$ (kembar), $x=-2$."},
+
+// [Barisan dan Deret] — 12 soal
+{question:"Tentukan suku ke-10 dari barisan aritmetika $3, 7, 11, 15, \\ldots$",options:["$39$","$43$","$35$","$41$","$47$"],answer:0,hint:"$a_n = a_1 + (n-1)d = 3 + 9(4)$.",explanation:"$a_1 = 3, d = 4$.\n$a_{10} = 3 + 9(4) = 3 + 36 = 39$."},
+{question:"Tentukan jumlah 20 suku pertama barisan aritmetika $2, 5, 8, 11, \\ldots$",options:["$610$","$600$","$590$","$620$","$580$"],answer:0,hint:"$S_n = \\frac{n}{2}(2a+(n-1)d)$.",explanation:"$a=2, d=3, n=20$.\n$S_{20} = \\frac{20}{2}(4 + 57) = 10(61) = 610$."},
+{question:"Tentukan suku ke-8 dari barisan geometri $2, 6, 18, 54, \\ldots$",options:["$4374$","$2187$","$6561$","$1458$","$3000$"],answer:0,hint:"$a_n = a_1 \\cdot r^{n-1} = 2 \\cdot 3^7$.",explanation:"$r = 3$.\n$a_8 = 2 \\cdot 3^7 = 2 \\cdot 2187 = 4374$."},
+{question:"Tentukan jumlah 6 suku pertama deret geometri $1, 2, 4, 8, \\ldots$",options:["$63$","$64$","$31$","$127$","$32$"],answer:0,hint:"$S_n = a\\frac{r^n - 1}{r - 1}$.",explanation:"$S_6 = 1 \\cdot \\frac{2^6 - 1}{2-1} = 64 - 1 = 63$."},
+{question:"Apakah barisan $1, \\frac{1}{2}, \\frac{1}{4}, \\frac{1}{8}, \\ldots$ konvergen?",options:["Konvergen ke $0$","Divergen","Konvergen ke $1$","Konvergen ke $1/2$","Osilasi"],answer:0,hint:"$a_n = (1/2)^{n-1} \\to 0$.",explanation:"$a_n = \\left(\\frac{1}{2}\\right)^{n-1} \\to 0$ saat $n \\to \\infty$.\nBarisan konvergen ke $0$."},
+{question:"Tentukan jumlah tak hingga $\\sum_{n=0}^\\infty \\left(\\frac{2}{3}\\right)^n$.",options:["$3$","$\\frac{3}{2}$","$2$","$\\infty$","$\\frac{2}{3}$"],answer:0,hint:"Deret geometri: $S = \\frac{1}{1-r}$ untuk $|r|<1$.",explanation:"$S = \\frac{1}{1 - 2/3} = \\frac{1}{1/3} = 3$."},
+{question:"Barisan Fibonacci dimulai $1, 1, 2, 3, 5, 8, \\ldots$ Tentukan suku ke-9.",options:["$34$","$21$","$55$","$13$","$89$"],answer:0,hint:"$F_n = F_{n-1} + F_{n-2}$. Lanjutkan: $13, 21, 34$.",explanation:"$F_7=13, F_8=21, F_9=34$."},
+{question:"Tentukan beda (selisih) barisan aritmetika yang suku ke-5 nya $17$ dan suku ke-12 nya $38$.",options:["$3$","$4$","$2$","$5$","$7$"],answer:0,hint:"$a_{12} - a_5 = 7d = 38-17 = 21$.",explanation:"$a_{12} - a_5 = (a+11d) - (a+4d) = 7d = 21$.\n$d = 3$."},
+{question:"Tentukan rasio barisan geometri jika $a_1 = 5$ dan $a_4 = 40$.",options:["$2$","$4$","$8$","$3$","$\\sqrt[3]{8}$"],answer:0,hint:"$a_4 = a_1 r^3 = 5r^3 = 40$.",explanation:"$5r^3 = 40 \\Rightarrow r^3 = 8 \\Rightarrow r = 2$."},
+{question:"Tentukan rata-rata aritmetika dari $7$ dan $13$.",options:["$10$","$20$","$7$","$13$","$6.5$"],answer:0,hint:"Rata-rata = $(a+b)/2$.",explanation:"$\\frac{7+13}{2} = \\frac{20}{2} = 10$."},
+{question:"Tentukan rata-rata geometri dari $4$ dan $16$.",options:["$8$","$10$","$20$","$12$","$64$"],answer:0,hint:"Rata-rata geometri = $\\sqrt{ab}$.",explanation:"$\\sqrt{4 \\cdot 16} = \\sqrt{64} = 8$."},
+{question:"Tentukan suku umum barisan $5, 10, 20, 40, \\ldots$",options:["$5 \\cdot 2^{n-1}$","$5n$","$5 \\cdot 2^n$","$10 \\cdot 2^{n-1}$","$5 + 5n$"],answer:0,hint:"Ini barisan geometri: $a=5, r=2$.",explanation:"$a_n = 5 \\cdot 2^{n-1}$."},
+
+// [Fungsi Rasional & Transformasi]
+{question:"Tentukan semua asimtot dari $f(x) = \\frac{2x^2+1}{x^2-4}$.",options:["Vertikal: $x=\\pm 2$, Horizontal: $y=2$","Vertikal: $x=2$, Horizontal: $y=0$","Vertikal: $x=\\pm 2$, Horizontal: $y=0$","Vertikal: $x=4$, Horizontal: $y=2$","Tidak ada asimtot"],answer:0,hint:"Penyebut = 0 saat $x = \\pm 2$. Derajat sama → $y = 2/1$.",explanation:"Asimtot vertikal: $x^2-4=0 \\Rightarrow x = \\pm 2$.\nDerajat sama: $y = 2/1 = 2$."},
+{question:"Tentukan semua asimtot dari $f(x) = \\frac{x}{x^2+1}$.",options:["Horizontal: $y=0$, tidak ada vertikal","Vertikal: $x=0$","Horizontal: $y=1$","Tidak ada asimtot","Vertikal: $x=\\pm 1$"],answer:0,hint:"$x^2+1 > 0$ selalu, jadi tidak ada asimtot vertikal. Derajat pembilang < penyebut.",explanation:"$x^2+1 \\ne 0$ untuk $x$ real → tidak ada asimtot vertikal.\nDerajat 1 < 2 → asimtot horizontal $y = 0$."},
+{question:"Jelaskan transformasi dari $y = f(x)$ ke $y = f(x-3) + 2$.",options:["Geser kanan 3, atas 2","Geser kiri 3, atas 2","Geser kanan 3, bawah 2","Geser kiri 3, bawah 2","Geser kanan 2, atas 3"],answer:0,hint:"$f(x-h)$ geser kanan $h$, $f(x)+k$ geser atas $k$.",explanation:"$f(x-3)$: geser kanan 3.\n$+2$: geser atas 2."},
+{question:"Jelaskan transformasi dari $y = f(x)$ ke $y = -f(x)$.",options:["Refleksi terhadap sumbu-$x$","Refleksi terhadap sumbu-$y$","Refleksi terhadap garis $y=x$","Rotasi $180°$","Dilatasi vertikal"],answer:0,hint:"Tanda negatif di luar fungsi membalik grafik secara vertikal.",explanation:"$y = -f(x)$: setiap $y$ diganti $-y$.\nRefleksi terhadap sumbu-$x$."},
+{question:"Jelaskan transformasi dari $y = f(x)$ ke $y = 2f(x)$.",options:["Dilatasi vertikal faktor 2","Dilatasi horizontal faktor 2","Geser atas 2","Refleksi sumbu-$x$","Kompresi vertikal faktor 2"],answer:0,hint:"Koefisien di luar fungsi meregang grafik secara vertikal.",explanation:"$y = 2f(x)$: setiap nilai $y$ dikali 2.\nDilatasi vertikal dengan faktor 2."},
+
+// [Bilangan Kompleks]
+{question:"Sederhanakan $i^2$.",options:["$-1$","$1$","$i$","$-i$","$0$"],answer:0,hint:"Definisi: $i = \\sqrt{-1}$, maka $i^2 = -1$.",explanation:"$i^2 = -1$ (definisi satuan imajiner)."},
+{question:"Sederhanakan $i^{17}$.",options:["$i$","$-1$","$-i$","$1$","$0$"],answer:0,hint:"$i^4 = 1$. $17 = 4(4) + 1$, jadi $i^{17} = i^1$.",explanation:"$i^4 = 1$, $17 \\mod 4 = 1$.\n$i^{17} = i$."},
+{question:"Tentukan modulus dari bilangan kompleks $z = 3 + 4i$.",options:["$5$","$7$","$\\sqrt{7}$","$25$","$1$"],answer:0,hint:"$|z| = \\sqrt{a^2+b^2}$.",explanation:"$|3+4i| = \\sqrt{9+16} = \\sqrt{25} = 5$."},
+{question:"Tentukan konjugat dari $z = 2 - 5i$.",options:["$2 + 5i$","$-2 + 5i$","$-2 - 5i$","$5 - 2i$","$5 + 2i$"],answer:0,hint:"Konjugat: ganti tanda bagian imajiner.",explanation:"$\\overline{z} = 2 + 5i$."},
+{question:"Hitung $(3+2i)(1-i)$.",options:["$5 - i$","$3 - 2i$","$5 + i$","$1 - 5i$","$3 + i$"],answer:0,hint:"FOIL: $3 - 3i + 2i - 2i^2$.",explanation:"$3(1) + 3(-i) + 2i(1) + 2i(-i)$\n$= 3 - 3i + 2i - 2i^2 = 3 - i + 2 = 5 - i$."},
+{question:"Hitung $\\frac{1+i}{1-i}$.",options:["$i$","$1$","$-i$","$-1$","$1+i$"],answer:0,hint:"Kalikan atas-bawah dengan konjugat penyebut: $(1+i)$.",explanation:"$\\frac{(1+i)(1+i)}{(1-i)(1+i)} = \\frac{1+2i+i^2}{1-i^2} = \\frac{2i}{2} = i$."},
+
+// [Vektor]
+{question:"Tentukan panjang vektor $\\vec{v} = \\langle 3, 4 \\rangle$.",options:["$5$","$7$","$\\sqrt{7}$","$25$","$1$"],answer:0,hint:"$|\\vec{v}| = \\sqrt{3^2+4^2}$.",explanation:"$|\\vec{v}| = \\sqrt{9+16} = \\sqrt{25} = 5$."},
+{question:"Tentukan $\\vec{a} + \\vec{b}$ jika $\\vec{a} = \\langle 1, 3 \\rangle$ dan $\\vec{b} = \\langle 4, -2 \\rangle$.",options:["$\\langle 5, 1 \\rangle$","$\\langle 3, 5 \\rangle$","$\\langle -3, 5 \\rangle$","$\\langle 4, -6 \\rangle$","$\\langle 5, -1 \\rangle$"],answer:0,hint:"Jumlahkan komponen: $(1+4, 3+(-2))$.",explanation:"$\\vec{a}+\\vec{b} = \\langle 1+4, 3+(-2)\\rangle = \\langle 5, 1 \\rangle$."},
+{question:"Tentukan hasil kali titik $\\vec{a} = \\langle 2, 3 \\rangle$ dan $\\vec{b} = \\langle -1, 4 \\rangle$.",options:["$10$","$-10$","$14$","$5$","$11$"],answer:0,hint:"$\\vec{a} \\cdot \\vec{b} = (2)(-1) + (3)(4)$.",explanation:"$\\vec{a} \\cdot \\vec{b} = -2 + 12 = 10$."},
+{question:"Dua vektor ortogonal jika $\\vec{a} \\cdot \\vec{b} = ?$",options:["$0$","$1$","$-1$","$|\\vec{a}||\\vec{b}|$","$\\infty$"],answer:0,hint:"Ortogonal = tegak lurus. $\\cos 90° = 0$.",explanation:"$\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos\\theta$.\nOrtogonal: $\\theta = 90°$, $\\cos 90° = 0$.\n$\\vec{a} \\cdot \\vec{b} = 0$."},
+{question:"Tentukan vektor satuan dari $\\vec{v} = \\langle 0, 5 \\rangle$.",options:["$\\langle 0, 1 \\rangle$","$\\langle 1, 0 \\rangle$","$\\langle 0, 5 \\rangle$","$\\langle 0, 1/5 \\rangle$","$\\langle 5, 0 \\rangle$"],answer:0,hint:"Vektor satuan = $\\vec{v}/|\\vec{v}|$.",explanation:"$|\\vec{v}| = 5$.\n$\\hat{v} = \\langle 0/5, 5/5 \\rangle = \\langle 0, 1 \\rangle$."},
+{question:"Tentukan sudut antara $\\vec{a} = \\langle 1, 0 \\rangle$ dan $\\vec{b} = \\langle 0, 1 \\rangle$.",options:["$90°$","$0°$","$45°$","$180°$","$60°$"],answer:0,hint:"$\\cos\\theta = \\frac{\\vec{a}\\cdot\\vec{b}}{|\\vec{a}||\\vec{b}|}$.",explanation:"$\\vec{a}\\cdot\\vec{b} = 0$.\n$\\cos\\theta = 0/1 = 0$.\n$\\theta = 90°$."},
+
+// [Koordinat Polar]
+{question:"Konversikan titik Kartesian $(3, 3)$ ke koordinat polar.",options:["$(3\\sqrt{2}, 45°)$","$(6, 45°)$","$(3, 45°)$","$(3\\sqrt{2}, 30°)$","$(9, 60°)$"],answer:0,hint:"$r = \\sqrt{x^2+y^2}$, $\\theta = \\arctan(y/x)$.",explanation:"$r = \\sqrt{9+9} = 3\\sqrt{2}$.\n$\\theta = \\arctan(1) = 45°$."},
+{question:"Konversikan koordinat polar $(4, 60°)$ ke Kartesian.",options:["$(2, 2\\sqrt{3})$","$(4, 4)$","$(2\\sqrt{3}, 2)$","$(4\\cos 60°, 4\\sin 60°)$","$(4, 2)$"],answer:0,hint:"$x = r\\cos\\theta$, $y = r\\sin\\theta$.",explanation:"$x = 4\\cos 60° = 4(1/2) = 2$.\n$y = 4\\sin 60° = 4(\\sqrt{3}/2) = 2\\sqrt{3}$."},
+{question:"Konversikan persamaan kartesian $x^2 + y^2 = 9$ ke bentuk polar.",options:["$r = 3$","$r^2 = 9$","$r = 9$","$r = 3\\cos\\theta$","$r\\cos\\theta = 3$"],answer:0,hint:"$x^2+y^2 = r^2$.",explanation:"$r^2 = 9 \\Rightarrow r = 3$."},
+
+// [Matriks 2x2]
+{question:"Tentukan determinan matriks $A = \\begin{pmatrix} 3 & 1 \\\\ 2 & 5 \\end{pmatrix}$.",options:["$13$","$15$","$17$","$11$","$7$"],answer:0,hint:"$\\det A = ad - bc = 3(5) - 1(2)$.",explanation:"$\\det A = 3(5) - 1(2) = 15 - 2 = 13$."},
+{question:"Tentukan invers dari matriks $A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 1 \\end{pmatrix}$.",options:["$\\begin{pmatrix} 1 & -1 \\\\ -1 & 2 \\end{pmatrix}$","$\\begin{pmatrix} 1 & 1 \\\\ 1 & 2 \\end{pmatrix}$","$\\begin{pmatrix} 2 & -1 \\\\ -1 & 1 \\end{pmatrix}$","$\\frac{1}{3}\\begin{pmatrix} 1 & -1 \\\\ -1 & 2 \\end{pmatrix}$","Tidak memiliki invers"],answer:0,hint:"$\\det A = 2-1 = 1$. $A^{-1} = \\frac{1}{\\det A} \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}$.",explanation:"$\\det A = 1$.\n$A^{-1} = \\begin{pmatrix} 1 & -1 \\\\ -1 & 2 \\end{pmatrix}$."},
+{question:"Tentukan hasil perkalian matriks $\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix} \\begin{pmatrix} 5 \\\\ 6 \\end{pmatrix}$.",options:["$\\begin{pmatrix} 17 \\\\ 39 \\end{pmatrix}$","$\\begin{pmatrix} 11 \\\\ 22 \\end{pmatrix}$","$\\begin{pmatrix} 17 \\\\ 33 \\end{pmatrix}$","$\\begin{pmatrix} 5 \\\\ 6 \\end{pmatrix}$","$\\begin{pmatrix} 23 \\\\ 34 \\end{pmatrix}$"],answer:0,hint:"Baris × kolom: $(1)(5)+(2)(6)=17$, $(3)(5)+(4)(6)=39$.",explanation:"$\\begin{pmatrix} 1(5)+2(6) \\\\ 3(5)+4(6) \\end{pmatrix} = \\begin{pmatrix} 17 \\\\ 39 \\end{pmatrix}$."},
+
+// [Fungsi Pecahan Linear / Möbius]
+{question:"Tentukan domain dan range dari $f(x) = \\frac{3x-1}{x+2}$.",options:["Domain: $x \\ne -2$, Range: $y \\ne 3$","Domain: $x \\ne 2$, Range: $y \\ne 3$","Domain: $x \\ne -2$, Range: $y \\ne -1/3$","Domain: $\\mathbb{R}$, Range: $\\mathbb{R}$","Domain: $x \\ne 3$, Range: $y \\ne -2$"],answer:0,hint:"Penyebut ≠ 0 → $x \\ne -2$. Asimtot horizontal $y = 3$ → range $y \\ne 3$.",explanation:"Domain: $x \\ne -2$.\nAsimtot horizontal: $y = 3/1 = 3$.\nRange: $y \\ne 3$."},
+{question:"Selesaikan sistem persamaan: $x + y = 5$ dan $x - y = 1$.",options:["$x=3, y=2$","$x=2, y=3$","$x=4, y=1$","$x=5, y=0$","$x=1, y=4$"],answer:0,hint:"Jumlahkan: $2x = 6$.",explanation:"$x+y=5$ dan $x-y=1$.\nJumlah: $2x = 6 \\Rightarrow x = 3$.\n$y = 5-3 = 2$."},
+{question:"Selesaikan sistem: $2x + 3y = 12$ dan $x - y = 1$.",options:["$x=3, y=2$","$x=2, y=3$","$x=4, y=1$","$x=1, y=0$","$x=6, y=0$"],answer:0,hint:"Dari persamaan 2: $x = y+1$. Substitusi ke persamaan 1.",explanation:"$x = y+1$.\n$2(y+1)+3y = 12 \\Rightarrow 5y+2 = 12 \\Rightarrow y = 2$.\n$x = 3$."},
+{question:"Tentukan himpunan penyelesaian $|x+3| > 5$.",options:["$x > 2$ atau $x < -8$","$-8 < x < 2$","$x > 5$","$x < -3$","$x > 8$ atau $x < -2$"],answer:0,hint:"$x+3 > 5$ atau $x+3 < -5$.",explanation:"$x+3 > 5 \\Rightarrow x > 2$.\n$x+3 < -5 \\Rightarrow x < -8$.\nHP: $(-\\infty,-8) \\cup (2,\\infty)$."},
+
+// [Kombinatorika & Peluang Dasar]
+{question:"Hitung $\\binom{5}{2}$.",options:["$10$","$20$","$5$","$25$","$15$"],answer:0,hint:"$\\binom{5}{2} = \\frac{5!}{2!3!}$.",explanation:"$\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{120}{2 \\cdot 6} = 10$."},
+{question:"Hitung $5!$.",options:["$120$","$60$","$24$","$720$","$20$"],answer:0,hint:"$5! = 5 \\times 4 \\times 3 \\times 2 \\times 1$.",explanation:"$5! = 120$."},
+{question:"Hitung $P(7,3) = \\frac{7!}{(7-3)!}$.",options:["$210$","$35$","$120$","$343$","$42$"],answer:0,hint:"$P(7,3) = 7 \\times 6 \\times 5$.",explanation:"$P(7,3) = 7 \\times 6 \\times 5 = 210$."},
+{question:"Berapa banyak cara menyusun huruf-huruf 'ABC'?",options:["$6$","$3$","$9$","$27$","$1$"],answer:0,hint:"Permutasi 3 huruf: $3!$.",explanation:"$3! = 6$ cara.\nABC, ACB, BAC, BCA, CAB, CBA."},
+
+// [Pertidaksamaan Kuadrat]
+{question:"Selesaikan $x^2 - 4x + 3 > 0$.",options:["$x < 1$ atau $x > 3$","$1 < x < 3$","$x > 3$","$x < 1$","$x \\ne 1, x \\ne 3$"],answer:0,hint:"Faktorkan: $(x-1)(x-3) > 0$.",explanation:"$(x-1)(x-3) > 0$.\nPositif saat $x < 1$ atau $x > 3$."},
+{question:"Selesaikan $x^2 + 2x - 8 \\le 0$.",options:["$-4 \\le x \\le 2$","$x \\le -4$ atau $x \\ge 2$","$-2 \\le x \\le 4$","$x \\le 2$","$x \\ge -4$"],answer:0,hint:"$(x+4)(x-2) \\le 0$.",explanation:"$(x+4)(x-2) \\le 0$.\nNegatif atau nol saat $-4 \\le x \\le 2$."},
+{question:"Tentukan diskriminan dari $3x^2 - 5x + 2 = 0$ dan klasifikasikan akarnya.",options:["$D = 1$, dua akar real berbeda","$D = 0$, akar kembar","$D = -1$, tidak ada akar real","$D = 49$, dua akar real","$D = 25$, dua akar real"],answer:0,hint:"$D = b^2 - 4ac = 25 - 24$.",explanation:"$D = (-5)^2 - 4(3)(2) = 25 - 24 = 1 > 0$.\nDua akar real berbeda."},
+
+// [Fungsi Piecewise]
+{question:"Evaluasi $f(3)$ jika $f(x) = \\begin{cases} x^2 & x < 2 \\\\ 2x+1 & x \\ge 2 \\end{cases}$.",options:["$7$","$9$","$6$","$5$","$3$"],answer:0,hint:"$x = 3 \\ge 2$, gunakan bagian kedua: $2(3)+1$.",explanation:"$3 \\ge 2$, jadi $f(3) = 2(3)+1 = 7$."},
+{question:"Evaluasi $f(1)$ jika $f(x) = \\begin{cases} x^2+1 & x \\le 1 \\\\ 3x-1 & x > 1 \\end{cases}$.",options:["$2$","$3$","$1$","$0$","$4$"],answer:0,hint:"$x = 1 \\le 1$, gunakan bagian pertama: $1+1$.",explanation:"$1 \\le 1$, jadi $f(1) = 1^2+1 = 2$."},
+
+// [Trigonometri Invers]
+{question:"Evaluasi $\\arcsin\\left(\\frac{1}{2}\\right)$.",options:["$\\frac{\\pi}{6}$","$\\frac{\\pi}{3}$","$\\frac{\\pi}{4}$","$\\frac{\\pi}{2}$","$0$"],answer:0,hint:"$\\sin(\\pi/6) = 1/2$.",explanation:"$\\arcsin(1/2) = \\pi/6$.\nKarena $\\sin(\\pi/6) = 1/2$."},
+{question:"Evaluasi $\\arccos(0)$.",options:["$\\frac{\\pi}{2}$","$0$","$\\pi$","$\\frac{\\pi}{4}$","$\\frac{\\pi}{3}$"],answer:0,hint:"$\\cos(\\pi/2) = 0$.",explanation:"$\\arccos(0) = \\pi/2$."},
+{question:"Evaluasi $\\arctan(1)$.",options:["$\\frac{\\pi}{4}$","$\\frac{\\pi}{2}$","$\\frac{\\pi}{3}$","$1$","$0$"],answer:0,hint:"$\\tan(\\pi/4) = 1$.",explanation:"$\\arctan(1) = \\pi/4$."},
+{question:"Evaluasi $\\arcsin(-1)$.",options:["$-\\frac{\\pi}{2}$","$\\frac{3\\pi}{2}$","$\\pi$","$-\\pi$","$\\frac{\\pi}{2}$"],answer:0,hint:"$\\sin(-\\pi/2) = -1$.",explanation:"$\\arcsin(-1) = -\\pi/2$."},
+
+// [Conic Sections]
+{question:"Tentukan persamaan parabola dengan fokus di $(0, 2)$ dan direktriks $y = -2$.",options:["$x^2 = 8y$","$y^2 = 8x$","$x^2 = 4y$","$x^2 = 2y$","$y = x^2$"],answer:0,hint:"Parabola vertikal: $x^2 = 4py$ dengan $p = 2$.",explanation:"Fokus $(0,p) = (0,2) \\Rightarrow p = 2$.\n$x^2 = 4(2)y = 8y$."},
+{question:"Identifikasi jenis irisan kerucut: $\\frac{x^2}{9} + \\frac{y^2}{4} = 1$.",options:["Elips","Lingkaran","Hiperbola","Parabola","Garis"],answer:0,hint:"Bentuk $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ dengan $a \\ne b$.",explanation:"$a^2 = 9, b^2 = 4$, $a \\ne b$.\nIni adalah elips dengan sumbu mayor horizontal."},
+{question:"Identifikasi jenis irisan kerucut: $\\frac{x^2}{4} - \\frac{y^2}{9} = 1$.",options:["Hiperbola","Elips","Lingkaran","Parabola","Garis"],answer:0,hint:"Tanda negatif antara dua suku kuadrat.",explanation:"Tanda minus → hiperbola.\nSumbu transversal horizontal."},
+
+// [Fungsi Periodik & Undulasi]
+{question:"Tentukan periode dari $y = \\tan(x)$.",options:["$\\pi$","$2\\pi$","$\\frac{\\pi}{2}$","$4\\pi$","$1$"],answer:0,hint:"Periode dasar tangen = $\\pi$.",explanation:"$\\tan(x+\\pi) = \\tan x$.\nPeriode = $\\pi$."},
+{question:"Tentukan himpunan penyelesaian $\\cos x = 1$ untuk $0 \\le x \\le 4\\pi$.",options:["$x = 0, 2\\pi, 4\\pi$","$x = 0, \\pi, 2\\pi, 3\\pi, 4\\pi$","$x = 0$","$x = \\pi, 3\\pi$","$x = 2\\pi, 4\\pi$"],answer:0,hint:"$\\cos x = 1$ saat $x = 2k\\pi$.",explanation:"$\\cos x = 1$ saat $x = 0, 2\\pi, 4\\pi$.\n(Hanya kelipatan $2\\pi$.)"},
+{question:"Tentukan persamaan garis lurus melalui $(2,3)$ dan $(4,7)$.",options:["$y = 2x - 1$","$y = 2x + 1$","$y = x + 1$","$y = 3x - 3$","$y = 2x - 3$"],answer:0,hint:"$m = \\frac{7-3}{4-2} = 2$. $y-3 = 2(x-2)$.",explanation:"$m = 2$.\n$y - 3 = 2(x-2) \\Rightarrow y = 2x - 1$."},
+{question:"Tentukan jarak antara titik $(1, 2)$ dan $(4, 6)$.",options:["$5$","$7$","$3$","$\\sqrt{7}$","$25$"],answer:0,hint:"$d = \\sqrt{(4-1)^2+(6-2)^2}$.",explanation:"$d = \\sqrt{9+16} = \\sqrt{25} = 5$."},
+{question:"Tentukan titik tengah ruas garis dari $(2, 8)$ ke $(6, 4)$.",options:["$(4, 6)$","$(4, 4)$","$(8, 12)$","$(3, 5)$","$(2, 2)$"],answer:0,hint:"Titik tengah = $\\left(\\frac{x_1+x_2}{2}, \\frac{y_1+y_2}{2}\\right)$.",explanation:"$M = \\left(\\frac{2+6}{2}, \\frac{8+4}{2}\\right) = (4, 6)$."},
+]);
