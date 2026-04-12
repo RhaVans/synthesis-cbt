@@ -280,74 +280,18 @@ function renderMathInContainer(container) {
 function prewrapMath(text) {
     if (!text) return text;
 
-    // Fast-path: if text already has $ signs, use it as-is (adv_calculus style)
+    // Fast-path: if already has proper $\cmd$ wrapping, return as-is
     if (text.includes('$')) return text;
 
-    // Does the text have any LaTeX content worth wrapping?
-    const HAS_LATEX = /\\[a-zA-Z]|\^[\{0-9]|_[\{0-9(]/.test(text);
-    if (!HAS_LATEX) return text;
+    // Does the text have any bare LaTeX content?
+    if (!/\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9]|[a-zA-Z0-9]_\{/.test(text)) return text;
 
-    // Process line by line (preserve \n breaks)
-    return text.split('\n').map(line => {
-        if (!/\\[a-zA-Z]|\^[\{0-9]|_[\{0-9(]/.test(line)) return line;
-
-        // Find all math tokens and their positions
-        const MATH_TOKEN = /(?:\\[a-zA-Z]+(?:\{[^{}]*\}|\([^)]*\))*(?:\^[\{\(]?[^}\)]+[\}\)]?|_[\{\(]?[^}\)]+[\}\)]?)*)|(?:[a-zA-Z0-9]\^[\{\(]?[^}\)\s]+[\}\)]?)|(?:[a-zA-Z0-9]_[\{\(]?[^}\)\s]+[\}\)]?)/g;
-
-        // Collect all token positions
-        const tokens = [];
-        let m;
-        while ((m = MATH_TOKEN.exec(line)) !== null) {
-            tokens.push({ start: m.index, end: m.index + m[0].length });
-        }
-
-        if (tokens.length === 0) return line;
-
-        // Expand each token to full math expression by sweeping left+right
-        const MATH_CHARS = /[0-9a-zA-Z\+\-\*\/\^\{\}\(\)\[\]_\.\,\|\\ =]/;
-        const expanded = tokens.map(tok => {
-            let { start, end } = tok;
-
-            // Sweep left (stop at word boundary or prose character)
-            while (start > 0) {
-                const ch = line[start - 1];
-                if (!MATH_CHARS.test(ch)) break;
-                // Don't consume long prose words — if previous word is >3 letters and no math, stop
-                start--;
-            }
-
-            // Sweep right
-            while (end < line.length) {
-                const ch = line[end];
-                if (!MATH_CHARS.test(ch)) break;
-                end++;
-            }
-
-            return { start, end };
-        });
-
-        // Merge overlapping expanded regions
-        const merged = [];
-        for (const r of expanded.sort((a, b) => a.start - b.start)) {
-            if (merged.length === 0 || r.start > merged[merged.length - 1].end + 1) {
-                merged.push({ ...r });
-            } else {
-                merged[merged.length - 1].end = Math.max(merged[merged.length - 1].end, r.end);
-            }
-        }
-
-        // Build output with $ inserted
-        let result = '';
-        let pos = 0;
-        for (const reg of merged) {
-            result += line.slice(pos, reg.start);
-            const math = line.slice(reg.start, reg.end).trim();
-            if (math) result += '$' + math + '$';
-            pos = reg.end;
-        }
-        result += line.slice(pos);
-        return result;
-    }).join('\n');
+    // Wrap each LaTeX token individually — do NOT sweep into prose (no space consumption)
+    // Token: \cmd{args}^{sup}_{sub}(args)  OR  x^{n}  OR  x_{n}
+    return text.replace(
+        /\\[a-zA-Z]+(?:\{[^{}]*\}|\([^)]*\))*(?:\^(?:\{[^{}]*\}|[0-9]))?(?:_(?:\{[^{}]*\}|[0-9]))?|[a-zA-Z0-9]\^(?:\{[^{}]*\}|[0-9]+)|[a-zA-Z0-9]_\{[^{}]*\}/g,
+        match => '$' + match + '$'
+    );
 }
 
 function formatText(text) {
