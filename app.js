@@ -48,13 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
     initHero();
 });
 
+const domCache = {
+    counts: {},
+    categories: {},
+    totalQuestions: null
+};
+
 function updateSubjectCounts() {
     let categoryTotals = { tps: 0, tkd: 0, saintek: 0, soshum: 0, adv: 0 };
     let grandTotal = 0;
 
     for (const [key, config] of Object.entries(SUBJECTS)) {
         const count = (QUESTION_BANK[key] || []).length;
-        const el = document.getElementById(`count-${key}`);
+
+        if (!domCache.counts[key]) {
+            domCache.counts[key] = document.getElementById(`count-${key}`);
+        }
+        const el = domCache.counts[key];
+
         if (el) el.textContent = count;
         if (!categoryTotals[config.catKey]) categoryTotals[config.catKey] = 0;
         categoryTotals[config.catKey] += count;
@@ -62,16 +73,17 @@ function updateSubjectCounts() {
     }
 
     for (const [cat, total] of Object.entries(categoryTotals)) {
-        const el = document.getElementById(`count-${cat}`);
+        if (!domCache.categories[cat]) {
+            domCache.categories[cat] = document.getElementById(`count-${cat}`);
+        }
+        const el = domCache.categories[cat];
         if (el) el.textContent = `${total} soal`;
     }
 
-    const totalEl = document.getElementById('totalQuestions');
-    if (totalEl) totalEl.textContent = grandTotal;
-
-    // Also update the new prestige hero stats cell (same id)
-    // The DOM may have two elements with id="totalQuestions" — update both
-    document.querySelectorAll('#totalQuestions').forEach(el => { el.textContent = grandTotal; });
+    if (!domCache.totalQuestions) {
+        domCache.totalQuestions = document.querySelectorAll('#totalQuestions');
+    }
+    domCache.totalQuestions.forEach(el => { el.textContent = grandTotal; });
 }
 
 // ========== VIEW MANAGEMENT ==========
