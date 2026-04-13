@@ -298,6 +298,17 @@ function renderMathInContainer(container) {
  * exponent/subscript notation, expand to include adjacent math chars,
  * then wrap the whole run in $...$. Skips segments already inside $...$.
  */
+function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(/[&<>"']/g, m => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+    })[m]);
+}
+
 function prewrapMath(text) {
     if (!text) return text;
 
@@ -317,6 +328,8 @@ function prewrapMath(text) {
 
 function formatText(text) {
     if (!text) return '';
+    // Escape HTML first to prevent XSS
+    text = escapeHTML(text);
     // Pre-wrap bare LaTeX math in $...$ for KaTeX auto-render
     text = prewrapMath(text);
     // Basic formatting: support for newlines and simple formatting
@@ -1030,7 +1043,7 @@ function renderCategoryBreakdown(stats) {
         html += `
             <div class="stats-breakdown-item">
                 <div class="stats-breakdown-header">
-                    <span class="stats-breakdown-name">${catInfo.name}</span>
+                    <span class="stats-breakdown-name">${escapeHTML(catInfo.name)}</span>
                     <div class="stats-breakdown-counts">
                         <span class="correct-count">✓ ${catCorrect}</span>
                         <span class="wrong-count">✗ ${catWrong}</span>
@@ -1068,7 +1081,7 @@ function renderSubjectBreakdown(stats) {
 
         html += `
             <div class="stats-subject-row">
-                <span class="stats-subject-name">${config.name}</span>
+                <span class="stats-subject-name">${escapeHTML(config.name)}</span>
                 <span class="stats-subject-cell correct-val">${s.correct}</span>
                 <span class="stats-subject-cell wrong-val">${s.wrong}</span>
                 <span class="stats-subject-cell total-val">${total}</span>
