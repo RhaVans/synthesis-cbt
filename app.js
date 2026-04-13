@@ -107,7 +107,12 @@ function startQuiz(subjectKey) {
     const config = SUBJECTS[subjectKey];
 
     state.currentSubject = subjectKey;
-    state.questions = shuffleArray([...questions]);
+    // Shuffle question order, then shuffle options within each question,
+    // then balance so no two consecutive questions share the same correct answer
+    let shuffled = shuffleArray([...questions]);
+    shuffled = shuffleOptions(shuffled);
+    shuffled = balanceConsecutiveAnswers(shuffled);
+    state.questions = shuffled;
     state.currentIndex = 0;
     state.answers = {};
     state.flagged = new Set();
@@ -147,7 +152,11 @@ function startFullExam() {
     }
 
     state.currentSubject = 'full_exam';
-    state.questions = shuffleArray(allQuestions).slice(0, 165);
+    // Shuffle question order, then shuffle options, then balance consecutive answers
+    let shuffled = shuffleArray(allQuestions).slice(0, 165);
+    shuffled = shuffleOptions(shuffled);
+    shuffled = balanceConsecutiveAnswers(shuffled);
+    state.questions = shuffled;
     state.currentIndex = 0;
     state.answers = {};
     state.flagged = new Set();
@@ -593,6 +602,64 @@ function shuffleArray(array) {
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
+}
+
+/**
+ * Shuffle the options within each question so the correct answer
+ * is no longer always at index 0 (option A). Creates deep copies
+ * so the original QUESTION_BANK is never mutated.
+ */
+function shuffleOptions(questions) {
+    return questions.map(q => {
+        // Deep-copy the question so we don't mutate the bank
+        const copy = { ...q, options: [...q.options] };
+        const numOptions = copy.options.length;
+
+        // Build index array [0,1,2,3,4] and shuffle it
+        const indices = Array.from({ length: numOptions }, (_, i) => i);
+        for (let i = indices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [indices[i], indices[j]] = [indices[j], indices[i]];
+        }
+
+        // Reorder options and remap the correct answer index
+        copy.options = indices.map(i => q.options[i]);
+        copy.answer = indices.indexOf(q.answer);
+
+        return copy;
+    });
+}
+
+/**
+ * Ensure no two consecutive questions share the same correct-answer index.
+ * When a collision is found, rotate the options of the current question
+ * so the correct answer moves to a different slot. This preserves the
+ * relative order of wrong answers and only changes where the correct
+ * answer sits (A/B/C/D/E).
+ */
+function balanceConsecutiveAnswers(questions) {
+    for (let i = 1; i < questions.length; i++) {
+        if (questions[i].answer === questions[i - 1].answer) {
+            const q = questions[i];
+            const numOptions = q.options.length;
+            const prevAnswer = questions[i - 1].answer;
+
+            // Collect candidate positions (anything != previous answer)
+            const candidates = [];
+            for (let pos = 0; pos < numOptions; pos++) {
+                if (pos !== prevAnswer) candidates.push(pos);
+            }
+
+            // Pick a random new position for the correct answer
+            const newPos = candidates[Math.floor(Math.random() * candidates.length)];
+
+            // Swap the option at newPos with the correct option
+            const oldPos = q.answer;
+            [q.options[oldPos], q.options[newPos]] = [q.options[newPos], q.options[oldPos]];
+            q.answer = newPos;
+        }
+    }
+    return questions;
 }
 
 // ========== PARTICLE SYSTEM ==========
