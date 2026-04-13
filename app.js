@@ -312,18 +312,20 @@ function escapeHTML(str) {
 function prewrapMath(text) {
     if (!text) return text;
 
-    // Fast-path: if already has proper $\cmd$ wrapping, return as-is
-    if (text.includes('$')) return text;
+    // Does the text have any bare LaTeX content? (or already wrapped content)
+    if (!/\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9]|[a-zA-Z0-9]_\{/.test(text)) return text;
 
-    // Does the text have any bare LaTeX content?
-    if (!/\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9]|[a-zA-Z0-9]_\{/.test(text)) return text;
-
+    // First match existing $...$ blocks to protect them, then match bare LaTeX tokens.
     // Wrap each LaTeX token individually — do NOT sweep into prose (no space consumption)
     // Token: \cmd{args}^{sup}_{sub}(args)  OR  x^{n}  OR  x_{n}
-    return text.replace(
-        /\\[a-zA-Z]+(?:\{[^{}]*\}|\([^)]*\))*(?:\^(?:\{[^{}]*\}|[0-9]))?(?:_(?:\{[^{}]*\}|[0-9]))?|[a-zA-Z0-9]\^(?:\{[^{}]*\}|[0-9]+)|[a-zA-Z0-9]_\{[^{}]*\}/g,
-        match => '$' + match + '$'
-    );
+    const regex = /\$[^\$]+\$|\\[a-zA-Z]+(?:\{[^{}]*\}|\([^)]*\))*(?:\^(?:\{[^{}]*\}|[0-9]))?(?:_(?:\{[^{}]*\}|[0-9]))?|[a-zA-Z0-9]\^(?:\{[^{}]*\}|[0-9]+)|[a-zA-Z0-9]_\{[^{}]*\}/g;
+
+    return text.replace(regex, match => {
+        if (match.startsWith('$')) {
+            return match; // already wrapped
+        }
+        return '$' + match + '$';
+    });
 }
 
 function formatText(text) {
