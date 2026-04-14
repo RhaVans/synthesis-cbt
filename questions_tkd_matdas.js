@@ -344,7 +344,7 @@ registerQuestions('tkd_matdas', [
     question: "Volume kerucut yang memiliki jari-jari alas 6 cm dan tinggi 8 cm adalah $\\ldots$",
     options: ["96$\\pi$ c$m^3$","72$\\pi$ c$m^3$","108$\\pi$ c$m^3$","144$\\pi$ c$m^3$","48$\\pi$ c$m^3$"],
     answer: 0,
-    hint: "V = (1/3)\\pir^2t.",
+    hint: "V = (1/3)$\\pi$r^2t.",
     explanation: "V = (1/3)$\\pi(6)^2(8)$ = (1/3)$\\pi(36)(8)$ = (1/3)(288$\\pi$) = 96$\\pi$ c$m^3$.\nJawaban: 96$\\pi$ c$m^3$ (A)."
 },
 // === TAMBAHAN SOAL ALJABAR & FUNGSI LANJUTAN (49-60) ===
