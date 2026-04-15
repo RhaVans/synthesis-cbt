@@ -109,10 +109,7 @@ function fixSingleBackslashLatex(src) {
             while (j < n) {
                 if (src[j] === '\\') {
                     const next = src[j+1] || '';
-                    if (/[ntr\\'"0bfvux]/.test(next)) {
-                        // Valid JS escape — copy as-is
-                        content += src[j] + next; j += 2;
-                    } else if (/[a-zA-Z]/.test(next)) {
+                    if (/[a-zA-Z]/.test(next)) {
                         // Potentially invalid JS escape (lone \cmd)
                         let cmdEnd = j + 1;
                         while (cmdEnd < n && /[a-zA-Z]/.test(src[cmdEnd])) cmdEnd++;
@@ -120,9 +117,15 @@ function fixSingleBackslashLatex(src) {
                         if (KNOWN_LATEX.has(cmd)) {
                             // Fix it: \cmd → \\cmd in source
                             content += '\\\\' + cmd; j = cmdEnd;
+                        } else if (/[ntr\\'"0bfvux]/.test(next)) {
+                            // Valid JS escape — copy as-is
+                            content += src[j] + next; j += 2;
                         } else {
                             content += src[j] + next; j += 2;
                         }
+                    } else if (/[ntr\\'"0bfvux]/.test(next)) {
+                        // Valid JS escape — copy as-is
+                        content += src[j] + next; j += 2;
                     } else {
                         content += src[j] + next; j += 2;
                     }
@@ -229,7 +232,10 @@ function wrapRawTokens(raw) {
             i = readAtomMods(raw, atomToks, i);
             out.push('$' + atomToks.join('') + '$');
             // Emit any remainder letters without wrapping
-            if (remainder) out.push(remainder);
+            if (remainder) {
+                out.push(remainder);
+                i = j; // Advance past the remainder in raw
+            }
             continue;
         }
         // Exponent/subscript with braces: x^{n}, x_{n}
