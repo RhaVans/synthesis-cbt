@@ -75,56 +75,45 @@ function unicodeToLatex(src) {
 // At runtime JS drops the unknown escape → 'sqrt' without backslash.
 // Here we repair: \cmd → \\cmd inside string literals.
 const KNOWN_LATEX = new Set([
-    'sqrt','log','lim','frac','sin','cos','tan','cot','sec','csc',
-    'arcsin','arccos','arctan','sinh','cosh','tanh','exp','ln',
-    'pi','alpha','beta','gamma','delta','epsilon','theta','lambda',
-    'mu','sigma','phi','omega','Delta','Sigma','Omega','infty',
-    'cdot','circ','pm','mp','times','div','leq','geq','neq','approx',
-    'to','Rightarrow','Leftrightarrow','in','notin','cap','cup',
-    'emptyset','subset','subseteq','forall','exists',
-    'lfloor','rfloor','lceil','rceil','mathbb','text',
-    'sum','int','prod','ldots','vec','hat','bar','overline','underline',
-    'binom','left','right','frac','partial','nabla',
+    'sqrt','log','lim','frac','sin','cos','tan','cot','sec','csc','arcsin','arccos','arctan','sinh','cosh','tanh','exp','ln','pi','alpha','beta','gamma','delta','epsilon','theta','lambda','mu','sigma','phi','omega','Delta','Sigma','Omega','infty','cdot','circ','pm','mp','times','div','leq','geq','neq','approx','to','Rightarrow','Leftrightarrow','in','notin','cap','cup','emptyset','subset','subseteq','forall','exists','lfloor','rfloor','lceil','rceil','mathbb','text','sum','int','prod','ldots','vec','hat','bar','overline','underline','binom','left','right','partial','nabla','rho','max','min','det','inf','sup','deg','dim','ker','arg','gcd','lg','begin','end','matrix','pmatrix','bmatrix','vmatrix','Vmatrix','cases','align','tau','eta','Phi','hbar','propto',
 ]);
 
 function fixSingleBackslashLatex(src) {
-    let result = '';
+    let result = "";
     let i = 0;
     const n = src.length;
     while (i < n) {
         // Skip single-line comments
-        if (src[i] === '/' && src[i+1] === '/') {
-            let j = i; while (j < n && src[j] !== '\n') j++;
+        if (src[i] === "/" && src[i+1] === "/") {
+            let j = i; while (j < n && src[j] !== "\n") j++;
             result += src.slice(i, j); i = j; continue;
         }
         // Skip multi-line comments
-        if (src[i] === '/' && src[i+1] === '*') {
+        if (src[i] === "/" && src[i+1] === "*") {
             let j = i + 2;
-            while (j < n-1 && !(src[j] === '*' && src[j+1] === '/')) j++;
+            while (j < n-1 && !(src[j] === "*" && src[j+1] === "/")) j++;
             j += 2; result += src.slice(i, j); i = j; continue;
         }
         // String literal
-        if (src[i] === '"' || src[i] === "'") {
-            const q = src[i]; let j = i + 1; let content = '';
+        if (src[i] === "\"" || src[i] === "'") {
+            const q = src[i]; let j = i + 1; let content = "";
             while (j < n) {
-                if (src[j] === '\\') {
-                    const next = src[j+1] || '';
-                    if (/[ntr\\'"0bfvux]/.test(next)) {
-                        // Valid JS escape — copy as-is
-                        content += src[j] + next; j += 2;
-                    } else if (/[a-zA-Z]/.test(next)) {
-                        // Potentially invalid JS escape (lone \cmd)
+                if (src[j] === "\\") {
+                    const next = src[j+1] || "";
+                    let handled = false;
+                    if (/[a-zA-Z]/.test(next)) {
                         let cmdEnd = j + 1;
                         while (cmdEnd < n && /[a-zA-Z]/.test(src[cmdEnd])) cmdEnd++;
                         const cmd = src.slice(j+1, cmdEnd);
                         if (KNOWN_LATEX.has(cmd)) {
-                            // Fix it: \cmd → \\cmd in source
-                            content += '\\\\' + cmd; j = cmdEnd;
-                        } else {
-                            content += src[j] + next; j += 2;
+                            // Fix it: \cmd → \\\\cmd in source
+                            content += "\\\\\\\\" + cmd; j = cmdEnd;
+                            handled = true;
                         }
-                    } else {
-                        content += src[j] + next; j += 2;
+                    }
+                    if (!handled) {
+                        // Valid JS escape (or unknown non-LaTeX) — copy as-is
+                        content += src[j] + (src[j+1] || ""); j += 2;
                     }
                 } else if (src[j] === q) { j++; break; }
                 else { content += src[j]; j++; }
@@ -222,14 +211,8 @@ function wrapRawTokens(raw) {
             }
             const cmd = letters.slice(0, cmdLen);
             const atomToks = ['\\\\', ...cmd.split('')];
-            i = i + 1 + cmdLen; // skip past '\\\\' and cmd letters
+            i = j; // skip past all read letters
             // Put remaining letters back (non-consumed) to out
-            const remainder = letters.slice(cmdLen);
-            // Read trailing mods (subscript, superscript, {args})
-            i = readAtomMods(raw, atomToks, i);
-            out.push('$' + atomToks.join('') + '$');
-            // Emit any remainder letters without wrapping
-            if (remainder) out.push(remainder);
             continue;
         }
         // Exponent/subscript with braces: x^{n}, x_{n}

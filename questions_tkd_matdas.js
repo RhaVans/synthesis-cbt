@@ -344,7 +344,7 @@ registerQuestions('tkd_matdas', [
     question: "Volume kerucut yang memiliki jari-jari alas 6 cm dan tinggi 8 cm adalah $\\ldots$",
     options: ["96$\\pi$ c$m^3$","72$\\pi$ c$m^3$","108$\\pi$ c$m^3$","144$\\pi$ c$m^3$","48$\\pi$ c$m^3$"],
     answer: 0,
-    hint: "V = (1/3)\\pir^2t.",
+    hint: "V = (1/3)^2t.",
     explanation: "V = (1/3)$\\pi(6)^2(8)$ = (1/3)$\\pi(36)(8)$ = (1/3)(288$\\pi$) = 96$\\pi$ c$m^3$.\nJawaban: 96$\\pi$ c$m^3$ (A)."
 },
 // === TAMBAHAN SOAL ALJABAR & FUNGSI LANJUTAN (49-60) ===
@@ -575,7 +575,7 @@ registerQuestions('tkd_matdas', [
     options: ["($\\sqrt{6}$ + $\\sqrt{2}$)/4","($\\sqrt{6}$ - $\\sqrt{2}$)/4","($\\sqrt{3}$ + 1)/4","($\\sqrt{3}$ + $\\sqrt{2}$)/4","$\\sqrt{6}$/4"],
     answer: 0,
     hint: "$\\sin$ 75^$\\circ$ = $\\sin(45^\\circ + 30^\\circ)$. Gunakan rumus jumlah dua sudut.",
-    explanation: "$\\sin$ 75^$\\circ$ = $\\sin(45^\\circ+30^\\circ)$ = sin45^$\\circ$coscos30^$\\circ$ + cos45^$\\circ$sinsin30^$\\circ$\n= ($\\sqrt{2}$/2)($\\sqrt{3}$/2) + ($\\sqrt{2}$/2)(1/2)\n= $\\sqrt{6}$/4 + $\\sqrt{2}$/4 = ($\\sqrt{6}$+$\\sqrt{2}$)/4.\nJawaban: ($\\sqrt{6}$ + $\\sqrt{2}$)/4 (A)."
+    explanation: "$\\sin$ 75^$\\circ$ = $\\sin(45^\\circ+30^\\circ)$ = sin45^$\\circ$cos30^$\\circ$ + cos45^$\\circ$sin30^$\\circ$\n= ($\\sqrt{2}$/2)($\\sqrt{3}$/2) + ($\\sqrt{2}$/2)(1/2)\n= $\\sqrt{6}$/4 + $\\sqrt{2}$/4 = ($\\sqrt{6}$+$\\sqrt{2}$)/4.\nJawaban: ($\\sqrt{6}$ + $\\sqrt{2}$)/4 (A)."
 },
 {
     question: "Persamaan $\\cos$ 2x = $\\cos$ x untuk 0^$\\circ$  $\\leq$  x  $\\leq$  360^$\\circ$ memiliki banyak solusi sebanyak $\\ldots$",
