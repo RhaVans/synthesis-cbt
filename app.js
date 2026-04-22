@@ -318,7 +318,7 @@ function prewrapMath(text) {
     // First match existing $...$ blocks to protect them, then match bare LaTeX tokens.
     // Wrap each LaTeX token individually — do NOT sweep into prose (no space consumption)
     // Token: \cmd{args}^{sup}_{sub}(args)  OR  x^{n}  OR  x_{n}
-    const regex = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|[a-zA-Z0-9]\^(?:\{[^{}]*\}|[0-9]+)|[a-zA-Z0-9]_(?:\{[^{}]*\}|[a-zA-Z0-9])/g;
+    const regex = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|(?:(?<![a-zA-Z0-9_])[a-zA-Z0-9]+)\^(?:\{[^{}]*\}|[0-9a-zA-Z-]+)|(?:(?<![a-zA-Z0-9_])[a-zA-Z0-9]+)_(?:\{[^{}]*\}|[a-zA-Z0-9]+)(?![a-zA-Z0-9_])/g;
 
     return text.replace(regex, match => {
         if (match.startsWith('$')) {
@@ -510,6 +510,9 @@ function submitQuiz() {
     document.getElementById('correctCount').textContent = correct;
     document.getElementById('wrongCount').textContent = wrong;
     document.getElementById('skippedCount').textContent = skipped;
+
+    // Render KaTeX in results (for review section if visible or any static math)
+    renderMathInContainer(document.getElementById('resultsScreen'));
     document.getElementById('timeTaken').textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
     // Animate score ring
@@ -591,6 +594,9 @@ function filterReview(filter) {
         `;
         reviewList.appendChild(item);
     });
+
+    // Render KaTeX for review items
+    renderMathInContainer(reviewList);
 
     if (reviewList.children.length === 0) {
         reviewList.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem;">Tidak ada soal yang sesuai filter.</p>';
