@@ -289,6 +289,16 @@ function renderMathInContainer(container) {
     }
 }
 
+// ========== TEXT FORMATTING & LaTeX PRE-WRAPPING ==========
+
+const REGEX_HTML_ESCAPE = /[&<>"']/g;
+const REGEX_MATH_INDICATOR = /\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9]|[a-zA-Z0-9]_/;
+const REGEX_LATEX_TOKEN = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|[a-zA-Z0-9]\^(?:\{[^{}]*\}|[0-9]+)|[a-zA-Z0-9]_(?:\{[^{}]*\}|[a-zA-Z0-9])/g;
+const REGEX_BOLD = /\*\*(.*?)\*\*/g;
+const REGEX_ITALIC = /\*(.*?)\*/g;
+const REGEX_CODE = /`(.*?)`/g;
+const REGEX_NEWLINE = /\n/g;
+
 /**
  * Pre-wrap LaTeX commands in $...$ so KaTeX auto-render picks them up.
  * Handles question strings that have LaTeX commands (\\sqrt, \\log, etc.)
@@ -300,7 +310,7 @@ function renderMathInContainer(container) {
  */
 function escapeHTML(str) {
     if (!str) return '';
-    return str.replace(/[&<>"']/g, m => ({
+    return str.replace(REGEX_HTML_ESCAPE, m => ({
         '&': '&amp;',
         '<': '&lt;',
         '>': '&gt;',
@@ -313,14 +323,12 @@ function prewrapMath(text) {
     if (!text) return text;
 
     // Does the text have any bare LaTeX content? (or already wrapped content)
-    if (!/\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9]|[a-zA-Z0-9]_/.test(text)) return text;
+    if (!REGEX_MATH_INDICATOR.test(text)) return text;
 
     // First match existing $...$ blocks to protect them, then match bare LaTeX tokens.
     // Wrap each LaTeX token individually — do NOT sweep into prose (no space consumption)
     // Token: \cmd{args}^{sup}_{sub}(args)  OR  x^{n}  OR  x_{n}
-    const regex = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|[a-zA-Z0-9]\^(?:\{[^{}]*\}|[0-9]+)|[a-zA-Z0-9]_(?:\{[^{}]*\}|[a-zA-Z0-9])/g;
-
-    return text.replace(regex, match => {
+    return text.replace(REGEX_LATEX_TOKEN, match => {
         if (match.startsWith('$')) {
             return match; // already wrapped
         }
@@ -336,10 +344,10 @@ function formatText(text) {
     text = prewrapMath(text);
     // Basic formatting: support for newlines and simple formatting
     return text
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.*?)\*/g, '<em>$1</em>')
-        .replace(/`(.*?)`/g, '<code style="background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;font-family:var(--font-mono);font-size:0.9em;">$1</code>')
-        .replace(/\n/g, '<br>');
+        .replace(REGEX_BOLD, '<strong>$1</strong>')
+        .replace(REGEX_ITALIC, '<em>$1</em>')
+        .replace(REGEX_CODE, '<code style="background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;font-family:var(--font-mono);font-size:0.9em;">$1</code>')
+        .replace(REGEX_NEWLINE, '<br>');
 }
 
 
