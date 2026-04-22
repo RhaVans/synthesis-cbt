@@ -26,6 +26,14 @@ const SUBJECTS = {
     adv_calculus: { name: 'Kalkulus', category: 'Advanced Challenge', catKey: 'adv', timePerQ: 120 },
 };
 
+const CATEGORY_METADATA = {
+    tps: { name: 'TPS / TPA', color: 'var(--cat-tps)' },
+    tkd: { name: 'TKD', color: 'var(--cat-tkd)' },
+    saintek: { name: 'TKA Saintek', color: 'var(--cat-saintek)' },
+    soshum: { name: 'TKA Soshum', color: 'var(--cat-soshum)' },
+    adv: { name: 'Advanced Challenge', color: 'var(--gold)' }
+};
+
 // ========== STATE ==========
 let state = {
     mode: 'practice', // 'practice' or 'exam'
@@ -1017,48 +1025,51 @@ function formatSessionDate(isoDate) {
     }
 }
 
-function renderCategoryBreakdown(stats) {
-    const container = document.getElementById('statsCategoryBreakdown');
-    const categories = {
-        tps: { name: 'TPS / TPA', color: 'var(--cat-tps)' },
-        tkd: { name: 'TKD', color: 'var(--cat-tkd)' },
-        saintek: { name: 'TKA Saintek', color: 'var(--cat-saintek)' },
-        soshum: { name: 'TKA Soshum', color: 'var(--cat-soshum)' },
-        adv: { name: 'Advanced Challenge', color: 'var(--gold)' }
-    };
-
-    let html = '';
-    for (const [catKey, catInfo] of Object.entries(categories)) {
-        let catCorrect = 0, catWrong = 0, catSkipped = 0;
-        for (const [subjKey, subjConfig] of Object.entries(SUBJECTS)) {
-            if (subjConfig.catKey === catKey && stats.subjects[subjKey]) {
-                catCorrect += stats.subjects[subjKey].correct;
-                catWrong += stats.subjects[subjKey].wrong;
-                catSkipped += stats.subjects[subjKey].skipped;
-            }
+function getCategoryStats(stats, catKey) {
+    let correct = 0, wrong = 0, skipped = 0;
+    for (const [subjKey, subjConfig] of Object.entries(SUBJECTS)) {
+        if (subjConfig.catKey === catKey && stats.subjects[subjKey]) {
+            correct += stats.subjects[subjKey].correct;
+            wrong += stats.subjects[subjKey].wrong;
+            skipped += stats.subjects[subjKey].skipped;
         }
-        const catTotal = catCorrect + catWrong + catSkipped;
-        const correctPct = catTotal > 0 ? (catCorrect / catTotal * 100) : 0;
-        const wrongPct = catTotal > 0 ? (catWrong / catTotal * 100) : 0;
-        const skippedPct = catTotal > 0 ? (catSkipped / catTotal * 100) : 0;
+    }
+    return { correct, wrong, skipped };
+}
 
-        html += `
-            <div class="stats-breakdown-item">
-                <div class="stats-breakdown-header">
-                    <span class="stats-breakdown-name">${escapeHTML(catInfo.name)}</span>
-                    <div class="stats-breakdown-counts">
-                        <span class="correct-count">✓ ${catCorrect}</span>
-                        <span class="wrong-count">✗ ${catWrong}</span>
-                        <span>${catTotal} total</span>
-                    </div>
-                </div>
-                <div class="stats-bar-track">
-                    <div class="stats-bar-correct" style="width:${correctPct}%"></div>
-                    <div class="stats-bar-wrong" style="width:${wrongPct}%"></div>
-                    <div class="stats-bar-skipped" style="width:${skippedPct}%"></div>
+function generateCategoryHTML(name, catStats) {
+    const { correct, wrong, skipped } = catStats;
+    const total = correct + wrong + skipped;
+    const correctPct = total > 0 ? (correct / total * 100) : 0;
+    const wrongPct = total > 0 ? (wrong / total * 100) : 0;
+    const skippedPct = total > 0 ? (skipped / total * 100) : 0;
+
+    return `
+        <div class="stats-breakdown-item">
+            <div class="stats-breakdown-header">
+                <span class="stats-breakdown-name">${escapeHTML(name)}</span>
+                <div class="stats-breakdown-counts">
+                    <span class="correct-count">✓ ${correct}</span>
+                    <span class="wrong-count">✗ ${wrong}</span>
+                    <span>${total} total</span>
                 </div>
             </div>
-        `;
+            <div class="stats-bar-track">
+                <div class="stats-bar-correct" style="width:${correctPct}%"></div>
+                <div class="stats-bar-wrong" style="width:${wrongPct}%"></div>
+                <div class="stats-bar-skipped" style="width:${skippedPct}%"></div>
+            </div>
+        </div>
+    `;
+}
+
+function renderCategoryBreakdown(stats) {
+    const container = document.getElementById('statsCategoryBreakdown');
+    let html = '';
+
+    for (const [catKey, catInfo] of Object.entries(CATEGORY_METADATA)) {
+        const catStats = getCategoryStats(stats, catKey);
+        html += generateCategoryHTML(catInfo.name, catStats);
     }
     container.innerHTML = html;
 }
