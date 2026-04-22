@@ -301,7 +301,7 @@ function renderMathInContainer(container) {
 
 const REGEX_HTML_ESCAPE = /[&<>"']/g;
 const REGEX_MATH_INDICATOR = /\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9\-]|(^|[^a-zA-Z])[a-zA-Z0-9]_[{a-zA-Z0-9]/;
-const REGEX_LATEX_TOKEN = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|\b[a-zA-Z0-9]\^(?:\{[^{}]*\}|[a-zA-Z0-9]+)|\b[a-zA-Z0-9]_(?:\{[^{}]*\}|[a-zA-Z0-9]+)(?!\w)/g;
+const REGEX_LATEX_TOKEN = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|(?:(?<![a-zA-Z0-9_])[a-zA-Z0-9]+)\^(?:\{[^{}]*\}|[0-9a-zA-Z-]+)|(?:(?<![a-zA-Z0-9_])[a-zA-Z0-9]+)_(?:\{[^{}]*\}|[a-zA-Z0-9]+)(?![a-zA-Z0-9_])/g;
 const REGEX_BOLD = /\*\*(.*?)\*\*/g;
 const REGEX_ITALIC = /\*(.*?)\*/g;
 const REGEX_CODE = /`(.*?)`/g;
@@ -526,6 +526,9 @@ function submitQuiz() {
     document.getElementById('correctCount').textContent = correct;
     document.getElementById('wrongCount').textContent = wrong;
     document.getElementById('skippedCount').textContent = skipped;
+
+    // Render KaTeX in results (for review section if visible or any static math)
+    renderMathInContainer(document.getElementById('resultsScreen'));
     document.getElementById('timeTaken').textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
     // Animate score ring
@@ -608,6 +611,11 @@ function filterReview(filter) {
         reviewList.appendChild(item);
     });
 
+<<<<<<< HEAD
+    // Render KaTeX for review items
+    renderMathInContainer(reviewList);
+=======
+>>>>>>> origin/main
 
     if (reviewList.children.length === 0) {
         reviewList.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem;">Tidak ada soal yang sesuai filter.</p>';
