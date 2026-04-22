@@ -313,18 +313,25 @@ function prewrapMath(text) {
     if (!text) return text;
 
     // Does the text have any bare LaTeX content? (or already wrapped content)
-    if (!/\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9]|[a-zA-Z0-9]_/.test(text)) return text;
+    if (!/\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9\-]|(^|[^a-zA-Z])[a-zA-Z0-9]_[{a-zA-Z0-9]/.test(text)) return text;
 
     // First match existing $...$ blocks to protect them, then match bare LaTeX tokens.
     // Wrap each LaTeX token individually — do NOT sweep into prose (no space consumption)
     // Token: \cmd{args}^{sup}_{sub}(args)  OR  x^{n}  OR  x_{n}
-    const regex = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|[a-zA-Z0-9]\^(?:\{[^{}]*\}|[0-9]+)|[a-zA-Z0-9]_(?:\{[^{}]*\}|[a-zA-Z0-9])/g;
+    // We use a capture group for the boundary character `(^|[^a-zA-Z])` so we don't wrap it.
+    const regex = /(\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|[a-zA-Z0-9]\^(?:\{[^{}]*\}|[\-0-9]+))|(^|[^a-zA-Z])([a-zA-Z0-9]_(?:\{[^{}]*\}|[a-zA-Z0-9]))/g;
 
-    return text.replace(regex, match => {
-        if (match.startsWith('$')) {
-            return match; // already wrapped
+    return text.replace(regex, (match, grp1, bound, grp3) => {
+        // If matched the first big block (no leading boundary needs handling)
+        if (grp1) {
+            if (grp1.startsWith('$')) return grp1;
+            return '$' + grp1 + '$';
         }
-        return '$' + match + '$';
+        // If matched the subscript block with boundary
+        if (grp3) {
+            return bound + '$' + grp3 + '$';
+        }
+        return match;
     });
 }
 
