@@ -611,11 +611,6 @@ function filterReview(filter) {
         reviewList.appendChild(item);
     });
 
-<<<<<<< HEAD
-    // Render KaTeX for review items
-    renderMathInContainer(reviewList);
-=======
->>>>>>> origin/main
 
     if (reviewList.children.length === 0) {
         reviewList.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem;">Tidak ada soal yang sesuai filter.</p>';
