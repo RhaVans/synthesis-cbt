@@ -224,10 +224,16 @@ function renderQuestion() {
             }
         }
 
-        btn.innerHTML = `
-            <span class="option-label">${labels[i]}</span>
-            <span class="option-text">${formatText(opt)}</span>
-        `;
+        const labelSpan = document.createElement('span');
+        labelSpan.className = 'option-label';
+        labelSpan.textContent = labels[i];
+
+        const textSpan = document.createElement('span');
+        textSpan.className = 'option-text';
+        textSpan.innerHTML = formatText(opt);
+
+        btn.appendChild(labelSpan);
+        btn.appendChild(textSpan);
 
         btn.addEventListener('click', () => selectOption(i));
         optionsList.appendChild(btn);
@@ -259,8 +265,8 @@ function renderQuestion() {
 
     // Nav buttons
     document.getElementById('btnPrev').style.visibility = idx === 0 ? 'hidden' : 'visible';
-    document.getElementById('btnNext').textContent = idx === total - 1 ? 'Selesai' : '';
-    document.getElementById('btnNext').innerHTML = idx === total - 1
+    const btnNext = document.getElementById('btnNext');
+    btnNext.innerHTML = idx === total - 1
         ? 'Kumpulkan <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'
         : 'Selanjutnya <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
 
@@ -577,18 +583,33 @@ function filterReview(filter) {
 
         const item = document.createElement('div');
         item.className = `review-item ${status}`;
-        item.innerHTML = `
-            <div class="review-question"><strong>Soal ${i + 1}.</strong> ${formatText(q.question)}</div>
-            <div class="review-answer-grid">
-                ${q.options.map((opt, j) => {
-                    let cls = 'review-option';
-                    if (j === q.answer) cls += ' is-correct';
-                    if (j === userAnswer && j !== q.answer) cls += ' is-selected is-wrong';
-                    return `<div class="${cls}"><span class="review-opt-label">${labels[j]}.</span> ${formatText(opt)}</div>`;
-                }).join('')}
-            </div>
-            <div class="review-explanation"><strong>Pembahasan:</strong>\n${formatText(q.explanation)}</div>
-        `;
+
+        // Question
+        const qDiv = document.createElement('div');
+        qDiv.className = 'review-question';
+        qDiv.innerHTML = `<strong>Soal ${i + 1}.</strong> ${formatText(q.question)}`;
+        item.appendChild(qDiv);
+
+        // Answer Grid
+        const gridDiv = document.createElement('div');
+        gridDiv.className = 'review-answer-grid';
+        q.options.forEach((opt, j) => {
+            const optDiv = document.createElement('div');
+            let cls = 'review-option';
+            if (j === q.answer) cls += ' is-correct';
+            if (j === userAnswer && j !== q.answer) cls += ' is-selected is-wrong';
+            optDiv.className = cls;
+            optDiv.innerHTML = `<span class="review-opt-label">${labels[j]}.</span> ${formatText(opt)}`;
+            gridDiv.appendChild(optDiv);
+        });
+        item.appendChild(gridDiv);
+
+        // Explanation
+        const explDiv = document.createElement('div');
+        explDiv.className = 'review-explanation';
+        explDiv.innerHTML = `<strong>Pembahasan:</strong><br>${formatText(q.explanation)}`;
+        item.appendChild(explDiv);
+
         reviewList.appendChild(item);
     });
 
@@ -1027,7 +1048,7 @@ function renderCategoryBreakdown(stats) {
         adv: { name: 'Advanced Challenge', color: 'var(--gold)' }
     };
 
-    let html = '';
+    container.innerHTML = '';
     for (const [catKey, catInfo] of Object.entries(categories)) {
         let catCorrect = 0, catWrong = 0, catSkipped = 0;
         for (const [subjKey, subjConfig] of Object.entries(SUBJECTS)) {
@@ -1042,38 +1063,64 @@ function renderCategoryBreakdown(stats) {
         const wrongPct = catTotal > 0 ? (catWrong / catTotal * 100) : 0;
         const skippedPct = catTotal > 0 ? (catSkipped / catTotal * 100) : 0;
 
-        html += `
-            <div class="stats-breakdown-item">
-                <div class="stats-breakdown-header">
-                    <span class="stats-breakdown-name">${escapeHTML(catInfo.name)}</span>
-                    <div class="stats-breakdown-counts">
-                        <span class="correct-count">✓ ${catCorrect}</span>
-                        <span class="wrong-count">✗ ${catWrong}</span>
-                        <span>${catTotal} total</span>
-                    </div>
-                </div>
-                <div class="stats-bar-track">
-                    <div class="stats-bar-correct" style="width:${correctPct}%"></div>
-                    <div class="stats-bar-wrong" style="width:${wrongPct}%"></div>
-                    <div class="stats-bar-skipped" style="width:${skippedPct}%"></div>
-                </div>
-            </div>
+        const item = document.createElement('div');
+        item.className = 'stats-breakdown-item';
+
+        const header = document.createElement('div');
+        header.className = 'stats-breakdown-header';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'stats-breakdown-name';
+        nameSpan.textContent = catInfo.name;
+        header.appendChild(nameSpan);
+
+        const countsDiv = document.createElement('div');
+        countsDiv.className = 'stats-breakdown-counts';
+        countsDiv.innerHTML = `
+            <span class="correct-count">✓ ${catCorrect}</span>
+            <span class="wrong-count">✗ ${catWrong}</span>
+            <span>${catTotal} total</span>
         `;
+        header.appendChild(countsDiv);
+        item.appendChild(header);
+
+        const track = document.createElement('div');
+        track.className = 'stats-bar-track';
+
+        const correctBar = document.createElement('div');
+        correctBar.className = 'stats-bar-correct';
+        correctBar.style.width = `${correctPct}%`;
+        track.appendChild(correctBar);
+
+        const wrongBar = document.createElement('div');
+        wrongBar.className = 'stats-bar-wrong';
+        wrongBar.style.width = `${wrongPct}%`;
+        track.appendChild(wrongBar);
+
+        const skippedBar = document.createElement('div');
+        skippedBar.className = 'stats-bar-skipped';
+        skippedBar.style.width = `${skippedPct}%`;
+        track.appendChild(skippedBar);
+
+        item.appendChild(track);
+        container.appendChild(item);
     }
-    container.innerHTML = html;
 }
 
 function renderSubjectBreakdown(stats) {
     const container = document.getElementById('statsSubjectBreakdown');
-    let html = `
-        <div class="stats-subject-row stats-subject-row-header">
-            <span>Mata Uji</span>
-            <span style="text-align:center">Benar</span>
-            <span style="text-align:center">Salah</span>
-            <span style="text-align:center">Total</span>
-            <span style="text-align:center">Akurasi</span>
-        </div>
+    container.innerHTML = '';
+
+    const header = document.createElement('div');
+    header.className = 'stats-subject-row stats-subject-row-header';
+    header.innerHTML = `
+        <span>Mata Uji</span>
+        <span style="text-align:center">Benar</span>
+        <span style="text-align:center">Salah</span>
+        <span style="text-align:center">Total</span>
+        <span style="text-align:center">Akurasi</span>
     `;
+    container.appendChild(header);
 
     for (const [key, config] of Object.entries(SUBJECTS)) {
         const s = stats.subjects[key] || { correct: 0, wrong: 0, skipped: 0 };
@@ -1081,17 +1128,36 @@ function renderSubjectBreakdown(stats) {
         const answered = s.correct + s.wrong;
         const accuracy = answered > 0 ? Math.round((s.correct / answered) * 100) + '%' : '—';
 
-        html += `
-            <div class="stats-subject-row">
-                <span class="stats-subject-name">${escapeHTML(config.name)}</span>
-                <span class="stats-subject-cell correct-val">${s.correct}</span>
-                <span class="stats-subject-cell wrong-val">${s.wrong}</span>
-                <span class="stats-subject-cell total-val">${total}</span>
-                <span class="stats-subject-cell accuracy-val">${accuracy}</span>
-            </div>
-        `;
+        const row = document.createElement('div');
+        row.className = 'stats-subject-row';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'stats-subject-name';
+        nameSpan.textContent = config.name;
+        row.appendChild(nameSpan);
+
+        const correctSpan = document.createElement('span');
+        correctSpan.className = 'stats-subject-cell correct-val';
+        correctSpan.textContent = s.correct;
+        row.appendChild(correctSpan);
+
+        const wrongSpan = document.createElement('span');
+        wrongSpan.className = 'stats-subject-cell wrong-val';
+        wrongSpan.textContent = s.wrong;
+        row.appendChild(wrongSpan);
+
+        const totalSpan = document.createElement('span');
+        totalSpan.className = 'stats-subject-cell total-val';
+        totalSpan.textContent = total;
+        row.appendChild(totalSpan);
+
+        const accuracySpan = document.createElement('span');
+        accuracySpan.className = 'stats-subject-cell accuracy-val';
+        accuracySpan.textContent = accuracy;
+        row.appendChild(accuracySpan);
+
+        container.appendChild(row);
     }
-    container.innerHTML = html;
 }
 
 // ========== RESET STATS ==========
