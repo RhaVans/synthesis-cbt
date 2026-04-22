@@ -301,7 +301,7 @@ function renderMathInContainer(container) {
 
 const REGEX_HTML_ESCAPE = /[&<>"']/g;
 const REGEX_MATH_INDICATOR = /\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9\-]|(^|[^a-zA-Z])[a-zA-Z0-9]_[{a-zA-Z0-9]/;
-const REGEX_LATEX_TOKEN = /(\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|[a-zA-Z0-9]\^(?:\{[^{}]*\}|[\-0-9]+))|(^|[^a-zA-Z])([a-zA-Z0-9]_(?:\{[^{}]*\}|[a-zA-Z0-9]))/g;
+const REGEX_LATEX_TOKEN = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|\b[a-zA-Z0-9]\^(?:\{[^{}]*\}|[a-zA-Z0-9]+)|\b[a-zA-Z0-9]_(?:\{[^{}]*\}|[a-zA-Z0-9]+)(?!\w)/g;
 const REGEX_BOLD = /\*\*(.*?)\*\*/g;
 const REGEX_ITALIC = /\*(.*?)\*/g;
 const REGEX_CODE = /`(.*?)`/g;
@@ -336,18 +336,11 @@ function prewrapMath(text) {
     // First match existing $...$ blocks to protect them, then match bare LaTeX tokens.
     // Wrap each LaTeX token individually — do NOT sweep into prose (no space consumption)
     // Token: \cmd{args}^{sup}_{sub}(args)  OR  x^{n}  OR  x_{n}
-    // We use a capture group for the boundary character `(^|[^a-zA-Z])` so we don't wrap it.
-    return text.replace(REGEX_LATEX_TOKEN, (match, grp1, bound, grp3) => {
-        // If matched the first big block (no leading boundary needs handling)
-        if (grp1) {
-            if (grp1.startsWith('$')) return grp1;
-            return '$' + grp1 + '$';
+    return text.replace(REGEX_LATEX_TOKEN, match => {
+        if (match.startsWith('$')) {
+            return match; // already wrapped
         }
-        // If matched the subscript block with boundary
-        if (grp3) {
-            return bound + '$' + grp3 + '$';
-        }
-        return match;
+        return '$' + match + '$';
     });
 }
 
@@ -615,10 +608,15 @@ function filterReview(filter) {
         reviewList.appendChild(item);
     });
 
+
     if (reviewList.children.length === 0) {
         reviewList.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem;">Tidak ada soal yang sesuai filter.</p>';
     }
+
+    // Render KaTeX math in the review area
+    renderMathInContainer(reviewList);
 }
+
 
 // ========== RETRY ==========
 function retryQuiz() {
