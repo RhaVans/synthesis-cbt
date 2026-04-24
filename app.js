@@ -301,7 +301,7 @@ function renderMathInContainer(container) {
 
 const REGEX_HTML_ESCAPE = /[&<>"']/g;
 const REGEX_MATH_INDICATOR = /\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9\-]|(^|[^a-zA-Z])[a-zA-Z0-9]_[{a-zA-Z0-9]/;
-const REGEX_LATEX_TOKEN = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|(?:(?<![a-zA-Z0-9_])[a-zA-Z0-9]+)\^(?:\{[^{}]*\}|[0-9a-zA-Z-]+)|(?:(?<![a-zA-Z0-9_])[a-zA-Z0-9]+)_(?:\{[^{}]*\}|[a-zA-Z0-9]+)(?![a-zA-Z0-9_])/g;
+const REGEX_LATEX_TOKEN = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|(^|[^a-zA-Z0-9_])([a-zA-Z0-9]+\^(?:\{[^{}]*\}|[\-0-9a-zA-Z]+))|(^|[^a-zA-Z0-9_])([a-zA-Z0-9]+_(?:\{[^{}]*\}|[a-zA-Z0-9]+)(?![a-zA-Z0-9_]))/g;
 const REGEX_BOLD = /\*\*(.*?)\*\*/g;
 const REGEX_ITALIC = /\*(.*?)\*/g;
 const REGEX_CODE = /`(.*?)`/g;
@@ -336,9 +336,15 @@ function prewrapMath(text) {
     // First match existing $...$ blocks to protect them, then match bare LaTeX tokens.
     // Wrap each LaTeX token individually — do NOT sweep into prose (no space consumption)
     // Token: \cmd{args}^{sup}_{sub}(args)  OR  x^{n}  OR  x_{n}
-    return text.replace(REGEX_LATEX_TOKEN, match => {
+    return text.replace(REGEX_LATEX_TOKEN, (match, p1, p2, p3, p4) => {
         if (match.startsWith('$')) {
             return match; // already wrapped
+        }
+        if (p1 !== undefined && p2 !== undefined) {
+            return p1 + '$' + p2 + '$';
+        }
+        if (p3 !== undefined && p4 !== undefined) {
+            return p3 + '$' + p4 + '$';
         }
         return '$' + match + '$';
     });

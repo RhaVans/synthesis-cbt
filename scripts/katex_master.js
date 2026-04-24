@@ -113,10 +113,21 @@ function fixSingleBackslashLatex(src) {
                         // Potentially invalid JS escape (lone \cmd)
                         let cmdEnd = j + 1;
                         while (cmdEnd < n && /[a-zA-Z]/.test(src[cmdEnd])) cmdEnd++;
-                        const cmd = src.slice(j+1, cmdEnd);
-                        if (KNOWN_LATEX.has(cmd)) {
+                        const fullLetters = src.slice(j+1, cmdEnd);
+
+                        // Find longest known prefix
+                        let matchedLen = 0;
+                        for (let k = fullLetters.length; k >= 1; k--) {
+                            if (KNOWN_LATEX.has(fullLetters.slice(0, k))) {
+                                matchedLen = k;
+                                break;
+                            }
+                        }
+
+                        if (matchedLen > 0) {
                             // Fix it: \cmd → \\cmd in source
-                            content += '\\\\' + cmd; j = cmdEnd;
+                            const cmd = fullLetters.slice(0, matchedLen);
+                            content += '\\\\' + cmd; j = j + 1 + matchedLen;
                         } else if (/[ntr\\'"0bfvux]/.test(next)) {
                             // Valid JS escape — copy as-is
                             content += src[j] + next; j += 2;
