@@ -442,13 +442,15 @@ function toggleHint() {
 function buildQuestionGrid() {
     const grid = document.getElementById('questionGrid');
     grid.innerHTML = '';
+    const fragment = document.createDocumentFragment();
     state.questions.forEach((_, i) => {
         const btn = document.createElement('button');
         btn.className = 'q-grid-btn';
         btn.textContent = i + 1;
         btn.addEventListener('click', () => goToQuestion(i));
-        grid.appendChild(btn);
+        fragment.appendChild(btn);
     });
+    grid.appendChild(fragment);
 }
 
 function updateQuestionGrid() {
@@ -587,6 +589,7 @@ function filterReview(filter) {
     reviewList.innerHTML = '';
 
     const labels = ['A', 'B', 'C', 'D', 'E'];
+    const fragment = document.createDocumentFragment();
 
     state.questions.forEach((q, i) => {
         const userAnswer = state.answers[i];
@@ -614,9 +617,10 @@ function filterReview(filter) {
             </div>
             <div class="review-explanation"><strong>Pembahasan:</strong>\n${formatText(q.explanation)}</div>
         `;
-        reviewList.appendChild(item);
+        fragment.appendChild(item);
     });
 
+    reviewList.appendChild(fragment);
 
     if (reviewList.children.length === 0) {
         reviewList.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem;">Tidak ada soal yang sesuai filter.</p>';
