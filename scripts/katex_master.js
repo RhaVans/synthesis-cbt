@@ -113,10 +113,18 @@ function fixSingleBackslashLatex(src) {
                         // Potentially invalid JS escape (lone \cmd)
                         let cmdEnd = j + 1;
                         while (cmdEnd < n && /[a-zA-Z]/.test(src[cmdEnd])) cmdEnd++;
-                        const cmd = src.slice(j+1, cmdEnd);
-                        if (KNOWN_LATEX.has(cmd)) {
+                        const fullWord = src.slice(j+1, cmdEnd);
+
+                        let cmdLen = 0;
+                        for (let k = fullWord.length; k >= 1; k--) {
+                            if (KNOWN_LATEX.has(fullWord.slice(0, k))) { cmdLen = k; break; }
+                        }
+
+                        if (cmdLen > 0) {
                             // Fix it: \cmd → \\cmd in source
-                            content += '\\\\' + cmd; j = cmdEnd;
+                            const cmd = fullWord.slice(0, cmdLen);
+                            content += '\\\\' + cmd;
+                            j = j + 1 + cmdLen;
                         } else if (/[ntr\\'"0bfvux]/.test(next)) {
                             // Valid JS escape — copy as-is
                             content += src[j] + next; j += 2;
@@ -234,8 +242,8 @@ function wrapRawTokens(raw) {
             // Emit any remainder letters without wrapping
             if (remainder) {
                 out.push(remainder);
-                i = j; // Advance past the remainder in raw
             }
+            i = Math.max(i, j); // Advance past ALL consumed letters and mods in raw
             continue;
         }
         // Exponent/subscript with braces: x^{n}, x_{n}
