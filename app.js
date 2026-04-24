@@ -300,8 +300,6 @@ function renderMathInContainer(container) {
 // ========== TEXT FORMATTING & LaTeX PRE-WRAPPING ==========
 
 const REGEX_HTML_ESCAPE = /[&<>"']/g;
-const REGEX_MATH_INDICATOR = /\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9]|[a-zA-Z0-9]_/;
-const REGEX_LATEX_TOKEN = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|[a-zA-Z0-9]\^(?:\{[^{}]*\}|[0-9]+)|[a-zA-Z0-9]_(?:\{[^{}]*\}|[a-zA-Z0-9])/g;
 const REGEX_BOLD = /\*\*(.*?)\*\*/g;
 const REGEX_ITALIC = /\*(.*?)\*/g;
 const REGEX_CODE = /`(.*?)`/g;
@@ -327,29 +325,10 @@ function escapeHTML(str) {
     })[m]);
 }
 
-function prewrapMath(text) {
-    if (!text) return text;
-
-    // Does the text have any bare LaTeX content? (or already wrapped content)
-    if (!REGEX_MATH_INDICATOR.test(text)) return text;
-
-    // First match existing $...$ blocks to protect them, then match bare LaTeX tokens.
-    // Wrap each LaTeX token individually — do NOT sweep into prose (no space consumption)
-    // Token: \cmd{args}^{sup}_{sub}(args)  OR  x^{n}  OR  x_{n}
-    return text.replace(REGEX_LATEX_TOKEN, match => {
-        if (match.startsWith('$')) {
-            return match; // already wrapped
-        }
-        return '$' + match + '$';
-    });
-}
-
 function formatText(text) {
     if (!text) return '';
     // Escape HTML first to prevent XSS
     text = escapeHTML(text);
-    // Pre-wrap bare LaTeX math in $...$ for KaTeX auto-render
-    text = prewrapMath(text);
     // Basic formatting: support for newlines and simple formatting
     return text
         .replace(REGEX_BOLD, '<strong>$1</strong>')
@@ -611,6 +590,8 @@ function filterReview(filter) {
     if (reviewList.children.length === 0) {
         reviewList.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem;">Tidak ada soal yang sesuai filter.</p>';
     }
+
+    renderMathInContainer(reviewList);
 }
 
 // ========== RETRY ==========

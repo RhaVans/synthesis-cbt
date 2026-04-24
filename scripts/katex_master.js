@@ -184,14 +184,25 @@ function wrapAtomsInSource(src) {
                 else { raw.push(src[j]); j++; }
             }
             const rawStr = raw.join('');
-            // Skip strings that already have $ or have no LaTeX/math
-            const hasDollar = rawStr.includes('$');
-            const hasLatexCmd = rawStr.includes('\\\\'); // double-backslash = valid LaTeX
-            const hasBracedExp = /[a-zA-Z0-9]\^{|[a-zA-Z0-9]_\{/.test(rawStr);
-            if (!hasDollar && (hasLatexCmd || hasBracedExp)) {
-                result += q + wrapRawTokens(raw) + q;
+            // First, strip existing $ to allow re-wrapping
+            let cleanRaw = [];
+            for (let k = 0; k < raw.length; k++) {
+                if (raw[k] !== '$') {
+                    cleanRaw.push(raw[k]);
+                }
+            }
+            const cleanRawStr = cleanRaw.join('');
+
+            // Check if string has LaTeX/math
+            const hasLatexCmd = cleanRawStr.includes('\\\\'); // double-backslash = valid LaTeX
+            const hasBracedExp = /[a-zA-Z0-9)]\^{|[a-zA-Z0-9)]_\{/.test(cleanRawStr);
+            const hasMathOp = /[=<>+\-]/.test(cleanRawStr);
+
+            // Only wrap if it actually has math
+            if (hasLatexCmd || hasBracedExp || (hasMathOp && cleanRawStr.match(/[a-zA-Z0-9]/))) {
+                result += q + wrapRawTokens(cleanRaw) + q;
             } else {
-                result += q + rawStr + q;
+                result += q + cleanRawStr + q;
             }
             i = j; continue;
         }
@@ -201,70 +212,140 @@ function wrapAtomsInSource(src) {
 }
 
 function wrapRawTokens(raw) {
-    const out = [];
+    const tokens = [];
     let i = 0;
     const n = raw.length;
     while (i < n) {
         const tok = raw[i];
-        // LaTeX command: '\\\\' followed by letters
+
+        // LaTeX command
         if (tok === '\\\\' && i+1 < n && raw[i+1] && /[a-zA-Z]/.test(raw[i+1][0])) {
-            // Read all consecutive letters
             let j = i + 1;
             let letters = '';
             while (j < n && raw[j] && raw[j].length === 1 && /[a-zA-Z]/.test(raw[j])) {
                 letters += raw[j]; j++;
             }
-            // Find the LONGEST prefix of letters that is a recognized LaTeX command
             let cmdLen = 0;
             for (let k = letters.length; k >= 1; k--) {
                 if (KNOWN_LATEX.has(letters.slice(0, k))) { cmdLen = k; break; }
             }
-            if (cmdLen === 0) {
-                // Not a recognized command — treat as single-letter cmd
-                cmdLen = 1;
-            }
+            if (cmdLen === 0) cmdLen = 1;
             const cmd = letters.slice(0, cmdLen);
             const atomToks = ['\\\\', ...cmd.split('')];
-            i = i + 1 + cmdLen; // skip past '\\\\' and cmd letters
-            // Put remaining letters back (non-consumed) to out
+            i = i + 1 + cmdLen;
             const remainder = letters.slice(cmdLen);
-            // Read trailing mods (subscript, superscript, {args})
             i = readAtomMods(raw, atomToks, i);
-            out.push('$' + atomToks.join('') + '$');
-            // Emit any remainder letters without wrapping
+            tokens.push({ type: 'math', value: atomToks.join('') });
             if (remainder) {
-                out.push(remainder);
-                i = j; // Advance past the remainder in raw
+                if (remainder.length === 1) tokens.push({ type: 'math_var', value: remainder });
+                else tokens.push({ type: 'text', value: remainder });
             }
             continue;
         }
-        // Exponent/subscript with braces: x^{n}, x_{n}
-        // OR bare numeric exponent: x^2, x^{-1}
-        // Do NOT wrap bare x_letter (to keep identifiers like tkd_matdas intact)
-        if (/[a-zA-Z0-9]/.test(tok) && i+1 < n && (raw[i+1] === '^' || raw[i+1] === '_')) {
+
+        // Exponent/subscript
+        if (/[a-zA-Z0-9)]/.test(tok) && i+1 < n && (raw[i+1] === '^' || raw[i+1] === '_')) {
             const base = tok, mod = raw[i+1];
             let j = i + 2;
             let atom = [base, mod];
             let matched = false;
             if (j < n && raw[j] === '{') {
-                // Brace-delimited: x^{...} or x_{...}
                 j = readBracedArg(raw, j, '{', '}', atom);
                 matched = true;
             } else if (mod === '^' && j < n && raw[j] && /[0-9]/.test(raw[j][0])) {
-                // x^digit
                 atom.push(raw[j]); j++; matched = true;
             } else if (mod === '^' && j < n && raw[j] === '-' && j+1 < n && /[0-9]/.test((raw[j+1]||'')[0])) {
-                // x^-digit
                 atom.push('{', raw[j], raw[j+1], '}'); j += 2; matched = true;
             }
             if (matched) {
-                out.push('$' + atom.join('') + '$');
+                tokens.push({ type: 'math', value: atom.join('') });
                 i = j; continue;
             }
         }
-        out.push(tok); i++;
+
+        if (/[0-9]/.test(tok)) {
+            tokens.push({ type: 'math_op', value: tok });
+            i++; continue;
+        }
+
+        if (/[-+=<>*/()]/.test(tok)) {
+            tokens.push({ type: 'math_op', value: tok });
+            i++; continue;
+        }
+
+        if (/[a-zA-Z]/.test(tok)) {
+            let j = i;
+            let letters = '';
+            while (j < n && /[a-zA-Z]/.test(raw[j])) {
+                letters += raw[j]; j++;
+            }
+            if (letters.length === 1) {
+                tokens.push({ type: 'math_var', value: letters });
+            } else {
+                tokens.push({ type: 'text', value: letters });
+            }
+            i = j; continue;
+        }
+
+        if (/[ \t]/.test(tok)) {
+            tokens.push({ type: 'space', value: tok });
+            i++; continue;
+        }
+
+        tokens.push({ type: 'text', value: tok }); i++;
     }
-    return out.join('');
+
+    // Grouping
+    let finalStr = '';
+    let currentMath = [];
+
+    for (let k = 0; k < tokens.length; k++) {
+        let t = tokens[k];
+        let isMath = (t.type === 'math' || t.type === 'math_op' || t.type === 'math_var');
+        let isSpace = (t.type === 'space');
+
+        if (isMath) {
+            currentMath.push(t);
+        } else if (isSpace && currentMath.length > 0) {
+            let nextMath = false;
+            for (let l = k + 1; l < tokens.length; l++) {
+                if (tokens[l].type === 'space') continue;
+                if (tokens[l].type === 'math' || tokens[l].type === 'math_op' || tokens[l].type === 'math_var') {
+                    nextMath = true;
+                }
+                break;
+            }
+            if (nextMath) {
+                currentMath.push(t);
+            } else {
+                finalStr += renderMathIsland(currentMath);
+                currentMath = [];
+                finalStr += t.value;
+            }
+        } else {
+            if (currentMath.length > 0) {
+                 finalStr += renderMathIsland(currentMath);
+                 currentMath = [];
+            }
+            finalStr += t.value;
+        }
+    }
+
+    if (currentMath.length > 0) {
+         finalStr += renderMathIsland(currentMath);
+    }
+
+    return finalStr;
+}
+
+function renderMathIsland(tokens) {
+    let str = tokens.map(t => t.value).join('');
+    let hasCoreMath = tokens.some(t => t.type === 'math' || (t.type === 'math_op' && /[=<>+\-]/.test(t.value)));
+    if (hasCoreMath && str.trim() !== '' && !/^[0-9.,]+$/.test(str.trim())) {
+        return '$' + str + '$';
+    } else {
+        return str;
+    }
 }
 
 function readAtomMods(raw, atomToks, startI) {
