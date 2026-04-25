@@ -300,8 +300,8 @@ function renderMathInContainer(container) {
 // ========== TEXT FORMATTING & LaTeX PRE-WRAPPING ==========
 
 const REGEX_HTML_ESCAPE = /[&<>"']/g;
-const REGEX_MATH_INDICATOR = /\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9\-]|(^|[^a-zA-Z])[a-zA-Z0-9]_[{a-zA-Z0-9]/;
-const REGEX_LATEX_TOKEN = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|(^|[^a-zA-Z0-9_])([a-zA-Z0-9]+\^(?:\{[^{}]*\}|[\-0-9a-zA-Z]+))|(^|[^a-zA-Z0-9_])([a-zA-Z0-9]+_(?:\{[^{}]*\}|[a-zA-Z0-9]+)(?![a-zA-Z0-9_]))/g;
+const REGEX_MATH_INDICATOR = /\$|\\[a-zA-Z]|[a-zA-Z0-9]\^[{0-9\-]|(^|[^a-zA-Z])(?:[a-zA-Z](?![a-zA-Z])|[0-9]+)_[{a-zA-Z0-9]/;
+const REGEX_LATEX_TOKEN = /\$[^\$]+\$|\\[a-zA-Z]+(?:_(?:\{[^{}]*\}|[a-zA-Z0-9])|\^(?:\{[^{}]*\}|[a-zA-Z0-9])|\{[^{}]*\}|\([^)]*\))*|(^|[^a-zA-Z0-9_])([a-zA-Z0-9]+\^(?:\{[^{}]*\}|[\-0-9a-zA-Z]+))|(^|[^a-zA-Z0-9_])((?:[a-zA-Z](?![a-zA-Z])|[0-9]+)_(?:\{[^{}]*\}|[a-zA-Z0-9]+)(?![a-zA-Z0-9_]))/g;
 const REGEX_BOLD = /\*\*(.*?)\*\*/g;
 const REGEX_ITALIC = /\*(.*?)\*/g;
 const REGEX_CODE = /`(.*?)`/g;

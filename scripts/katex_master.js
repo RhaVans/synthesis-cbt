@@ -245,7 +245,7 @@ function wrapRawTokens(raw) {
             // Emit any remainder letters without wrapping
             if (remainder) {
                 out.push(remainder);
-                i = j; // Advance past the remainder in raw
+                i = Math.max(i, j); // Advance past the remainder in raw
             }
             continue;
         }
